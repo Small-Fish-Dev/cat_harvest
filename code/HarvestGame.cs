@@ -8,14 +8,25 @@ using System.Threading.Tasks;
 namespace Cat_Harvest
 {
 
-	public partial class Game : Sandbox.Game
+	public partial class HarvestGame : Sandbox.Game
 	{
-		public Game()
+
+		[Net]
+		public static int CatsCollected { get; set; } = 0;
+
+		public HarvestGame()
 		{
 			if ( IsServer )
 			{
 
 				new HarvestHUD();
+
+			}
+
+			if ( IsClient )
+			{
+
+				PlaySound( "relax" );
 
 			}
 
@@ -29,6 +40,16 @@ namespace Cat_Harvest
 			client.Pawn = player;
 
 			player.Respawn();
+		}
+
+		[ServerCmd( "cat" )]
+		public static void Cat()
+		{
+
+			Assert.NotNull( ConsoleSystem.Caller );
+
+			CatsCollected++;
+
 		}
 	}
 

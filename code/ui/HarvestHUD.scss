@@ -1,0 +1,37 @@
+RootPanel {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	.CatCounter {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba( black, 0.2 );
+		border-radius: 30px;
+		backdrop-filter: blur( 15px );
+		width: 220px;
+		height: 120px;
+		top: 10px;
+		font-family: Chewy;
+		color: white;
+
+		.title {
+			font-size: 40px;
+			text-shadow: 0px 0px 8px rgba( black, 1 );
+			text-stroke: 7px black;
+		}
+
+		.subtitle {
+			font-size: 25px;
+			text-shadow: 0px 0px 5px rgba( black, 1 );
+			text-stroke: 5px black;
+		}
+	}
+}
