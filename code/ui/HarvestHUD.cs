@@ -16,9 +16,18 @@ namespace Cat_Harvest
 			Add.Label( "Cats uprooted", "subtitle" );
 			catsLabel = Add.Label( "0/96", "title" );
 
-			catsLabel.Bind( "title", () => Time.Now );
+		}
+
+		public override void Tick()
+		{
+
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+
+			catsLabel.Text = $"{ply.CatsCollected}/96";
 
 		}
+
+		
 
 	}
 

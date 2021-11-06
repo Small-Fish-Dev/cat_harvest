@@ -11,9 +11,6 @@ namespace Cat_Harvest
 	public partial class HarvestGame : Sandbox.Game
 	{
 
-		[Net]
-		public static int CatsCollected { get; set; } = 0;
-
 		public HarvestGame()
 		{
 			if ( IsServer )
@@ -42,15 +39,6 @@ namespace Cat_Harvest
 			player.Respawn();
 		}
 
-		[ServerCmd( "cat" )]
-		public static void Cat()
-		{
-
-			Assert.NotNull( ConsoleSystem.Caller );
-
-			CatsCollected++;
-
-		}
 	}
 
 }
