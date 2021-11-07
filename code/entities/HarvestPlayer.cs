@@ -95,8 +95,8 @@ namespace Cat_Harvest
 			if ( Velocity.Length > 0f && lastStep >= 70 / Velocity.Length && GroundEntity != null )
 			{
 
-				string step = $"player/step{Rand.Int( 5 )}";
-				PlaySound( step );
+				string step = $"step{Rand.Int( 5 )}";
+				Sound.FromEntity( step, this );
 				lastStep = 0f;
 
 			}
