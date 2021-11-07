@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Cat_Harvest
 {
-	partial class HarvestPlayer : Sandbox.Player
+	public partial class HarvestPlayer : Sandbox.Player
 	{
 
 		[Net] public int CatsUprooted { get; set; } = 0;

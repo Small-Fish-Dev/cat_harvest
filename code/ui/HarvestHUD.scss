@@ -40,6 +40,7 @@ RootPanel {
 		width: 700px;
 		top: 140px;
 		flex-direction: column;
+		transition: all 0.1s ease-in;
 
 		.titleContainer {
 			background-color: rgba( 40 40 40, 0.95);
