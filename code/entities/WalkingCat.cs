@@ -12,6 +12,8 @@ namespace Cat_Harvest
 
 			base.Spawn();
 
+			Tags.Add( "Cat" );
+
 			SetModel( "models/citizen/citizen.vmdl" );
 			CollisionGroup = CollisionGroup.Prop;
 			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) );
@@ -35,27 +37,43 @@ namespace Cat_Harvest
 			SetAnimFloat( "duckspeed_scale", 1.0f / 80.0f );
 			*/
 
-			if ( lastMove > 2f )
+			SetAnimFloat( "move_x", 7f * Velocity.Length );
+
+			float friction = 0.2f;
+
+			if ( lastMove > 6f )
 			{
 
-				Velocity = 1f;
-				lastMove = 0f;
+				Velocity = new Vector3( Rand.Float( 10f ) - 5f, Rand.Float( 10f ) - 5f, 0f );
+
+				lastMove = Rand.Float( 2f );
 
 			}
 
-			Position += Velocity;
-			Velocity *= 0.95f;
+			TraceResult traceGround = Trace.Ray( Position + Vector3.Up * 16, Position + Vector3.Down * 32 )
+				.Ignore( this )
+				.WithoutTags( "Player" )
+				.WithoutTags( "Cat" )
+				.Run();
 
-		}
+			if ( traceGround.Hit )
+			{
 
-		protected virtual void Move( float speed = 0f)
-		{
+				Position = traceGround.EndPos;
+				Position += Rotation.Forward * 10 * Velocity.Length * Time.Delta;
 
-			Vector3 direction = Vector3.Zero;
-			Vector3 curVelocity = Velocity * 0.95f;
+				Rotation rotation = Velocity.EulerAngles.ToRotation();
+				Rotation = Rotation.Slerp( Rotation, rotation, 2 * Time.Delta );
 
-			Position += curVelocity;
-			Velocity = curVelocity;
+			}
+			else
+			{
+
+				Position += Vector3.Down * 100 * Time.Delta;
+
+			}
+
+			Velocity *= 1 - Time.Delta * friction;
 
 		}
 

@@ -13,7 +13,10 @@ namespace Cat_Harvest
 
 		public override void Respawn()
 		{
+
 			SetModel( "models/citizen/citizen.vmdl" );
+
+			Tags.Add( "Player" );
 
 			Controller = new WalkController() { WalkSpeed = 100.0f, DefaultSpeed = 100.0f, SprintSpeed = 160.0f };
 
