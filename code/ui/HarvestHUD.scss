@@ -82,15 +82,15 @@ RootPanel {
 				background-color: rgba( 40 40 40, 0.9 );
 				border: 3px solid rgba( 20 20 20, 1 );
 				border-radius: 5px;
-				
+
 				&.hide {
 					background-size: 0px; //yea haha :^)
 				}
 			}
+		}
 
-			&.closed {
-				opacity: 0;
-			}
+		&.closed {
+			opacity: 0;
 		}
 	}
 }

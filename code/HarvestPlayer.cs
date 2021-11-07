@@ -9,12 +9,13 @@ namespace Cat_Harvest
 
 		[Net] public int CatsUprooted { get; set; } = 0;
 		[Net] public int CatsHarvested { get; set; } = 0;
+		[Net] public bool OpenInventory { get; set; } = false;
 
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
 
-			Controller = new WalkController();
+			Controller = new WalkController() { WalkSpeed = 100.0f, DefaultSpeed = 100.0f, SprintSpeed = 160.0f };
 
 			Animator = new StandardPlayerAnimator();
 
@@ -27,18 +28,37 @@ namespace Cat_Harvest
 
 		}
 
+		TimeSince lastStep = 0f;
+
 		public override void Simulate( Client cl )
 		{
+
 			base.Simulate( cl );
 
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
+			if ( IsServer )
 			{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen/citizen.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 1000;
+				if( Input.Down( InputButton.Score ) )
+				{
+
+					OpenInventory = true;
+
+				}
+				else
+				{
+
+					OpenInventory = false;
+
+				}
+				
+			}
+
+			if ( Velocity.Length > 0f  && lastStep >= 70/Velocity.Length )
+			{
+
+				string step = $"step{Rand.Int( 5 )}";
+				PlaySound( step );
+				lastStep = 0f;
+
 			}
 		}
 

@@ -80,6 +80,8 @@ namespace Cat_Harvest
 
 			}
 
+			SetClass( "closed", !ply.OpenInventory );
+
 		}
 
 	}
