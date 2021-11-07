@@ -67,21 +67,23 @@ namespace Cat_Harvest
 
 			}
 
-			if ( IsServer )
-			{ 
 
-				TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
-				.Size( new Vector3( 20f, 20f, 20f ) )
-				.Ignore( PhysicsWorld.WorldBody.Entity )
-				.WithTag( "Cat" )
-				.Run();
 
-				if ( eyeTrace.Hit )
+			TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
+			.Size( new Vector3( 20f, 20f, 20f ) )
+			.Ignore( PhysicsWorld.WorldBody.Entity )
+			.WithTag( "Cat" )
+			.Run();
+
+			if ( eyeTrace.Hit )
+			{
+
+				DisplayPopup = true;
+
+				if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
 				{
 
-					DisplayPopup = true;
-
-					if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
+					if ( IsServer )
 					{
 
 						eyeTrace.Entity.Delete();
@@ -90,20 +92,24 @@ namespace Cat_Harvest
 
 					}
 
-				}
-				else
-				{
-
-					DisplayPopup = false;
+					PlaySound( $"meow{ Rand.Int( 10 ) }" );
 
 				}
 
 			}
+			else
+			{
+
+				DisplayPopup = false;
+
+			}
+
+			
 
 			if ( Velocity.Length > 0f && lastStep >= 70 / Velocity.Length && GroundEntity != null )
 			{
 
-				string step = $"step{Rand.Int( 5 )}";
+				string step = $"step{ Rand.Int( 5 ) }";
 				Sound.FromEntity( step, this );
 				lastStep = 0f;
 

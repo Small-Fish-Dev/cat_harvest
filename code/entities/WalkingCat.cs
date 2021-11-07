@@ -17,10 +17,10 @@ namespace Cat_Harvest
 
 			Tags.Add( "Cat" );
 
-			SetModel( "models/citizen/citizen.vmdl" );
-			Scale = 0.2f;
+			SetModel( "models/cat/cat.vmdl" );
+			Scale = 1f;
 			CollisionGroup = CollisionGroup.Prop;
-			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) );
+			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) ); //Remove collisions when done? Can't pick them up in final game anyways
 
 		}
 
@@ -30,7 +30,7 @@ namespace Cat_Harvest
 		public void Tick()
 		{
 			
-			SetAnimFloat( "move_x", 35f * Velocity.Length );
+			//SetAnimFloat( "move_x", 35f * Velocity.Length );
 
 			float friction = 0.2f;
 
@@ -86,12 +86,18 @@ namespace Cat_Harvest
 		{
 
 			var pos = ConsoleSystem.Caller.Pawn.Position;
-			var npc = new WalkingCat
+
+			for ( int i = 0; i < 96; i++ )
 			{
 
-				Position = pos
+				var npc = new WalkingCat
+				{
 
-			};
+					Position = pos
+
+				};
+
+			}
 
 		}
 

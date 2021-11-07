@@ -4,13 +4,13 @@
 	{
 		sounds = 
 		[
-			"sounds/cats/meow10.vsnd",
+			"sounds/meow10.vsnd",
 		]
 		UI = false
 		Volume = 0.3
-		VolumeRandom = 0.2
+		VolumeRandom = 0.1
 		Pitch = 1.0
-		PitchRandom = 0.2
+		PitchRandom = 0.3
 		DistanceMax = 1000.0
 	}
 }
