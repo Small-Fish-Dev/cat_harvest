@@ -23,7 +23,7 @@ namespace Cat_Harvest
 			if ( IsClient )
 			{
 
-				PlaySound( "relax" );
+				PlaySound( "music/relax" );
 
 			}
 

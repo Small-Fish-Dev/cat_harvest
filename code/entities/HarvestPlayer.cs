@@ -73,6 +73,15 @@ namespace Cat_Harvest
 
 					DisplayPopup = true;
 
+					if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
+					{
+
+						eyeTrace.Entity.Delete();
+						CatsUprooted++;
+						CatsHarvested++;
+
+					}
+
 				}
 				else
 				{
@@ -86,7 +95,7 @@ namespace Cat_Harvest
 			if ( Velocity.Length > 0f && lastStep >= 70 / Velocity.Length && GroundEntity != null )
 			{
 
-				string step = $"step{Rand.Int( 5 )}";
+				string step = $"player/step{Rand.Int( 5 )}";
 				PlaySound( step );
 				lastStep = 0f;
 
