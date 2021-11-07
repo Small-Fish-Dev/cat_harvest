@@ -1,6 +1,7 @@
 ﻿using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
+using System.Collections.Generic;
 
 namespace Cat_Harvest
 {
@@ -33,6 +34,7 @@ namespace Cat_Harvest
 	{
 
 		Label inventoryLabel;
+		List<Panel> items = new();
 
 		public CatInventory()
 		{
@@ -41,10 +43,13 @@ namespace Cat_Harvest
 			inventoryLabel = titleContainer.Add.Label( "Inventory (0/96)", "title" );
 
 			Panel itemsContainer = Add.Panel( "itemsContainer" );
+
 			for( int i = 0; i < 96; i++ )
 			{
 
-				itemsContainer.Add.Panel( "item" );
+				Panel slot = itemsContainer.Add.Panel( "item" );
+				slot.SetClass( "hide", true );
+				items.Add( slot );
 
 			}
 
@@ -56,6 +61,24 @@ namespace Cat_Harvest
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 
 			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
+
+			for( int i = 0; i < 96; i++ )
+			{
+
+				if( i < ply.CatsHarvested )
+				{
+
+					items[i].SetClass( "hide", false );
+
+				}
+				else
+				{
+
+					items[i].SetClass( "hide", true );
+
+				}
+
+			}
 
 		}
 
@@ -77,5 +100,6 @@ namespace Cat_Harvest
 		}
 
 	}
+
 
 }

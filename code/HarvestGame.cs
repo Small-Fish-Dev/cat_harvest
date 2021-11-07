@@ -39,6 +39,23 @@ namespace Cat_Harvest
 			player.Respawn();
 		}
 
+
+		[ServerCmd( "cat" )] // REMEMBER TO REMOVE THIS
+		public static void Cat()
+		{
+
+			foreach( Client client in Client.All )
+			{
+
+				HarvestPlayer ply = client.Pawn as HarvestPlayer;
+
+				ply.CatsUprooted++;
+				ply.CatsHarvested++;
+
+			}
+
+		}
+
 	}
 
 }
