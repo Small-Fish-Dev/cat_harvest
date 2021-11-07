@@ -7,6 +7,9 @@ namespace Cat_Harvest
 	public partial class WalkingCat : AnimEntity
 	{
 
+		private readonly Vector3 minBounds = new Vector3( -800, -770, 0 );
+		private readonly Vector3 maxBounds = new Vector3( 750, 790, 0 );
+
 		public override void Spawn()
 		{
 
@@ -15,6 +18,7 @@ namespace Cat_Harvest
 			Tags.Add( "Cat" );
 
 			SetModel( "models/citizen/citizen.vmdl" );
+			Scale = 0.2f;
 			CollisionGroup = CollisionGroup.Prop;
 			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) );
 
@@ -26,14 +30,25 @@ namespace Cat_Harvest
 		public void Tick()
 		{
 			
-			SetAnimFloat( "move_x", 7f * Velocity.Length );
+			SetAnimFloat( "move_x", 35f * Velocity.Length );
 
 			float friction = 0.2f;
 
 			if ( nextMove <= Time.Now )
 			{
 
-				Velocity = new Vector3( Rand.Float( 10f ) - 5f, Rand.Float( 10f ) - 5f, 0f );
+				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
+				{
+
+					Velocity = ( Vector3.Zero - Position ).ClampLength( 10f );
+
+				}
+				else
+				{
+
+					Velocity = new Vector3( Rand.Float( 10f ) - 5f, Rand.Float( 10f ) - 5f, 0f );
+
+				}
 
 				nextMove = Time.Now + 6f + Rand.Float( 2f );
 
