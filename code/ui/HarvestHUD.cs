@@ -159,7 +159,8 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			SetClass( "closed", false );//!ply.HasCat );
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+			SetClass( "closed", !ply.HasCat );
 
 		}
 

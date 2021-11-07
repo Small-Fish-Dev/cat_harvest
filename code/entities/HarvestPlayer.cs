@@ -85,15 +85,14 @@ namespace Cat_Harvest
 				if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
 				{
 
-					Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat);
-					Particles.Create( "particles/uproot.vpcf", cat, "" );
+					Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
+					Particles.Create( "particles/uproot.vpcf", cat.Position );
 
 					if ( IsServer )
 					{
 
 						cat.Delete();
 						CatsUprooted++;
-						CatsHarvested++;
 						HasCat = true;
 
 					}
@@ -123,7 +122,10 @@ namespace Cat_Harvest
 		public static void Harvest()
 		{
 
-			Log.Info( "HARVESTED" );
+			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
+
+			ply.CatsHarvested++;
+			ply.HasCat = false;
 
 		}
 
@@ -131,16 +133,18 @@ namespace Cat_Harvest
 		public static void Rescue()
 		{
 
-			var pos = ConsoleSystem.Caller.Pawn.Position;
+			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
 
 			var cat = new WalkingCat
 			{
 
-				Position = pos
+				Position = ply.Position
 
 			};
 
 			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
+
+			ply.HasCat = false;
 
 		}
 
