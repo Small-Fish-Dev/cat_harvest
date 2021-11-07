@@ -159,6 +159,7 @@ namespace Cat_Harvest
 
 			RootPanel.StyleSheet.Load( "ui/HarvestHUD.scss" );
 
+			RootPanel.Add.Panel( "CrossHair" );
 			RootPanel.AddChild<CatCounter>( "CatCounter" );
 			RootPanel.AddChild<CatInventory>( "Inventory" );
 			RootPanel.AddChild<Instructions>( "Instructions" );

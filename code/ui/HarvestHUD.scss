@@ -9,6 +9,20 @@ RootPanel {
 	justify-content: flex-start;
 	align-items: center;
 
+	.CrossHair {
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		height: 14px;
+		width: 14px;
+		margin-left: -7px;
+		margine-top: -7px;
+		border: 1.5px solid rgba ( 255, 255, 255, 0.3 );
+		border-radius: 100px;
+
+	}
+
 	.CatCounter {
 		flex-direction: column;
 		justify-content: center;

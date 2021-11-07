@@ -34,6 +34,7 @@ namespace Cat_Harvest
 		}
 
 		TimeSince lastStep = 0f;
+		TimeSince autoClose = 0f;
 
 		public override void Simulate( Client cl )
 		{
@@ -54,6 +55,13 @@ namespace Cat_Harvest
 				{
 
 					OpenInventory = false;
+
+				}
+
+				if( autoClose >= 15f )
+				{
+
+					CloseInstructions = true;
 
 				}
 
