@@ -56,6 +56,63 @@ namespace Cat_Harvest
 
 		}
 
+		public static void EndGame( HarvestPlayer ply, int harvested )
+		{
+
+			if ( harvested >= 1 && harvested < 96 )
+			{
+
+				NeutralEnding( ply );
+
+			}
+			else if ( harvested <= 0 )
+			{
+
+				PeacefulEnding( ply );
+
+			}
+			else if ( harvested >= 96 )
+			{
+
+				GenocideEnding( ply );
+
+			}
+
+		}
+
+		public static void NeutralEnding( HarvestPlayer ply  )
+		{
+
+
+
+		}
+
+		public static void PeacefulEnding( HarvestPlayer ply  )
+		{
+
+
+
+		}
+
+		public static void GenocideEnding( HarvestPlayer ply  )
+		{
+
+			for ( int i = 0; i < ply.CatsHarvested; i++ )
+			{
+
+				var cat = new WalkingCat
+				{
+
+					Position = ply.Position
+
+				};
+
+			}
+
+			ply.CatsHarvested = 0;
+
+		}
+
 	}
 
 }

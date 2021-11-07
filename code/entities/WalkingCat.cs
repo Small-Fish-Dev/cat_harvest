@@ -73,7 +73,7 @@ namespace Cat_Harvest
 			else
 			{
 
-				Position += Vector3.Down * 100 * Time.Delta;
+				Position += Vector3.Down * 300 * Time.Delta;
 
 			}
 

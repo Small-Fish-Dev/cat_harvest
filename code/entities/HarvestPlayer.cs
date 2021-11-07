@@ -13,6 +13,7 @@ namespace Cat_Harvest
 		public bool CloseInstructions { get; set; } = false;
 		[Net] public bool DisplayPopup { get; set; } = false;
 		[Net] public bool HasCat { get; set; } = false;
+		[Net] public Vector3 LookPos { get; set; } = new Vector3( 0, 0, 0 );
 
 		public override void Respawn()
 		{
@@ -68,13 +69,15 @@ namespace Cat_Harvest
 
 			}
 
-
+			LookPos = Trace.Ray( Input.Cursor, 150f )
+				.Ignore( this )
+				.Run().EndPos;
 
 			TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
-			.Size( new Vector3( 20f, 20f, 20f ) )
-			.Ignore( PhysicsWorld.WorldBody.Entity )
-			.WithTag( "Cat" )
-			.Run();
+				.Size( new Vector3( 20f, 20f, 20f ) )
+				.Ignore( PhysicsWorld.WorldBody.Entity )
+				.WithTag( "Cat" )
+				.Run();
 
 			if ( eyeTrace.Hit )
 			{
@@ -127,6 +130,13 @@ namespace Cat_Harvest
 			ply.CatsHarvested++;
 			ply.HasCat = false;
 
+			if ( ply.CatsUprooted == 96 )
+			{
+
+				HarvestGame.EndGame( ply, ply.CatsHarvested );
+
+			}
+
 		}
 
 		[ServerCmd]
@@ -138,13 +148,20 @@ namespace Cat_Harvest
 			var cat = new WalkingCat
 			{
 
-				Position = ply.Position
+				Position = ply.Position //TODO LookPos doesn't place at the right place? Ray position is fine though
 
 			};
 
 			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
 
 			ply.HasCat = false;
+
+			if ( ply.CatsUprooted == 96 )
+			{
+
+				HarvestGame.EndGame( ply, ply.CatsHarvested );
+
+			}
 
 		}
 
