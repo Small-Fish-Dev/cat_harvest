@@ -12,6 +12,7 @@ namespace Cat_Harvest
 		public bool OpenInventory { get; set; } = false;
 		public bool CloseInstructions { get; set; } = false;
 		[Net] public bool DisplayPopup { get; set; } = false;
+		[Net] public bool HasCat { get; set; } = false;
 
 		public override void Respawn()
 		{
@@ -93,6 +94,7 @@ namespace Cat_Harvest
 						cat.Delete();
 						CatsUprooted++;
 						CatsHarvested++;
+						HasCat = true;
 
 					}
 

@@ -149,6 +149,28 @@ namespace Cat_Harvest
 
 	}
 
+	public class Choices : Panel
+	{
+
+		public Choices()
+		{
+
+			Add.Panel( "button" ).Add.Label( "HARVEST", "title" );
+			Add.Panel( "button" ).Add.Label( "RESCUE", "title" );
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+
+			SetClass( "closed", !ply.HasCat );
+
+		}
+
+	}
+
 	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
 	{
 
@@ -164,6 +186,7 @@ namespace Cat_Harvest
 			RootPanel.AddChild<CatInventory>( "Inventory" );
 			RootPanel.AddChild<Instructions>( "Instructions" );
 			RootPanel.AddChild<Popup>( "Popup" );
+			RootPanel.AddChild<Choices>( "Choices" );
 
 		}
 
