@@ -23,7 +23,6 @@ namespace Cat_Harvest
 		{
 
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-
 			catsLabel.Text = $"{ply.CatsUprooted}/96";
 
 		}
@@ -63,7 +62,6 @@ namespace Cat_Harvest
 		{
 
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-
 			SetClass( "closed", ply.CloseInstructions );
 
 		}
@@ -99,7 +97,6 @@ namespace Cat_Harvest
 		{
 
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-
 			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
 
 			for( int i = 0; i < 96; i++ )
@@ -142,7 +139,6 @@ namespace Cat_Harvest
 		{
 
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-
 			SetClass( "closed", !ply.DisplayPopup );
 
 		}
@@ -155,17 +151,15 @@ namespace Cat_Harvest
 		public Choices()
 		{
 
-			Add.Panel( "button" ).Add.Label( "HARVEST", "title" );
-			Add.Panel( "button" ).Add.Label( "RESCUE", "title" );
+			Add.Button( "", "button", () => { HarvestPlayer.Harvest(); } ).Add.Label( "HARVEST", "title" );
+			Add.Button( "", "button", () => { HarvestPlayer.Rescue(); } ).Add.Label( "RESCUE", "title" );
 
 		}
 
 		public override void Tick()
 		{
 
-			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-
-			SetClass( "closed", !ply.HasCat );
+			SetClass( "closed", false );//!ply.HasCat );
 
 		}
 
@@ -191,6 +185,5 @@ namespace Cat_Harvest
 		}
 
 	}
-
 
 }

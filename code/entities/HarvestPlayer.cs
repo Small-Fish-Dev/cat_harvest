@@ -108,8 +108,6 @@ namespace Cat_Harvest
 
 			}
 
-			
-
 			if ( Velocity.Length > 0f && lastStep >= 70 / Velocity.Length && GroundEntity != null )
 			{
 
@@ -118,6 +116,31 @@ namespace Cat_Harvest
 				lastStep = 0f;
 
 			}
+
+		}
+
+		[ServerCmd]
+		public static void Harvest()
+		{
+
+			Log.Info( "HARVESTED" );
+
+		}
+
+		[ServerCmd]
+		public static void Rescue()
+		{
+
+			var pos = ConsoleSystem.Caller.Pawn.Position;
+
+			var cat = new WalkingCat
+			{
+
+				Position = pos
+
+			};
+
+			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
 
 		}
 
