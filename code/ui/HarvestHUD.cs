@@ -166,6 +166,32 @@ namespace Cat_Harvest
 
 	}
 
+	public class EndingScreen : Panel
+	{
+
+		Label title;
+		Label subtitle;
+
+		public EndingScreen()
+		{
+
+			title = Add.Label( "ENDING", "title" );
+			subtitle = Add.Label( "SUBTITLE HERE", "subtitle" );
+
+
+		}
+
+		public override void Tick()
+		{
+
+			SetClass( "hidden", !HarvestGame.EndState );
+			title.Text = $"{ HarvestGame.EndingTitles[ HarvestGame.Ending ] }";
+			subtitle.Text = $"{HarvestGame.EndingDescriptions[HarvestGame.Ending] }";
+
+		}
+
+	}
+
 	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
 	{
 
@@ -182,6 +208,7 @@ namespace Cat_Harvest
 			RootPanel.AddChild<Instructions>( "Instructions" );
 			RootPanel.AddChild<Popup>( "Popup" );
 			RootPanel.AddChild<Choices>( "Choices" );
+			RootPanel.AddChild<EndingScreen>( "EndingScreen" );
 
 		}
 

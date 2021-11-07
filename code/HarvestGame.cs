@@ -11,6 +11,23 @@ namespace Cat_Harvest
 	public partial class HarvestGame : Sandbox.Game
 	{
 
+		[Net] public static bool EndState { get; set; } = false;
+		[Net] public static int Ending { get; set; } = 0;
+		public static readonly string[] EndingTitles = new string[] {
+			"NEUTRAL ENDING",
+			"PEACEFUL ENDING",
+			"BALANCED ENDING",
+			"GENOCIDE ENDING",
+			"SECRET ENDING"
+		};
+		public static readonly string[] EndingDescriptions = new string[] {
+			"After a hard day of work, you went back home to sleep.",
+			"You've rescued all kittens, they will live peacefully.",
+			"Perfectly balandes, as all things should be.",
+			"Run.",
+			"You found El Wiwi. You passed out not long after."
+		};
+
 		public HarvestGame()
 		{
 			if ( IsServer )
@@ -59,24 +76,33 @@ namespace Cat_Harvest
 		public static void EndGame( HarvestPlayer ply, int harvested )
 		{
 
-			if ( harvested >= 1 && harvested < 96 )
+			switch ( harvested )
 			{
 
-				NeutralEnding( ply );
+				case 48:
+					BalancedEnding( ply );
+					break;
+
+				case <= 0:
+					PeacefulEnding( ply );
+					break;
+
+				case >= 96:
+					GenocideEnding( ply );
+					break;
+
+				default:
+					NeutralEnding( ply );
+					break;
 
 			}
-			else if ( harvested <= 0 )
-			{
 
-				PeacefulEnding( ply );
+		}
 
-			}
-			else if ( harvested >= 96 )
-			{
+		public static void BalancedEnding( HarvestPlayer ply )
+		{
 
-				GenocideEnding( ply );
 
-			}
 
 		}
 
