@@ -20,33 +20,22 @@ namespace Cat_Harvest
 
 		}
 
-		TimeSince lastMove = 0f;
+		float nextMove = 0f;
 
 		[Event.Tick.Server]
 		public void Tick()
 		{
-			/*
-			var forward = Vector3.Dot( Rotation.Forward, Velocity.Normal );
-			var sideward = Vector3.Dot( Rotation.Right, Velocity.Normal );
-			var angle = MathF.Atan2( sideward, forward ).RadianToDegree().NormalizeDegrees();
-			SetAnimFloat( "move_direction", angle );
-
-			SetAnimFloat( "wishspeed", Velocity.Length * 1.5f );
-			SetAnimFloat( "walkspeed_scale", 1.0f / 10.0f );
-			SetAnimFloat( "runspeed_scale", 1.0f / 320.0f );
-			SetAnimFloat( "duckspeed_scale", 1.0f / 80.0f );
-			*/
-
+			
 			SetAnimFloat( "move_x", 7f * Velocity.Length );
 
 			float friction = 0.2f;
 
-			if ( lastMove > 6f )
+			if ( nextMove <= Time.Now )
 			{
 
 				Velocity = new Vector3( Rand.Float( 10f ) - 5f, Rand.Float( 10f ) - 5f, 0f );
 
-				lastMove = Rand.Float( 2f );
+				nextMove = Time.Now + 6f + Rand.Float( 2f );
 
 			}
 
@@ -85,7 +74,7 @@ namespace Cat_Harvest
 			var npc = new WalkingCat
 			{
 
-				Position = pos,
+				Position = pos
 
 			};
 
