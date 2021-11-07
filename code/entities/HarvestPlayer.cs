@@ -52,7 +52,7 @@ namespace Cat_Harvest
 				
 			}
 
-			if ( Velocity.Length > 0f  && lastStep >= 70/Velocity.Length )
+			if ( Velocity.Length > 0f  && lastStep >= 70/Velocity.Length && GroundEntity != null )
 			{
 
 				string step = $"step{Rand.Int( 5 )}";
