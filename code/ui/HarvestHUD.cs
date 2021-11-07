@@ -23,11 +23,41 @@ namespace Cat_Harvest
 
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 
-			catsLabel.Text = $"{ply.CatsCollected}/96";
+			catsLabel.Text = $"{ply.CatsUprooted}/96";
+
+		}
+		
+	}
+
+	public class CatInventory : Panel
+	{
+
+		Label inventoryLabel;
+
+		public CatInventory()
+		{
+
+			Panel titleContainer = Add.Panel( "titleContainer" );
+			inventoryLabel = titleContainer.Add.Label( "Inventory (0/96)", "title" );
+
+			Panel itemsContainer = Add.Panel( "itemsContainer" );
+			for( int i = 0; i < 96; i++ )
+			{
+
+				itemsContainer.Add.Panel( "item" );
+
+			}
 
 		}
 
-		
+		public override void Tick()
+		{
+
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+
+			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
+
+		}
 
 	}
 
@@ -42,6 +72,7 @@ namespace Cat_Harvest
 			RootPanel.StyleSheet.Load( "ui/HarvestHUD.scss" );
 
 			RootPanel.AddChild<CatCounter>( "CatCounter" );
+			RootPanel.AddChild<CatInventory>( "Inventory" );
 
 		}
 

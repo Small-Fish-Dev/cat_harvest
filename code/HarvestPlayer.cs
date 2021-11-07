@@ -7,8 +7,8 @@ namespace Cat_Harvest
 	partial class HarvestPlayer : Sandbox.Player
 	{
 
-		[Net]
-		public int CatsCollected { get; set; } = 0;
+		[Net] public int CatsUprooted { get; set; } = 0;
+		[Net] public int CatsHarvested { get; set; } = 0;
 
 		public override void Respawn()
 		{

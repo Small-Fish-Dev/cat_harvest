@@ -34,4 +34,59 @@ RootPanel {
 			text-stroke: 5px black;
 		}
 	}
+
+	.Inventory {
+		height: 100%;
+		width: 700px;
+		top: 140px;
+		flex-direction: column;
+
+		.titleContainer {
+			background-color: rgba( 40 40 40, 0.95);
+			border-top-left-radius: 30px;
+			border-top-right-radius: 30px;
+			backdrop-filter: blur( 15px );
+			flex-shrink: 0;
+			height: 50px;
+			align-items: center;
+			justify-content: center;
+
+			.title {
+				font-family: Chewy;
+				color: white;
+				font-size: 25px;
+				text-stroke: 4px black;
+			}
+		}
+
+		.itemsContainer {
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba( black, 0.4 );
+			border-radius: 0px 0px 30px 30px;
+			backdrop-filter: blur( 15px );
+			aspect-ratio: 1.46;
+			padding: 20px 20px 20px 20px;
+			flex-wrap: wrap;
+			overflow: hidden;
+
+			.item {
+				width: 48px;
+				height: 48px;
+				margin: 3px;
+				background-image: url( /ui/babby.png );
+				background-size: 40px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: rgba( 40 40 40, 0.9 );
+				border: 3px solid rgba( 20 20 20, 1 );
+				border-radius: 5px;
+			}
+
+			&.closed {
+				opacity: 0;
+			}
+		}
+	}
 }
