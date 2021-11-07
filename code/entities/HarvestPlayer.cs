@@ -79,20 +79,22 @@ namespace Cat_Harvest
 			{
 
 				DisplayPopup = true;
+				var cat = eyeTrace.Entity;
 
 				if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
 				{
 
+					Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat);
+					Particles.Create( "particles/uproot.vpcf", cat, "" );
+
 					if ( IsServer )
 					{
 
-						eyeTrace.Entity.Delete();
+						cat.Delete();
 						CatsUprooted++;
 						CatsHarvested++;
 
 					}
-
-					PlaySound( $"meow{ Rand.Int( 10 ) }" );
 
 				}
 
@@ -119,7 +121,7 @@ namespace Cat_Harvest
 
 		public override void OnKilled()
 		{
-			//Don't die!
+			//Don't die! wtf
 		}
 
 	}
