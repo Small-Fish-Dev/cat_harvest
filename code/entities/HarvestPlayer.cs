@@ -9,8 +9,9 @@ namespace Cat_Harvest
 
 		[Net] public int CatsUprooted { get; set; } = 0;
 		[Net] public int CatsHarvested { get; set; } = 0;
-		[Net] public bool OpenInventory { get; set; } = false;
-		[Net] public bool CloseInstructions { get; set; } = false;	
+		public bool OpenInventory { get; set; } = false;
+		public bool CloseInstructions { get; set; } = false;
+		[Net] public bool DisplayPopup { get; set; } = false;
 
 		public override void Respawn()
 		{
@@ -39,9 +40,10 @@ namespace Cat_Harvest
 
 			base.Simulate( cl );
 
-			if ( IsServer )
+			if ( IsClient )
 			{
-				if( Input.Down( InputButton.Score ) )
+
+				if ( Input.Down( InputButton.Score ) )
 				{
 
 					OpenInventory = true;
@@ -54,10 +56,34 @@ namespace Cat_Harvest
 					OpenInventory = false;
 
 				}
-				
+
 			}
 
-			if ( Velocity.Length > 0f  && lastStep >= 70/Velocity.Length && GroundEntity != null )
+			if ( IsServer )
+			{ 
+
+				TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
+				.Size( new Vector3( 20f, 20f, 20f ) )
+				.Ignore( PhysicsWorld.WorldBody.Entity )
+				.WithTag( "Cat" )
+				.Run();
+
+				if ( eyeTrace.Hit )
+				{
+
+					DisplayPopup = true;
+
+				}
+				else
+				{
+
+					DisplayPopup = false;
+
+				}
+
+			}
+
+			if ( Velocity.Length > 0f && lastStep >= 70 / Velocity.Length && GroundEntity != null )
 			{
 
 				string step = $"step{Rand.Int( 5 )}";
@@ -65,6 +91,7 @@ namespace Cat_Harvest
 				lastStep = 0f;
 
 			}
+
 		}
 
 		public override void OnKilled()

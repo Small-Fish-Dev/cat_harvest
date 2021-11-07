@@ -126,6 +126,29 @@ namespace Cat_Harvest
 
 	}
 
+	public class Popup : Panel
+	{
+
+		public Popup()
+		{
+
+			string use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
+
+			Add.Label( $"Uproot the cat [ { use } ]", "title" );
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+
+			SetClass( "closed", !ply.DisplayPopup );
+
+		}
+
+	}
+
 	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
 	{
 
@@ -139,6 +162,7 @@ namespace Cat_Harvest
 			RootPanel.AddChild<CatCounter>( "CatCounter" );
 			RootPanel.AddChild<CatInventory>( "Inventory" );
 			RootPanel.AddChild<Instructions>( "Instructions" );
+			RootPanel.AddChild<Popup>( "Popup" );
 
 		}
 
