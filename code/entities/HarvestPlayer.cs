@@ -10,6 +10,7 @@ namespace Cat_Harvest
 		[Net] public int CatsUprooted { get; set; } = 0;
 		[Net] public int CatsHarvested { get; set; } = 0;
 		[Net] public bool OpenInventory { get; set; } = false;
+		[Net] public bool CloseInstructions { get; set; } = false;	
 
 		public override void Respawn()
 		{
@@ -44,6 +45,7 @@ namespace Cat_Harvest
 				{
 
 					OpenInventory = true;
+					CloseInstructions = true;
 
 				}
 				else

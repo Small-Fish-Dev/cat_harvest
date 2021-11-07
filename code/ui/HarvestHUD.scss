@@ -13,6 +13,7 @@ RootPanel {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		flex-shrink: 0;
 		background-color: rgba( black, 0.2 );
 		border-radius: 30px;
 		backdrop-filter: blur( 15px );
@@ -39,8 +40,9 @@ RootPanel {
 		height: 100%;
 		width: 700px;
 		top: 140px;
+		flex-shrink: 0;
 		flex-direction: column;
-		transition: all 0.1s ease-in;
+		transition: all 0.15s ease-in;
 
 		.titleContainer {
 			background-color: rgba( 40 40 40, 0.95);
@@ -85,12 +87,74 @@ RootPanel {
 				border-radius: 5px;
 
 				&.hide {
-					background-size: 0px; //yea haha :^)
+					background-size: 0px;
 				}
 			}
 		}
 
 		&.closed {
+			display: none;
+		}
+	}
+
+	.Instructions {
+		position: absolute;
+		top: 300px;
+		height: 100%;
+		width: 600px;
+		flex-direction: column;
+		transition: all 1s ease-in;
+
+		.titleContainer {
+			background-color: rgba( 40 40 40, 0.95);
+			border-top-left-radius: 30px;
+			border-top-right-radius: 30px;
+			backdrop-filter: blur( 15px );
+			flex-shrink: 0;
+			height: 50px;
+			align-items: center;
+			justify-content: center;
+
+			.title {
+				font-family: Chewy;
+				color: white;
+				font-size: 25px;
+				text-stroke: 4px black;
+			}
+		}
+
+		.descriptionContainer {
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba( black, 0.4 );
+			border-radius: 0px 0px 30px 30px;
+			backdrop-filter: blur( 15px );
+			aspect-ratio: 2.25;
+			padding: 20px 20px 20px 20px;
+			flex-wrap: wrap;
+			overflow: hidden;
+
+			.description {
+				font-family: Chewy;
+				margin: 3px 60px 3px 60px;
+				color: white;
+				font-size: 20px;
+				text-stroke: 3px black;
+			}
+
+			.objective {
+				font-family: Chewy;
+				margin: 3px 10px 30px 10px;
+				color: white;
+				font-size: 23px;
+				text-stroke: 4px black;
+				text-shadow: 0px 0px 6px rgba( black, 1 );
+			}
+		}
+
+		&.closed {
+			top: 70%;
 			opacity: 0;
 		}
 	}

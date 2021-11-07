@@ -30,6 +30,46 @@ namespace Cat_Harvest
 		
 	}
 
+	public class Instructions : Panel
+	{
+
+		public Instructions()
+		{
+
+			Panel titleContainer = Add.Panel( "titleContainer" );
+			titleContainer.Add.Label( "Instructions", "title" );
+
+			string forward = Input.GetKeyWithBinding( "iv_forward" ).ToUpper();
+			string left = Input.GetKeyWithBinding( "iv_left" ).ToUpper();
+			string back = Input.GetKeyWithBinding( "iv_back" ).ToUpper();
+			string right = Input.GetKeyWithBinding( "iv_right" ).ToUpper();
+			string sprint = Input.GetKeyWithBinding( "iv_sprint" ).ToUpper();
+			string use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
+			string attack = Input.GetKeyWithBinding( "iv_attack" ).ToUpper();
+			string score = Input.GetKeyWithBinding( "iv_score" ).ToUpper();
+
+
+			Panel descriptionContainer = Add.Panel( "descriptionContainer" ); // Haha, fuck centering text
+			descriptionContainer.Add.Label( $"[ { forward } ] [ { left } ] [ { back } ] [ { right } ] to walk.", "description" );
+			descriptionContainer.Add.Label( $"Use [ { sprint } ] to run.", "description" );
+			descriptionContainer.Add.Label( $"Uproot the cats by pressing [ { use } ]", "description" );
+			descriptionContainer.Add.Label( $"Decide their fate with your cursor and press [ { attack } ]", "description" );
+			descriptionContainer.Add.Label( $"Open the inventory by pressing [ { score } ]", "description" );
+			descriptionContainer.Add.Label( $"Uproot all the cats and find all the secret endings", "objective" );
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+
+			SetClass( "closed", ply.CloseInstructions );
+
+		}
+
+	}
+
 	public class CatInventory : Panel
 	{
 
@@ -98,6 +138,7 @@ namespace Cat_Harvest
 
 			RootPanel.AddChild<CatCounter>( "CatCounter" );
 			RootPanel.AddChild<CatInventory>( "Inventory" );
+			RootPanel.AddChild<Instructions>( "Instructions" );
 
 		}
 
