@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Cat_Harvest
 {
+
 	public partial class HarvestPlayer : Sandbox.Player
 	{
 
@@ -14,6 +15,7 @@ namespace Cat_Harvest
 		[Net] public bool DisplayPopup { get; set; } = false;
 		[Net] public bool HasCat { get; set; } = false;
 		[Net] public Vector3 LookPos { get; set; } = new Vector3( 0, 0, 0 );
+		public HarvestViewModel ViewModel { get; set; }
 
 		public override void Respawn()
 		{
@@ -27,6 +29,8 @@ namespace Cat_Harvest
 			Animator = new StandardPlayerAnimator();
 
 			Camera = new FirstPersonCamera();
+
+			CreateViewModel();
 
 			EnableAllCollisions = true;
 			EnableDrawing = false;
@@ -118,6 +122,18 @@ namespace Cat_Harvest
 				lastStep = 0f;
 
 			}
+
+		}
+
+		[ClientRpc]
+		public void CreateViewModel()
+		{
+
+			ViewModel = new HarvestViewModel();
+			ViewModel.Position = Position;
+			ViewModel.Owner = Owner;
+			ViewModel.EnableViewmodelRendering = true;
+			ViewModel.SetModel( "models/viewmodel/viewmodel.vmdl" );
 
 		}
 

@@ -151,8 +151,22 @@ namespace Cat_Harvest
 		public Choices()
 		{
 
-			Add.Button( "", "button", () => { HarvestPlayer.Harvest(); } ).Add.Label( "HARVEST", "title" );
-			Add.Button( "", "button", () => { HarvestPlayer.Rescue(); } ).Add.Label( "RESCUE", "title" );
+			Add.Button( "", "button", () => 
+			{
+
+				HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+				HarvestPlayer.Harvest();
+
+			} ).Add.Label( "HARVEST", "title" );
+
+			Add.Button( "", "button", () => 
+			
+			{
+				HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+				ply.ViewModel.SetAnimBool( "finished", true );
+				HarvestPlayer.Rescue(); 
+			
+			} ).Add.Label( "RESCUE", "title" );
 
 		}
 
