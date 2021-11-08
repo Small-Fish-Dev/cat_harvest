@@ -108,6 +108,7 @@
 					m_vDomainMaxs = [ 0.0, 0.0 ]
 				}
 			}
+			m_nControlPointNumber = 12
 		},
 		{
 			_class = "C_INIT_InitFloat"
@@ -945,6 +946,8 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flEndScale = 2.0
+			m_flEndTime = 0.8
+			m_flStartScale = 0.3
 		},
 	]
 	m_Renderers = 

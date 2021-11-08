@@ -13,19 +13,22 @@ namespace Cat_Harvest
 
 		[Net] public bool EndState { get; set; } = false;
 		[Net] public int Ending { get; set; } = 0;
+		public bool Snappening = false;
 		public static readonly string[] EndingTitles = new string[] {
 			"NEUTRAL ENDING",
 			"PEACEFUL ENDING",
 			"BALANCED ENDING",
 			"GENOCIDE ENDING",
-			"SECRET ENDING"
+			"SECRET ENDING",
+			"Thank you for playing"
 		};
 		public static readonly string[] EndingDescriptions = new string[] {
 			"After a hard day of work, you went back home to sleep.",
 			"The world has been restored - and everyone is much happier.",
 			"Perfectly balanced, as all things should be.",
 			"Run.",
-			"You found El Wiwi. You passed out not long after."
+			"You found El Wiwi. You passed out not long after.",
+			"There are 5 total endings, will you find them all?"
 		};
 
 		public HarvestGame()
@@ -114,10 +117,17 @@ namespace Cat_Harvest
 
 			ply.Camera = new BalancedEndingCamera();
 
-			await current.Task.Delay( 3000 );
+			current.Snappening = true;
+
+			await current.Task.Delay( 8000 );
+
+			current.EndState = true;
+			current.Ending = 5;
+
+			await current.Task.Delay( 6000 );
 
 			ply.Client.Kick();
-
+			current.Delete();
 
 		}
 
@@ -132,6 +142,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 6000 );
 
 			ply.Client.Kick();
+			current.Delete();
 
 		}
 
@@ -146,6 +157,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 6000 );
 
 			ply.Client.Kick();
+			current.Delete();
 
 		}
 
@@ -180,6 +192,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 4000 );
 
 			ply.Client.Kick();
+			current.Delete();
 
 		}
 
@@ -194,6 +207,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 6000 );
 
 			ply.Client.Kick(); // fuck you that's why
+			current.Delete(); //This is to end tasks
 
 		}
 
@@ -228,6 +242,33 @@ namespace Cat_Harvest
 
 			};
 				
+		}
+
+		float lastSnap = 0f;
+
+		[Event.Tick.Server]
+		public void OnTick()
+		{
+
+			if( Snappening && lastSnap <= Time.Now )
+			{ 
+
+				HarvestGame current = HarvestGame.Current as HarvestGame;
+
+				if ( WalkingCat.All.Count > 0 )
+				{
+
+					int randomCat = Rand.Int( WalkingCat.All.Count - 1 );
+
+					Particles.Create( "particles/ashes.vpcf", WalkingCat.All[randomCat].Position );
+					WalkingCat.All[randomCat].Delete();
+
+				}
+
+				lastSnap = Time.Now + 0.5f;
+
+			}
+
 		}
 
 	}

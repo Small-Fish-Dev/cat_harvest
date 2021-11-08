@@ -175,10 +175,12 @@ namespace Cat_Harvest
 	public class BalancedEndingCamera : Camera
 	{
 
+		float created = Time.Now;
+
 		public override void Update()
 		{
 
-			Pos = new Vector3( 0f, 0f, 3000f );
+			Pos = new Vector3( -30f, 0f, 500f + ( Time.Now - created ) * 50f );
 			Rot = Rotation.FromPitch( 90 );
 
 			FieldOfView = 70f;
