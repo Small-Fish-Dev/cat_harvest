@@ -100,13 +100,24 @@ namespace Cat_Harvest
 
 		}
 
-		public static void BalancedEnding( HarvestPlayer ply )
+		public static async void BalancedEnding( HarvestPlayer ply )
 		{
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
 			current.EndState = true;
 			current.Ending = 2;
+
+			await current.Task.Delay( 5000 );
+
+			current.EndState = false;
+
+			ply.Camera = new BalancedEndingCamera();
+
+			await current.Task.Delay( 3000 );
+
+			ply.Client.Kick();
+
 
 		}
 

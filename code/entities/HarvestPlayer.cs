@@ -172,4 +172,34 @@ namespace Cat_Harvest
 
 	}
 
+	public class BalancedEndingCamera : Camera
+	{
+
+		public override void Update()
+		{
+
+			Pos = new Vector3( 0f, 0f, 3000f );
+			Rot = Rotation.FromPitch( 90 );
+
+			FieldOfView = 70f;
+
+		}
+
+	}
+
+	public class PeacefulEndingCamera : Camera
+	{
+
+		public override void Update()
+		{
+
+			Pos = new Vector3( 500f, 200f, 200f );
+			Rot = Rotation.FromYaw( 45 );
+
+			FieldOfView = 70f;
+
+		}
+
+	}
+
 }
