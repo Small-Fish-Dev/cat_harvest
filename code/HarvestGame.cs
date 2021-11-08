@@ -11,8 +11,8 @@ namespace Cat_Harvest
 	public partial class HarvestGame : Sandbox.Game
 	{
 
-		[Net] public static bool EndState { get; set; } = false;
-		[Net] public static int Ending { get; set; } = 0;
+		[Net] public bool EndState { get; set; } = false;
+		[Net] public int Ending { get; set; } = 0;
 		public static readonly string[] EndingTitles = new string[] {
 			"NEUTRAL ENDING",
 			"PEACEFUL ENDING",
@@ -22,14 +22,15 @@ namespace Cat_Harvest
 		};
 		public static readonly string[] EndingDescriptions = new string[] {
 			"After a hard day of work, you went back home to sleep.",
-			"You've rescued all kittens, they will live peacefully.",
-			"Perfectly balandes, as all things should be.",
+			"The world has been restored - and everyone is much happier.",
+			"Perfectly balanced, as all things should be.",
 			"Run.",
 			"You found El Wiwi. You passed out not long after."
 		};
 
 		public HarvestGame()
 		{
+
 			if ( IsServer )
 			{
 
@@ -102,21 +103,30 @@ namespace Cat_Harvest
 		public static void BalancedEnding( HarvestPlayer ply )
 		{
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 
+			current.EndState = true;
+			current.Ending = 2;
 
 		}
 
 		public static void NeutralEnding( HarvestPlayer ply  )
 		{
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 
+			current.EndState = true;
+			current.Ending = 0;
 
 		}
 
 		public static void PeacefulEnding( HarvestPlayer ply  )
 		{
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 
+			current.EndState = true;
+			current.Ending = 1;
 
 		}
 
@@ -137,6 +147,58 @@ namespace Cat_Harvest
 
 			ply.CatsHarvested = 0;
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			current.EndState = true;
+			current.Ending = 3;
+
+		}
+
+		public static async void SecretEnding( HarvestPlayer ply )
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			current.EndState = true;
+			current.Ending = 4;
+
+			await current.Task.Delay( 6000 );
+
+			ply.Client.Kick(); // fuck you that's why
+
+		}
+
+		[ServerCmd( "ending" )] //TODO REMEMBER DELETE!!!
+		public static void DoEnding( string ending)
+		{
+
+			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
+
+			switch ( ending )
+			{
+
+				case "balanced":
+					BalancedEnding( ply );
+					break;
+
+				case "peaceful":
+					PeacefulEnding( ply );
+					break;
+
+				case "genocide":
+					GenocideEnding( ply );
+					break;
+
+				case "secret":
+					SecretEnding( ply );
+					break;
+
+				default:
+					NeutralEnding( ply );
+					break;
+
+			};
+				
 		}
 
 	}

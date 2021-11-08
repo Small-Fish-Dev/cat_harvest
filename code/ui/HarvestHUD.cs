@@ -184,9 +184,11 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			SetClass( "hidden", !HarvestGame.EndState );
-			title.Text = $"{ HarvestGame.EndingTitles[ HarvestGame.Ending ] }";
-			subtitle.Text = $"{HarvestGame.EndingDescriptions[HarvestGame.Ending] }";
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			SetClass( "hidden", !current.EndState );
+			title.Text = $"{ HarvestGame.EndingTitles[ current.Ending ] }";
+			subtitle.Text = $"{HarvestGame.EndingDescriptions[ current.Ending ] }";
 
 		}
 
