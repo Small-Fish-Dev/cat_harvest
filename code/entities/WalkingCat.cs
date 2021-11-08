@@ -1,6 +1,7 @@
 ﻿using Sandbox;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Cat_Harvest
 {
@@ -9,9 +10,12 @@ namespace Cat_Harvest
 
 		private readonly Vector3 minBounds = new Vector3( -800, -770, 0 );
 		private readonly Vector3 maxBounds = new Vector3( 750, 790, 0 );
+		[Net] public bool IsDying { get; set; } = false;
 
 		public override void Spawn()
 		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 
 			base.Spawn();
 
@@ -19,6 +23,8 @@ namespace Cat_Harvest
 
 			SetModel( "models/cat/cat.vmdl" );
 			Scale = 1f;
+
+			current.AllCats.Add( this );
 
 		}
 
@@ -79,6 +85,41 @@ namespace Cat_Harvest
 
 		}
 
+		float hourOfDeath = 0f;
+
+		public void Snap()
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			Particles.Create( "particles/ashes.vpcf", Position );
+			IsDying = true;
+			hourOfDeath = Time.Now + 0.2f;
+
+			current.AllCats.Remove( this );
+
+		}
+
+		[Event.Tick.Server]
+		public void OnTick()
+		{
+
+			if ( IsDying )
+			{
+
+				RenderColor = RenderColor.WithAlpha( ( hourOfDeath - Time.Now ) * 5 );
+
+				if( Time.Now >= hourOfDeath )
+				{
+
+					Delete();
+
+				}
+
+			}
+
+		}
+
 		[ServerCmd("spawncat")] //TODO REMEMBER DELETE!!!
 		public static void SpawnCat()
 		{
@@ -98,6 +139,8 @@ namespace Cat_Harvest
 			}
 
 		}
+
+
 
 	}
 

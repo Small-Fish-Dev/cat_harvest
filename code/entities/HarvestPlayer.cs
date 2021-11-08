@@ -180,7 +180,7 @@ namespace Cat_Harvest
 		public override void Update()
 		{
 
-			Pos = new Vector3( -30f, 0f, 500f + ( Time.Now - created ) * 50f );
+			Pos = new Vector3( -30f, 0f, 300f + ( Time.Now - created ) * 50f );
 			Rot = Rotation.FromPitch( 90 );
 
 			FieldOfView = 70f;
