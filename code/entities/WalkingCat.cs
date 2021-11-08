@@ -19,8 +19,6 @@ namespace Cat_Harvest
 
 			SetModel( "models/cat/cat.vmdl" );
 			Scale = 1f;
-			CollisionGroup = CollisionGroup.Prop;
-			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) ); //Remove collisions when done? Can't pick them up in final game anyways
 
 		}
 
