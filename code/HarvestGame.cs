@@ -13,7 +13,7 @@ namespace Cat_Harvest
 	{
 
 		[Net] public List<WalkingCat> AllCats { get; set; } = new();
-		public Sound Music { get; set; };
+		public Sound Music { get; set; }
 
 		public HarvestGame()
 		{
@@ -25,12 +25,7 @@ namespace Cat_Harvest
 
 			}
 
-			if ( IsClient )
-			{
-
-				Music = PlaySound( "relax" );
-
-			}
+			Music = PlaySound( "relax" );
 
 		}
 

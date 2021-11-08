@@ -73,6 +73,8 @@ namespace Cat_Harvest
 
 			current.Snappening = true;
 
+			current.Music = current.PlaySound( "horror" );
+
 			await current.Task.Delay( 8000 );
 
 			current.EndState = true;
