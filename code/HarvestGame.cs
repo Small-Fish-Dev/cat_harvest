@@ -110,13 +110,17 @@ namespace Cat_Harvest
 
 		}
 
-		public static void NeutralEnding( HarvestPlayer ply  )
+		public static async void NeutralEnding( HarvestPlayer ply  )
 		{
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
 			current.EndState = true;
 			current.Ending = 0;
+
+			await current.Task.Delay( 6000 );
+
+			ply.Client.Kick();
 
 		}
 
@@ -130,7 +134,7 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick(); // fuck you that's why
+			ply.Client.Kick();
 
 		}
 
