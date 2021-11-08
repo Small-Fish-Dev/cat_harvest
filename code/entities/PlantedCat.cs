@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Cat_Harvest
 {
+	[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
 	public partial class PlantedCat : AnimEntity
 	{
 
@@ -33,7 +34,7 @@ namespace Cat_Harvest
 				var npc = new PlantedCat
 				{
 
-					Position = pos + Vector3.Down * 20f,
+					Position = pos + Vector3.Down * 6f,
 					Rotation = Rotation.FromPitch( 90 )
 
 				};
