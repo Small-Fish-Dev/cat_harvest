@@ -130,8 +130,19 @@ namespace Cat_Harvest
 
 		}
 
-		public static void GenocideEnding( HarvestPlayer ply  )
+		public static async void GenocideEnding( HarvestPlayer ply  )
 		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			current.EndState = true;
+			current.Ending = 3;
+
+			await current.Task.Delay( 5000 );
+
+			current.EndState = false;
+
+			await current.Task.Delay( 3500 );
 
 			for ( int i = 0; i < ply.CatsHarvested; i++ )
 			{
@@ -147,10 +158,9 @@ namespace Cat_Harvest
 
 			ply.CatsHarvested = 0;
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			await current.Task.Delay( 4000 );
 
-			current.EndState = true;
-			current.Ending = 3;
+			ply.Client.Kick();
 
 		}
 
