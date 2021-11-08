@@ -120,13 +120,17 @@ namespace Cat_Harvest
 
 		}
 
-		public static void PeacefulEnding( HarvestPlayer ply  )
+		public static async void PeacefulEnding( HarvestPlayer ply  )
 		{
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
 			current.EndState = true;
 			current.Ending = 1;
+
+			await current.Task.Delay( 6000 );
+
+			ply.Client.Kick(); // fuck you that's why
 
 		}
 
