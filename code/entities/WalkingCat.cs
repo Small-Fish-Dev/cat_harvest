@@ -120,7 +120,7 @@ namespace Cat_Harvest
 
 			var pos = ConsoleSystem.Caller.Pawn.Position;
 
-			for ( int i = 0; i < 48; i++ )
+			for ( int i = 0; i < 46; i++ )
 			{
 
 				var npc = new WalkingCat
