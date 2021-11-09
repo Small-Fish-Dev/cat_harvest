@@ -33,10 +33,6 @@ namespace Cat_Harvest
 		[Event.Tick.Server]
 		public void Tick()
 		{
-			
-			//SetAnimFloat( "move_x", 35f * Velocity.Length );
-
-			float friction = 0.2f;
 
 			if ( nextMove <= Time.Now )
 			{
@@ -80,8 +76,6 @@ namespace Cat_Harvest
 				Position += Vector3.Down * 300 * Time.Delta;
 
 			}
-
-			Velocity *= 1 - Time.Delta * friction;
 
 		}
 

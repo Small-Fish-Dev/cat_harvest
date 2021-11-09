@@ -221,7 +221,7 @@ namespace Cat_Harvest
 
 				}
 
-				lastSnap = Time.Now + 0.1f;
+				lastSnap = Time.Now + 0.3f;
 
 			}
 

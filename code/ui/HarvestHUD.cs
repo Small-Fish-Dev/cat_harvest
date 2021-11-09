@@ -154,7 +154,6 @@ namespace Cat_Harvest
 			Add.Button( "", "button", () => 
 			{
 
-				HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 				HarvestPlayer.Harvest();
 
 			} ).Add.Label( "HARVEST", "title" );
@@ -162,8 +161,7 @@ namespace Cat_Harvest
 			Add.Button( "", "button", () => 
 			
 			{
-				HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-				ply.ViewModel.SetAnimBool( "finished", true );
+
 				HarvestPlayer.Rescue(); 
 			
 			} ).Add.Label( "RESCUE", "title" );

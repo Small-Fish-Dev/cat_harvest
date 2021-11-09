@@ -89,7 +89,7 @@ namespace Cat_Harvest
 				DisplayPopup = true;
 				var cat = eyeTrace.Entity;
 
-				if ( Input.Down( InputButton.Use ) && Input.Pressed( InputButton.Use ) ) 
+				if ( Input.Pressed( InputButton.Use ) ) 
 				{
 
 					Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
@@ -100,6 +100,8 @@ namespace Cat_Harvest
 
 						cat.Delete();
 						CatsUprooted++;
+						SetAnim( "grab", true );
+						SetAnim( "finished", false );
 						HasCat = true;
 
 					}
@@ -137,6 +139,16 @@ namespace Cat_Harvest
 
 		}
 
+		[ClientRpc]
+		protected virtual void SetAnim( string name, bool state)
+		{
+
+			Host.AssertClient();
+
+			ViewModel?.SetAnimBool( name, state );
+
+		}
+
 		[ServerCmd]
 		public static void Harvest()
 		{
@@ -145,6 +157,8 @@ namespace Cat_Harvest
 
 			ply.CatsHarvested++;
 			ply.HasCat = false;
+			ply.SetAnim( "finished", true );
+			ply.SetAnim( "grab", false );
 
 			if ( ply.CatsUprooted == 96 )
 			{
@@ -171,6 +185,8 @@ namespace Cat_Harvest
 			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
 
 			ply.HasCat = false;
+			ply.SetAnim( "finished", true );
+			ply.SetAnim( "grab", false );
 
 			if ( ply.CatsUprooted == 96 )
 			{

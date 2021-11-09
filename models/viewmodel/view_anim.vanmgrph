@@ -15,8 +15,8 @@
 				}
 				m_previewButton = "ANIMPARAM_BUTTON_NONE"
 				m_bNetwork = false
-				m_bUseMostRecentValue = false
-				m_bAutoReset = true
+				m_bUseMostRecentValue = true
+				m_bAutoReset = false
 				m_bPredicted = false
 				m_bDefaultValue = false
 			},
@@ -29,8 +29,8 @@
 				}
 				m_previewButton = "ANIMPARAM_BUTTON_NONE"
 				m_bNetwork = false
-				m_bUseMostRecentValue = false
-				m_bAutoReset = true
+				m_bUseMostRecentValue = true
+				m_bAutoReset = false
 				m_bPredicted = false
 				m_bDefaultValue = false
 			},
@@ -99,7 +99,7 @@
 				{
 					m_id = 100337029
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_sequenceName = "grab"
 				m_nFrameIndex = 0
@@ -141,7 +141,7 @@
 				{
 					m_id = 546630035
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_states = 
 				[
@@ -485,7 +485,7 @@
 				{
 					m_id = 1430440567
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "unequip"
@@ -507,7 +507,7 @@
 				{
 					m_id = 1541253457
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "grab"
@@ -529,7 +529,7 @@
 				{
 					m_id = 1759532605
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_childID = 
 				{
@@ -551,7 +551,7 @@
 				{
 					m_id = 1852884190
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "equip"
@@ -625,7 +625,7 @@
 				{
 					m_id = 2129907287
 				}
-				m_networkMode = "ServerAuthoritative"
+				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_baseChildID = 
 				{
