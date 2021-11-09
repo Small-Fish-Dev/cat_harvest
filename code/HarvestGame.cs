@@ -24,19 +24,25 @@ namespace Cat_Harvest
 				new HarvestHUD();
 
 			}
+			else
+			{
 
-			Music = PlaySound( "relax" );
+				Music = PlaySound( "relax" );
+
+			}
 
 		}
 
 		public override void ClientJoined( Client client )
 		{
+
 			base.ClientJoined( client );
 
 			var player = new HarvestPlayer();
 			client.Pawn = player;
 
 			player.Respawn();
+
 		}
 
 

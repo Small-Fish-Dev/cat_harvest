@@ -73,7 +73,7 @@ namespace Cat_Harvest
 
 			current.Snappening = true;
 
-			current.Music = current.PlaySound( "horror" );
+			ChangeMusic( "horror" );
 
 			await current.Task.Delay( 8000 );
 
@@ -198,6 +198,17 @@ namespace Cat_Harvest
 
 			};
 				
+		}
+
+		[ClientRpc]
+		public static void ChangeMusic( string music )
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			current.Music.Stop();
+			current.Music = current.PlaySound( music );
+
 		}
 
 		float lastSnap = 0f;
