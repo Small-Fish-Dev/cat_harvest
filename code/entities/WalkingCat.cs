@@ -11,6 +11,7 @@ namespace Cat_Harvest
 		private readonly Vector3 minBounds = new Vector3( -800, -770, 0 );
 		private readonly Vector3 maxBounds = new Vector3( 750, 790, 0 );
 		[Net] public bool IsDying { get; set; } = false;
+		public bool Aggressive { get; set; } = false;
 
 		public override void Spawn()
 		{

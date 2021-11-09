@@ -218,7 +218,7 @@
 								m_blendDuration = 0.2
 								m_destState = 
 								{
-									m_id = 635205773
+									m_id = 1363105982
 								}
 								m_bReset = true
 								m_resetCycleOption = "Beginning"
@@ -328,6 +328,56 @@
 							m_id = 1758810673
 						}
 						m_position = [ -160.0, 16.0 ]
+						m_bIsStartState = false
+						m_bIsEndtState = false
+						m_bIsPassthrough = false
+						m_bIsRootMotionExclusive = false
+						m_bAlwaysEvaluate = false
+					},
+					{
+						_class = "CAnimState"
+						m_transitions = 
+						[
+							{
+								_class = "CAnimStateTransition"
+								m_conditions = 
+								[
+									{
+										_class = "CFinishedCondition"
+										m_comparisonOp = 0
+										m_option = "FinishedConditionOption_OnFinished"
+										m_bIsFinished = true
+									},
+								]
+								m_blendDuration = 0.2
+								m_destState = 
+								{
+									m_id = 635205773
+								}
+								m_bReset = true
+								m_resetCycleOption = "Beginning"
+								m_flFixedCycleValue = 0.0
+								m_blendCurve = 
+								{
+									m_vControlPoint1 = [ 0.5, 0.0 ]
+									m_vControlPoint2 = [ 0.5, 1.0 ]
+								}
+								m_bForceFootPlant = false
+								m_bDisabled = false
+							},
+						]
+						m_tags = [  ]
+						m_tagBehaviors = [  ]
+						m_name = "grabagain"
+						m_childNodeID = 
+						{
+							m_id = 1541253457
+						}
+						m_stateID = 
+						{
+							m_id = 1363105982
+						}
+						m_position = [ -192.0, -128.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -606,7 +656,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_commentText = ""
-				m_size = [ 560.0, 208.0 ]
+				m_size = [ 560.0, 272.0 ]
 				m_color = [ 49, 139, 146, 255 ]
 			}
 		},
@@ -632,7 +682,7 @@
 				}
 				m_subtractChildID = 
 				{
-					m_id = 2096114973
+					m_id = 1223585754
 				}
 				m_timingBehavior = "UseChild1"
 				m_flTimingBlend = 0.5
@@ -683,7 +733,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Idle movement"
-				m_vecPosition = [ -528.0, 256.0 ]
+				m_vecPosition = [ -528.0, 304.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1142395821
@@ -694,6 +744,26 @@
 				m_sequenceName = "handidle"
 				m_playbackSpeed = 1.0
 				m_bLoop = true
+			}
+		},
+		{
+			key = 
+			{
+				m_id = 1223585754
+			}
+			value = 
+			{
+				_class = "CSingleFrameAnimNode"
+				m_sName = "Unnamed"
+				m_vecPosition = [ -528.0, 208.0 ]
+				m_nNodeID = 
+				{
+					m_id = 1223585754
+				}
+				m_networkMode = "ClientSimulate"
+				m_sNote = ""
+				m_sequenceName = "catidle"
+				m_nFrameIndex = 0
 			}
 		},
 		{
@@ -793,7 +863,7 @@
 			{
 				_class = "CSingleFrameAnimNode"
 				m_sName = "Idle movement"
-				m_vecPosition = [ -528.0, 208.0 ]
+				m_vecPosition = [ -528.0, 256.0 ]
 				m_nNodeID = 
 				{
 					m_id = 2096114973

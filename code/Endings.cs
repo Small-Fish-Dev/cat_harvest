@@ -82,8 +82,7 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick();
-			current.Delete();
+			CloseGame( ply );
 
 		}
 
@@ -97,8 +96,7 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick();
-			current.Delete();
+			CloseGame( ply );
 
 		}
 
@@ -112,8 +110,7 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick();
-			current.Delete();
+			CloseGame( ply );
 
 		}
 
@@ -128,8 +125,9 @@ namespace Cat_Harvest
 			await current.Task.Delay( 5000 );
 
 			current.EndState = false;
+			ChangeMusic( "horror" );
 
-			await current.Task.Delay( 3500 );
+			await current.Task.Delay( 2000 );
 
 			for ( int i = 0; i < ply.CatsHarvested; i++ )
 			{
@@ -137,7 +135,8 @@ namespace Cat_Harvest
 				var cat = new WalkingCat
 				{
 
-					Position = ply.Position
+					Position = ply.Position,
+					Aggressive = true
 
 				};
 
@@ -145,10 +144,14 @@ namespace Cat_Harvest
 
 			ply.CatsHarvested = 0;
 
-			await current.Task.Delay( 4000 );
+			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick();
-			current.Delete();
+			current.EndState = true;
+			current.Ending = 5;
+
+			await current.Task.Delay( 6000 );
+
+			CloseGame( ply );
 
 		}
 
@@ -162,8 +165,7 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 6000 );
 
-			ply.Client.Kick(); // fuck you that's why
-			current.Delete(); //This is to end tasks
+			CloseGame( ply );
 
 		}
 
@@ -208,6 +210,16 @@ namespace Cat_Harvest
 
 			current.Music.Stop();
 			current.Music = current.PlaySound( music );
+
+		}
+
+		public static void CloseGame( HarvestPlayer ply )
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			ply.Client.Kick();
+			current.Delete();
 
 		}
 

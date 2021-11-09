@@ -192,7 +192,7 @@
 						source_filename = "models/viewmodel/wiwiequip.dmx"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 18.0
 						take = 0
 						reverse = false
 					},
