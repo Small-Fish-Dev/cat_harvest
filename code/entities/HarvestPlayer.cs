@@ -101,7 +101,6 @@ namespace Cat_Harvest
 						cat.Delete();
 						CatsUprooted++;
 						SetAnim( "grab", true );
-						SetAnim( "finished", false );
 						HasCat = true;
 
 					}
@@ -158,7 +157,6 @@ namespace Cat_Harvest
 			ply.CatsHarvested++;
 			ply.HasCat = false;
 			ply.SetAnim( "finished", true );
-			ply.SetAnim( "grab", false );
 
 			if ( ply.CatsUprooted == 96 )
 			{
@@ -183,10 +181,10 @@ namespace Cat_Harvest
 			};
 
 			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
+			Particles.Create( "particles/hearts.vpcf", cat.Position );
 
 			ply.HasCat = false;
 			ply.SetAnim( "finished", true );
-			ply.SetAnim( "grab", false );
 
 			if ( ply.CatsUprooted == 96 )
 			{
