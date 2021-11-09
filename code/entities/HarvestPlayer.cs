@@ -197,6 +197,16 @@ namespace Cat_Harvest
 
 		}
 
+		[ServerCmd( "cheat" )] //TODO REMEMBER DELETE!!!
+		public static void Cheat( int numUprooted, int numHarvested)
+		{
+			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
+
+			ply.CatsUprooted = numUprooted;
+			ply.CatsHarvested = numHarvested;
+
+		}
+
 		public override void OnKilled()
 		{
 			//Don't die! wtf

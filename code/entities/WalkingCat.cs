@@ -40,13 +40,13 @@ namespace Cat_Harvest
 				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
 				{
 
-					Velocity = ( Vector3.Zero - Position ).ClampLength( 10f );
+					Velocity = ( Vector3.Zero - Position ).Normal * 4;
 
 				}
 				else
 				{
 
-					Velocity = new Vector3( Rand.Float( 10f ) - 5f, Rand.Float( 10f ) - 5f, 0f );
+					Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * 2;
 
 				}
 
@@ -120,7 +120,7 @@ namespace Cat_Harvest
 
 			var pos = ConsoleSystem.Caller.Pawn.Position;
 
-			for ( int i = 0; i < 96; i++ )
+			for ( int i = 0; i < 48; i++ )
 			{
 
 				var npc = new WalkingCat
