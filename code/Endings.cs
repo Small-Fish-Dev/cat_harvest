@@ -73,7 +73,7 @@ namespace Cat_Harvest
 
 			current.Snappening = true;
 
-			ChangeMusic( "horror" );
+			ChangeMusic( "political" );
 
 			await current.Task.Delay( 8000 );
 
@@ -94,7 +94,19 @@ namespace Cat_Harvest
 			current.EndState = true;
 			current.Ending = 0;
 
-			await current.Task.Delay( 6000 );
+			ChangeMusic( "bravo" );
+
+			await current.Task.Delay( 4000 );
+
+			current.EndState = false;
+			current.Ending = 0;
+
+			await current.Task.Delay( 3000 );
+
+			current.EndState = true;
+			current.Ending = 5;
+
+			await current.Task.Delay( 5000 );
 
 			CloseGame( ply );
 
