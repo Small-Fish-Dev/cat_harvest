@@ -158,6 +158,8 @@ namespace Cat_Harvest
 			ply.HasCat = false;
 			ply.SetAnim( "finished", true );
 
+			Sound.FromEntity( $"sad{ Rand.Int( 1 ) }", ply );
+
 			if ( ply.CatsUprooted == 96 )
 			{
 

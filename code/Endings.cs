@@ -118,6 +118,7 @@ namespace Cat_Harvest
 		{
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
+			WalkController controller = ply.Controller as WalkController;
 
 			current.EndState = true;
 			current.Ending = 3;
@@ -126,8 +127,10 @@ namespace Cat_Harvest
 
 			current.EndState = false;
 			ChangeMusic( "horror" );
-
-			await current.Task.Delay( 2000 );
+			ply.Position = new Vector3( 0, 0, 30 );
+			controller.WalkSpeed = 30f;
+			controller.DefaultSpeed = 30f;
+			controller.SprintSpeed = 40f;
 
 			for ( int i = 0; i < ply.CatsHarvested; i++ )
 			{
@@ -135,8 +138,9 @@ namespace Cat_Harvest
 				var cat = new WalkingCat
 				{
 
-					Position = ply.Position,
-					Aggressive = true
+					Position = ply.Position + new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 15f ),
+					Aggressive = true,
+					Victim = ply
 
 				};
 
