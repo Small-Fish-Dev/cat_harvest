@@ -86,8 +86,10 @@ namespace Cat_Harvest
 			if ( eyeTrace.Hit )
 			{
 
+				HarvestGame current = HarvestGame.Current as HarvestGame;
+
 				DisplayPopup = true;
-				var cat = eyeTrace.Entity;
+				var cat = eyeTrace.Entity as WalkingCat;
 
 				if ( Input.Pressed( InputButton.Use ) ) 
 				{
@@ -99,9 +101,22 @@ namespace Cat_Harvest
 					{
 
 						cat.Delete();
-						CatsUprooted++;
-						SetAnim( "grab", true );
-						HasCat = true;
+
+						if ( cat.Boring_DoNotActivate )
+						{
+
+							SetAnim( "wiwi", true );
+							HarvestGame.EndGame( this, 0, true );
+
+						}
+						else
+						{
+
+							CatsUprooted++;
+							SetAnim( "grab", true );
+							HasCat = true;
+
+						}
 
 					}
 
@@ -178,7 +193,6 @@ namespace Cat_Harvest
 			var cat = new WalkingCat
 			{
 
-				Boring_DoNotActivate = true,
 				Position = ply.Position //TODO LookPos doesn't place at the right place? Ray position is fine though
 
 			};

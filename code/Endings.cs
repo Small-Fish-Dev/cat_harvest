@@ -31,8 +31,16 @@ namespace Cat_Harvest
 			"There are 5 total endings, will you find them all?"
 		};
 
-		public static void EndGame( HarvestPlayer ply, int harvested )
+		public static void EndGame( HarvestPlayer ply, int harvested, bool secret = false )
 		{
+
+			if ( secret )
+			{
+
+				SecretEnding( ply );
+				return;
+
+			}
 
 			switch ( harvested )
 			{
@@ -190,6 +198,22 @@ namespace Cat_Harvest
 			current.EndState = true;
 			current.Ending = 4;
 
+			ChangeMusic( "silly" );
+
+			await current.Task.Delay( 2500 );
+
+			Sound.FromEntity( "sad0", ply ).SetVolume( 1f );
+
+			await current.Task.Delay( 3000 );
+
+			current.EndState = false;
+
+			Sound.FromEntity( "munch", ply ).SetVolume( 3f ) ;
+
+			await current.Task.Delay( 3000 );
+
+			current.EndState = true;
+			current.Ending = 5;
 			await current.Task.Delay( 6000 );
 
 			CloseGame( ply );

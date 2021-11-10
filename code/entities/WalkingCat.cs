@@ -26,20 +26,7 @@ namespace Cat_Harvest
 
 			SetModel( "models/cat/cat.vmdl" );
 
-			Scale = Boring_DoNotActivate ? 0.1f : 1f;
-
-			if( Boring_DoNotActivate )
-			{
-
-				SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) ); //Needs physics to be able to be picked up
-
-			}
-			else
-			{
-
-				current.AllCats.Add( this );
-
-			}
+			current.AllCats.Add( this );
 			
 		}
 
@@ -55,7 +42,7 @@ namespace Cat_Harvest
 				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
 				{
 
-					Velocity = ( Vector3.Zero - Position ).Normal * ( Boring_DoNotActivate ? 2 : 4 );
+					Velocity = ( Vector3.Zero - Position ).Normal * ( Boring_DoNotActivate ? 1.5f : 4 );
 
 				}
 				else
@@ -77,8 +64,8 @@ namespace Cat_Harvest
 					else
 					{
 
-						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( Boring_DoNotActivate ? 0.5f : 2 );
-						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( 0.05f );
+						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( Boring_DoNotActivate ? 0.3f : 2 );
+						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( 0.03f );
 
 					}
 

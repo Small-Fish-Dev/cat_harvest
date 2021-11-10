@@ -23,6 +23,15 @@ namespace Cat_Harvest
 
 				new HarvestHUD();
 
+				new WalkingCat
+				{
+
+					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 25f ),
+					Boring_DoNotActivate = true,
+					Scale = 0.7f
+
+				}.SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) ); //Needs physics to be able to be picked up;
+
 			}
 			else
 			{
@@ -30,6 +39,7 @@ namespace Cat_Harvest
 				Music = PlaySound( "relax" );
 
 			}
+
 
 		}
 
