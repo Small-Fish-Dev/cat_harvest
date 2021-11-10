@@ -5,6 +5,7 @@ using System.Linq;
 namespace Cat_Harvest
 {
 	[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
+	[Hammer.EditorModel( "models/tail/tail.vmdl" )]
 	public partial class PlantedCat : AnimEntity
 	{
 
@@ -19,30 +20,9 @@ namespace Cat_Harvest
 			Scale = 1.5f;
 			CollisionGroup = CollisionGroup.Prop;
 			PlaybackRate = Rand.Float( 1.5f ) + 0.2f;
-			Position -= Vector3.Up * 2;
-			SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, Capsule.FromHeightAndRadius( 16, 2 ) ); //Remove collisions when done? Can't pick them up in final game anyways
+			Position -= Vector3.Up * 2; //Plant them a bit deeper
+			SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) );
 			
-
-		}
-
-		[ServerCmd("plantcat")] //TODO REMEMBER DELETE!!!
-		public static void SpawnCat()
-		{
-
-			var pos = ConsoleSystem.Caller.Pawn.Position;
-
-			for ( int i = 0; i < 1; i++ )
-			{
-
-				var npc = new PlantedCat
-				{
-
-					Position = pos + Vector3.Down * 6f,
-					Rotation = Rotation.FromPitch( 90 )
-
-				};
-
-			}
 
 		}
 

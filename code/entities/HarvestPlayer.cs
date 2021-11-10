@@ -100,7 +100,7 @@ namespace Cat_Harvest
 
 						cat.Delete();
 						CatsUprooted++;
-						SetAnim( "wiwi", true );
+						SetAnim( "grab", true );
 						HasCat = true;
 
 					}

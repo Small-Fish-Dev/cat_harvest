@@ -16,7 +16,7 @@
 //
 // Cat_Harvest.PlantedCat
 //
-@PointClass base(BaseProperties_cat_harvest) = harvest_planted : "Planted kitten to uproot."
+@PointClass base(BaseProperties_cat_harvest) editormodel( "models/tail/tail.vmdl" ) = harvest_planted : "Planted kitten to uproot."
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
