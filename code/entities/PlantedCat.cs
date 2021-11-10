@@ -20,7 +20,8 @@ namespace Cat_Harvest
 			Scale = 1.5f;
 			CollisionGroup = CollisionGroup.Prop;
 			PlaybackRate = Rand.Float( 1.5f ) + 0.2f;
-			Position -= Vector3.Up * 2; //Plant them a bit deeper
+			Position -= Vector3.Up * 1; //Plant them a bit deeper
+			Rotation = Rotation.FromYaw( Rand.Float( 360f ) ); //Random rotate
 			SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) );
 			
 

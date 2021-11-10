@@ -56,8 +56,8 @@
 						[
 							{
 								_class = "AnimSmoothLoop"
-								frames_from_start = -5
-								frames_from_end = 5
+								frames_from_start = -3
+								frames_from_end = 3
 							},
 						]
 						activity_name = ""

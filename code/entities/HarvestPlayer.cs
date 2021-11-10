@@ -178,11 +178,11 @@ namespace Cat_Harvest
 			var cat = new WalkingCat
 			{
 
+				Boring_DoNotActivate = true,
 				Position = ply.Position //TODO LookPos doesn't place at the right place? Ray position is fine though
 
 			};
 
-			Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", cat );
 			Particles.Create( "particles/hearts.vpcf", cat.Position );
 
 			ply.HasCat = false;

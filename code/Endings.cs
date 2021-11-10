@@ -131,6 +131,7 @@ namespace Cat_Harvest
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 			WalkController controller = ply.Controller as WalkController;
+			int totCats = ply.CatsHarvested;
 
 			current.EndState = true;
 			current.Ending = 3;
@@ -144,7 +145,7 @@ namespace Cat_Harvest
 			controller.DefaultSpeed = 30f;
 			controller.SprintSpeed = 40f;
 
-			for ( int i = 0; i < ply.CatsHarvested; i++ )
+			for ( int i = 0; i < totCats; i++ )
 			{
 
 				var cat = new WalkingCat
@@ -158,9 +159,19 @@ namespace Cat_Harvest
 
 			}
 
-			ply.CatsHarvested = 0;
 
-			await current.Task.Delay( 6000 );
+
+			for ( int i = 0; i < totCats; i++ )
+			{
+
+				ply.CatsHarvested--;
+				ply.CatsUprooted--;
+
+				await current.Task.Delay( 25 );
+
+			}
+
+			await current.Task.Delay( 4000 );
 
 			current.EndState = true;
 			current.Ending = 5;
