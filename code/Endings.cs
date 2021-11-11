@@ -129,7 +129,35 @@ namespace Cat_Harvest
 			current.EndState = true;
 			current.Ending = 1;
 
-			await current.Task.Delay( 6000 );
+			ChangeMusic( "silly" );
+
+			await current.Task.Delay( 5000 );
+
+			int totCats = ply.CatsUprooted;
+
+			for ( int i = 0; i < totCats; i++ )
+			{
+
+				var cat = new WalkingCat
+				{
+
+					Position = ply.Position + new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ), 15f ),
+					Passive = true
+
+				};
+
+			}
+
+			ply.Camera = new PeacefulEndingCamera();
+
+			current.EndState = false;
+
+			await current.Task.Delay( 7000 );
+
+			current.EndState = true;
+			current.Ending = 5;
+
+			await current.Task.Delay( 5000 );
 
 			CloseGame( ply );
 
@@ -196,7 +224,7 @@ namespace Cat_Harvest
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
-			ChangeMusic( "silly" );
+			ChangeMusic( "wonders" );
 
 			await current.Task.Delay( 2000 );
 

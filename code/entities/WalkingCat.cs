@@ -12,6 +12,7 @@ namespace Cat_Harvest
 		private readonly Vector3 maxBounds = new Vector3( 750, 790, 0 );
 		[Net] public bool IsDying { get; set; } = false;
 		public bool Aggressive { get; set; } = false;
+		public bool Passive { get; set; } = false;
 		public HarvestPlayer Victim { get; set; }
 
 		public override void Spawn()
@@ -38,39 +39,51 @@ namespace Cat_Harvest
 			if ( nextMove <= Time.Now )
 			{
 
-				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
+				if ( !Passive )
 				{
 
-					Velocity = ( Vector3.Zero - Position ).Normal * ( IsSecret() ? 1.5f : 4 );
-
-				}
-				else
-				{
-
-					if ( Aggressive )
+					if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
 					{
 
-						if ( Victim.IsValid() )
-						{
-
-							Velocity = ( ( Victim.Position + new Vector3( Rand.Float( 30f ) - 15f, Rand.Float( 30f ) - 15f, 0 ) ) - Position ).Normal * 2;
-
-						}
-
-						Sound.FromEntity( $"angry{ Rand.Int( 1 ) }", this );
+						Velocity = (Vector3.Zero - Position).Normal * (IsSecret() ? 1.5f : 4);
 
 					}
 					else
 					{
 
-						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( IsSecret() ? 0.3f : 2 );
-						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( IsSecret() ? 0.05f : 0.15f );
+						if ( Aggressive )
+						{
+
+							if ( Victim.IsValid() )
+							{
+
+								Velocity = ((Victim.Position + new Vector3( Rand.Float( 30f ) - 15f, Rand.Float( 30f ) - 15f, 0 )) - Position).Normal * 2;
+
+							}
+
+							Sound.FromEntity( $"angry{ Rand.Int( 1 ) }", this );
+
+						}
+						else
+						{
+
+							Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * (IsSecret() ? 0.3f : 2);
+							Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( IsSecret() ? 0.05f : 0.15f );
+
+						}
 
 					}
 
+					nextMove = Time.Now + Rand.Float( 2f ) + (Aggressive ? 0f : 6f);
+
 				}
 
-				nextMove = Time.Now +  Rand.Float( 2f ) + ( Aggressive ? 0f : 6f );
+				else
+				{
+
+					Velocity = new Vector3( 0f, 4f, 0f );
+
+				}
 
 			}
 

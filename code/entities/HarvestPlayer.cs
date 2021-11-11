@@ -195,7 +195,7 @@ namespace Cat_Harvest
 			var cat = new WalkingCat
 			{
 
-				Position = ply.Position //TODO LookPos doesn't place at the right place? Ray position is fine though
+				Position = ply.Position
 
 			};
 
@@ -238,7 +238,7 @@ namespace Cat_Harvest
 		public override void Update()
 		{
 
-			Pos = new Vector3( -300f +(Time.Now - created) * 50f, 0f, 300f + ( Time.Now - created ) * 50f );
+			Pos = new Vector3( -300f + (Time.Now - created) * 50f, 0f, 300f + ( Time.Now - created ) * 50f );
 			Rot = Rotation.FromPitch( 80f );
 
 			FieldOfView = 70f;
@@ -250,11 +250,13 @@ namespace Cat_Harvest
 	public class PeacefulEndingCamera : Camera
 	{
 
+		float created = Time.Now;
+
 		public override void Update()
 		{
 
-			Pos = new Vector3( 500f, 200f, 200f );
-			Rot = Rotation.FromYaw( 45 );
+			Pos = new Vector3( 0f, -200f + (Time.Now - created) * 30f, 100f + (Time.Now - created) * 10f );
+			Rot = Rotation.From( new Angles( 20f, 90f, 0f ) );
 
 			FieldOfView = 70f;
 
