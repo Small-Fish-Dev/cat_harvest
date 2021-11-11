@@ -206,6 +206,27 @@ namespace Cat_Harvest
 
 	}
 
+	public class Jumpscare : Panel
+	{
+
+		public Jumpscare()
+		{
+
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			SetClass( "hidden", !current.Jumpscare );
+
+		}
+
+	}
+
+
 	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
 	{
 
@@ -223,6 +244,7 @@ namespace Cat_Harvest
 			RootPanel.AddChild<Popup>( "Popup" );
 			RootPanel.AddChild<Choices>( "Choices" );
 			RootPanel.AddChild<EndingScreen>( "EndingScreen" );
+			RootPanel.AddChild<Jumpscare>( "Jumpscare" );
 
 		}
 

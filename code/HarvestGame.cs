@@ -28,7 +28,7 @@ namespace Cat_Harvest
 				{
 
 					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 25f ),
-					Scale = 0.7f
+					Scale = 0.07f
 
 				};
 

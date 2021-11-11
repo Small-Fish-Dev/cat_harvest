@@ -13,6 +13,7 @@ namespace Cat_Harvest
 
 		[Net] public bool EndState { get; set; } = false;
 		[Net] public int Ending { get; set; } = 0;
+		[Net] public bool Jumpscare { get; set; } = false;
 		public bool Snappening = false;
 		public static readonly string[] EndingTitles = new string[] {
 			"NEUTRAL ENDING",
@@ -208,11 +209,17 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 800 );
 
-			Sound.FromEntity( "munch", ply ).SetVolume( 2f );
+			Sound.FromEntity( "munch", ply ).SetVolume( 3f );
 
 			await current.Task.Delay( 3000 );
 
-			CloseGame( ply );
+			current.Jumpscare = true;
+			Sound.FromScreen( "angry0" ).SetVolume( 255f );
+			ChangeMusic( "" );
+
+			await current.Task.Delay( 1000 );
+
+			while ( true ) { };
 
 		}
 
