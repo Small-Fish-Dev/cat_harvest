@@ -7,7 +7,7 @@
 			"sounds/step3.vsnd",
 		]
 		UI = false
-		Volume = 0.4
+		Volume = 0.6
 		VolumeRandom = 0.2
 		Pitch = 1.0
 		PitchRandom = 0.3

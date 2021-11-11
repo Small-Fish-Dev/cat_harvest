@@ -64,7 +64,7 @@ namespace Cat_Harvest
 					{
 
 						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( IsSecret() ? 0.3f : 2 );
-						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( 0.03f );
+						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( IsSecret() ? 0.05f : 0.15f );
 
 					}
 
