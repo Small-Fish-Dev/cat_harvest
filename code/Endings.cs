@@ -195,26 +195,22 @@ namespace Cat_Harvest
 
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
+			ChangeMusic( "silly" );
+
+			await current.Task.Delay( 2000 );
+
 			current.EndState = true;
 			current.Ending = 4;
 
-			ChangeMusic( "silly" );
-
-			await current.Task.Delay( 2500 );
+			await current.Task.Delay( 2200 );
 
 			Sound.FromEntity( "sad0", ply ).SetVolume( 1f );
 
-			await current.Task.Delay( 3000 );
+			await current.Task.Delay( 800 );
 
-			current.EndState = false;
-
-			Sound.FromEntity( "munch", ply ).SetVolume( 3f ) ;
+			Sound.FromEntity( "munch", ply ).SetVolume( 2f );
 
 			await current.Task.Delay( 3000 );
-
-			current.EndState = true;
-			current.Ending = 5;
-			await current.Task.Delay( 6000 );
 
 			CloseGame( ply );
 

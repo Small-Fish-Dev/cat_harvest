@@ -12,7 +12,6 @@ namespace Cat_Harvest
 		private readonly Vector3 maxBounds = new Vector3( 750, 790, 0 );
 		[Net] public bool IsDying { get; set; } = false;
 		public bool Aggressive { get; set; } = false;
-		[Net] public bool Boring_DoNotActivate { get; set; } = false; //I need this to hide the secret, doesn't work much if you're reading this code right now
 		public HarvestPlayer Victim { get; set; }
 
 		public override void Spawn()
@@ -42,7 +41,7 @@ namespace Cat_Harvest
 				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
 				{
 
-					Velocity = ( Vector3.Zero - Position ).Normal * ( Boring_DoNotActivate ? 1.5f : 4 );
+					Velocity = ( Vector3.Zero - Position ).Normal * ( IsSecret() ? 1.5f : 4 );
 
 				}
 				else
@@ -64,7 +63,7 @@ namespace Cat_Harvest
 					else
 					{
 
-						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( Boring_DoNotActivate ? 0.3f : 2 );
+						Velocity = new Vector3( Rand.Float( 2f ) - 1f, Rand.Float( 2f ) - 1f, 0f ).Normal * ( IsSecret() ? 0.3f : 2 );
 						Sound.FromEntity( $"meow{ Rand.Int( 10 ) }", this ).SetVolume( 0.03f );
 
 					}
@@ -112,6 +111,22 @@ namespace Cat_Harvest
 			hourOfDeath = Time.Now + 0.2f;
 
 			current.AllCats.Remove( this );
+
+		}
+
+		public bool IsSecret()
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			if ( this == current.SecretCat )
+			{
+
+				return true;
+
+			}
+
+			return false;
 
 		}
 

@@ -84,6 +84,6 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = ""
+		anim_graph_name = "models/cat_harvest/viewmodel/view_anim.vanmgrph"
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using Sandbox;
 using System;
 using System.Linq;
+using System.Text.Json;
 
 namespace Cat_Harvest
 {
@@ -89,7 +90,7 @@ namespace Cat_Harvest
 				HarvestGame current = HarvestGame.Current as HarvestGame;
 
 				DisplayPopup = true;
-				var cat = eyeTrace.Entity as WalkingCat;
+				var cat = eyeTrace.Entity;
 
 				if ( Input.Pressed( InputButton.Use ) ) 
 				{
@@ -102,7 +103,7 @@ namespace Cat_Harvest
 
 						cat.Delete();
 
-						if ( cat.Boring_DoNotActivate )
+						if ( cat == current.SecretCat )
 						{
 
 							SetAnim( "wiwi", true );
@@ -174,6 +175,7 @@ namespace Cat_Harvest
 			ply.SetAnim( "finished", true );
 
 			Sound.FromEntity( $"sad{ Rand.Int( 1 ) }", ply );
+			Particles.Create( "particles/dollars.vpcf", ply.Position );
 
 			if ( ply.CatsUprooted == 96 )
 			{

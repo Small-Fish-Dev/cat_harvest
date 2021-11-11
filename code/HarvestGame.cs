@@ -13,6 +13,7 @@ namespace Cat_Harvest
 	{
 
 		[Net] public List<WalkingCat> AllCats { get; set; } = new();
+		[Net] public WalkingCat SecretCat { get; set; } 
 		public Sound Music { get; set; }
 
 		public HarvestGame()
@@ -23,14 +24,15 @@ namespace Cat_Harvest
 
 				new HarvestHUD();
 
-				new WalkingCat
+				SecretCat = new WalkingCat
 				{
 
 					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 25f ),
-					Boring_DoNotActivate = true,
 					Scale = 0.7f
 
-				}.SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) ); //Needs physics to be able to be picked up;
+				};
+
+				SecretCat.SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) ); //Needs physics to be able to be picked up;
 
 			}
 			else
