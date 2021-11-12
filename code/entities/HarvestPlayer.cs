@@ -14,6 +14,7 @@ namespace Cat_Harvest
 		public bool OpenInventory { get; set; } = false;
 		public bool CloseInstructions { get; set; } = false;
 		[Net] public bool DisplayPopup { get; set; } = false;
+		[Net] public bool DisplaySecretPopup { get; set; } = false;
 		[Net] public bool HasCat { get; set; } = false;
 		[Net] public Vector3 LookPos { get; set; } = new Vector3( 0, 0, 0 );
 		public HarvestViewModel ViewModel { get; set; }
@@ -74,9 +75,9 @@ namespace Cat_Harvest
 
 			}
 
-			LookPos = Trace.Ray( Input.Cursor, 150f )
+			/*LookPos = Trace.Ray( Input.Cursor, 150f )
 				.Ignore( this )
-				.Run().EndPos;
+				.Run().EndPos;*/
 
 			TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
 				.Size( new Vector3( 20f, 20f, 20f ) )
@@ -88,30 +89,55 @@ namespace Cat_Harvest
 			{
 
 				HarvestGame current = HarvestGame.Current as HarvestGame;
-
-				DisplayPopup = true;
 				var cat = eyeTrace.Entity;
 
-				if ( Input.Pressed( InputButton.Use ) ) 
+				if ( cat == current.SecretCat )
 				{
 
-					Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
-					Particles.Create( "particles/uproot.vpcf", cat.Position );
+					TraceResult secretTrace = Trace.Ray( Input.Cursor, 70f )
+						.Size( new Vector3( 10f, 10f, 10f ) )
+						.Ignore( PhysicsWorld.WorldBody.Entity )
+						.WithTag( "Cat" )
+						.Run();
 
-					if ( IsServer )
-					{
+					if ( secretTrace.Entity == current.SecretCat )
+					{ 
 
-						cat.Delete();
+						DisplaySecretPopup = true;
 
-						if ( cat == current.SecretCat )
+						if ( Input.Pressed( InputButton.Use ) )
 						{
 
-							SetAnim( "wiwi", true );
-							HarvestGame.EndGame( this, 0, true );
+							if ( IsServer )
+							{
+
+								cat.Delete();
+
+								SetAnim( "wiwi", true );
+								HarvestGame.EndGame( this, 0, true );
+
+							}
 
 						}
-						else
+
+					}
+
+				}
+				else
+				{
+
+					DisplayPopup = true;
+
+					if ( Input.Pressed( InputButton.Use ) )
+					{
+
+						Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
+						Particles.Create( "particles/uproot.vpcf", cat.Position );
+
+						if ( IsServer )
 						{
+
+							cat.Delete();
 
 							CatsUprooted++;
 							SetAnim( "grab", true );
@@ -123,11 +149,13 @@ namespace Cat_Harvest
 
 				}
 
+
 			}
 			else
 			{
 
 				DisplayPopup = false;
+				DisplaySecretPopup = false;
 
 			}
 

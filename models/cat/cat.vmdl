@@ -15,7 +15,7 @@
 						[
 							{
 								from = "cat.vmat"
-								to = "materials/1_snow.vmat"
+								to = "materials/cat.vmat"
 							},
 						]
 						use_global_default = false

@@ -57,7 +57,7 @@ namespace Cat_Harvest
 			descriptionContainer.Add.Label( $"Uproot the cats by pressing [ { use } ]", "description" );
 			descriptionContainer.Add.Label( $"Decide their fate with your cursor and press [ { attack } ]", "description" );
 			descriptionContainer.Add.Label( $"Open the inventory by pressing [ { score } ]", "description" );
-			descriptionContainer.Add.Label( $"Uproot all the cats and find all the secret endings", "objective" );
+			descriptionContainer.Add.Label( $"Uproot all the cats and find all the 5 endings", "objective" );
 
 		}
 
@@ -145,6 +145,29 @@ namespace Cat_Harvest
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			SetClass( "closed", !ply.DisplayPopup || current.Finishing );
+
+		}
+
+	}
+
+	public class SecretPopup : Panel
+	{
+
+		public SecretPopup()
+		{
+
+			string use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
+
+			Add.Label( $"Pick up El Wiwi [ { use } ]", "title" );
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
+			SetClass( "closed", !ply.DisplaySecretPopup || current.Finishing );
 
 		}
 
@@ -268,6 +291,7 @@ namespace Cat_Harvest
 			RootPanel.AddChild<CatInventory>( "Inventory" );
 			RootPanel.AddChild<Instructions>( "Instructions" );
 			RootPanel.AddChild<Popup>( "Popup" );
+			RootPanel.AddChild<SecretPopup>( "Popup" );
 			RootPanel.AddChild<Choices>( "Choices" );
 			RootPanel.AddChild<EndingScreen>( "EndingScreen" );
 			RootPanel.AddChild<Jumpscare>( "Jumpscare" );
