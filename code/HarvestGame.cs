@@ -13,7 +13,9 @@ namespace Cat_Harvest
 	{
 
 		[Net] public List<WalkingCat> AllCats { get; set; } = new();
-		[Net] public WalkingCat SecretCat { get; set; } 
+		[Net] public WalkingCat SecretCat { get; set; }
+		[Net] public bool Finishing { get; set; } = false;
+		public HarvestHUD HUD { get; set; }
 		public Sound Music { get; set; }
 
 		public HarvestGame()
@@ -22,7 +24,7 @@ namespace Cat_Harvest
 			if ( IsServer )
 			{
 
-				new HarvestHUD();
+				HUD = new HarvestHUD();
 
 				SecretCat = new WalkingCat
 				{

@@ -19,6 +19,10 @@ RootPanel {
 		margin-top: -7px;
 		border: 1.5px solid rgba ( 255, 255, 255, 0.3 );
 		border-radius: 100px;
+
+		&.hidden {
+			opacity: 0;
+		}
 	}
 
 	.CatCounter {
@@ -45,6 +49,10 @@ RootPanel {
 			font-size: 25px;
 			text-shadow: 0px 0px 5px rgba( black, 1 );
 			text-stroke: 5px black;
+		}
+
+		&.hidden {
+			opacity: 0;
 		}
 	}
 

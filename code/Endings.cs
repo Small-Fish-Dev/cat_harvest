@@ -77,6 +77,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 5000 );
 
 			current.EndState = false;
+			current.Finishing = true;
 
 			ply.Camera = new BalancedEndingCamera();
 
@@ -109,6 +110,7 @@ namespace Cat_Harvest
 
 			current.EndState = false;
 			current.Ending = 0;
+			current.Finishing = true;
 
 			await current.Task.Delay( 3000 );
 
@@ -134,6 +136,7 @@ namespace Cat_Harvest
 			await current.Task.Delay( 5000 );
 
 			int totCats = ply.CatsUprooted;
+			current.Finishing = true;
 
 			for ( int i = 0; i < totCats; i++ )
 			{
@@ -225,6 +228,7 @@ namespace Cat_Harvest
 			HarvestGame current = HarvestGame.Current as HarvestGame;
 
 			ChangeMusic( "wonders" );
+			current.Finishing = true;
 
 			await current.Task.Delay( 2000 );
 

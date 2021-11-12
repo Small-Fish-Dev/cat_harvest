@@ -25,6 +25,9 @@ namespace Cat_Harvest
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			catsLabel.Text = $"{ply.CatsUprooted}/96";
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+			SetClass( "hidden", current.Finishing );
+
 		}
 		
 	}
@@ -117,7 +120,8 @@ namespace Cat_Harvest
 
 			}
 
-			SetClass( "closed", !ply.OpenInventory );
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+			SetClass( "closed", !ply.OpenInventory || current.Finishing );
 
 		}
 
@@ -138,8 +142,9 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-			SetClass( "closed", !ply.DisplayPopup );
+			SetClass( "closed", !ply.DisplayPopup || current.Finishing );
 
 		}
 
@@ -171,8 +176,9 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
+			HarvestGame current = HarvestGame.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
-			SetClass( "closed", !ply.HasCat );
+			SetClass( "closed", !ply.HasCat || current.Finishing );
 
 		}
 
@@ -226,6 +232,26 @@ namespace Cat_Harvest
 
 	}
 
+	public class CrossHair : Panel
+	{
+
+		public CrossHair()
+		{
+
+
+		}
+
+		public override void Tick()
+		{
+
+			HarvestGame current = HarvestGame.Current as HarvestGame;
+
+			SetClass( "hidden", current.Finishing );
+
+		}
+
+	}
+
 
 	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
 	{
@@ -237,7 +263,7 @@ namespace Cat_Harvest
 
 			RootPanel.StyleSheet.Load( "ui/HarvestHUD.scss" );
 
-			RootPanel.Add.Panel( "CrossHair" );
+			RootPanel.AddChild<CrossHair>( "CrossHair" );
 			RootPanel.AddChild<CatCounter>( "CatCounter" );
 			RootPanel.AddChild<CatInventory>( "Inventory" );
 			RootPanel.AddChild<Instructions>( "Instructions" );
