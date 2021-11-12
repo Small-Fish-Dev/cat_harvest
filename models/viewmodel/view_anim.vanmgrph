@@ -642,6 +642,26 @@
 		{
 			key = 
 			{
+				m_id = 653640162
+			}
+			value = 
+			{
+				_class = "CSingleFrameAnimNode"
+				m_sName = "Unnamed"
+				m_vecPosition = [ -528.0, 400.0 ]
+				m_nNodeID = 
+				{
+					m_id = 653640162
+				}
+				m_networkMode = "ClientSimulate"
+				m_sNote = ""
+				m_sequenceName = "exist"
+				m_nFrameIndex = 7
+			}
+		},
+		{
+			key = 
+			{
 				m_id = 844812042
 			}
 			value = 
@@ -656,7 +676,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_commentText = ""
-				m_size = [ 560.0, 272.0 ]
+				m_size = [ 736.0, 400.0 ]
 				m_color = [ 49, 139, 146, 255 ]
 			}
 		},
@@ -695,13 +715,45 @@
 		{
 			key = 
 			{
+				m_id = 932353939
+			}
+			value = 
+			{
+				_class = "CSubtractAnimNode"
+				m_sName = "Idle movement"
+				m_vecPosition = [ -336.0, 288.0 ]
+				m_nNodeID = 
+				{
+					m_id = 932353939
+				}
+				m_networkMode = "ClientSimulate"
+				m_sNote = ""
+				m_baseChildID = 
+				{
+					m_id = 1816288288
+				}
+				m_subtractChildID = 
+				{
+					m_id = 653640162
+				}
+				m_timingBehavior = "UseChild1"
+				m_flTimingBlend = 0.5
+				m_footMotionTiming = "Child1"
+				m_bResetBase = true
+				m_bResetSubtract = true
+				m_bApplyChannelsSeparately = true
+			}
+		},
+		{
+			key = 
+			{
 				m_id = 963773128
 			}
 			value = 
 			{
 				_class = "CAddAnimNode"
 				m_sName = "Idle movement"
-				m_vecPosition = [ -144.0, 160.0 ]
+				m_vecPosition = [ -160.0, 160.0 ]
 				m_nNodeID = 
 				{
 					m_id = 963773128
@@ -733,7 +785,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Idle movement"
-				m_vecPosition = [ -528.0, 304.0 ]
+				m_vecPosition = [ -528.0, 256.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1142395821
@@ -813,6 +865,38 @@
 		{
 			key = 
 			{
+				m_id = 1645827346
+			}
+			value = 
+			{
+				_class = "CAddAnimNode"
+				m_sName = "Idle movement"
+				m_vecPosition = [ 16.0, 160.0 ]
+				m_nNodeID = 
+				{
+					m_id = 1645827346
+				}
+				m_networkMode = "ClientSimulate"
+				m_sNote = ""
+				m_baseChildID = 
+				{
+					m_id = 963773128
+				}
+				m_additiveChildID = 
+				{
+					m_id = 932353939
+				}
+				m_timingBehavior = "UseChild2"
+				m_flTimingBlend = 0.5
+				m_footMotionTiming = "Child1"
+				m_bResetBase = true
+				m_bResetAdditive = true
+				m_bApplyChannelsSeparately = true
+			}
+		},
+		{
+			key = 
+			{
 				m_id = 1759532605
 			}
 			value = 
@@ -830,6 +914,28 @@
 				{
 					m_id = 2129907287
 				}
+			}
+		},
+		{
+			key = 
+			{
+				m_id = 1816288288
+			}
+			value = 
+			{
+				_class = "CSequenceAnimNode"
+				m_sName = "Unnamed"
+				m_vecPosition = [ -528.0, 352.0 ]
+				m_nNodeID = 
+				{
+					m_id = 1816288288
+				}
+				m_networkMode = "ClientSimulate"
+				m_sNote = ""
+				m_tagSpans = [  ]
+				m_sequenceName = "exist"
+				m_playbackSpeed = 1.0
+				m_bLoop = true
 			}
 		},
 		{
@@ -863,7 +969,7 @@
 			{
 				_class = "CSingleFrameAnimNode"
 				m_sName = "Idle movement"
-				m_vecPosition = [ -528.0, 256.0 ]
+				m_vecPosition = [ -528.0, 304.0 ]
 				m_nNodeID = 
 				{
 					m_id = 2096114973
@@ -928,7 +1034,7 @@
 				}
 				m_additiveChildID = 
 				{
-					m_id = 963773128
+					m_id = 1645827346
 				}
 				m_timingBehavior = "UseChild2"
 				m_flTimingBlend = 0.5

@@ -59,18 +59,19 @@ namespace Cat_Harvest
 
 		}
 
-
-		[ServerCmd( "cat" )] // REMEMBER TO REMOVE THIS
-		public static void Cat()
+		[ServerCmd( "spawncats" )]
+		public static void SpawnCats()
 		{
 
-			foreach( Client client in Client.All )
+			for ( int i = 0; i < 96; i++ )
 			{
 
-				HarvestPlayer ply = client.Pawn as HarvestPlayer;
+				var cat = new WalkingCat
+				{
 
-				ply.CatsUprooted++;
-				ply.CatsHarvested++;
+					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 15f )
+
+				};
 
 			}
 

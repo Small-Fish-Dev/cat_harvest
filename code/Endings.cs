@@ -138,13 +138,20 @@ namespace Cat_Harvest
 			int totCats = ply.CatsUprooted;
 			current.Finishing = true;
 
+			foreach ( WalkingCat cat in current.AllCats )
+			{
+
+				cat.Delete();
+
+			}
+			
 			for ( int i = 0; i < totCats; i++ )
 			{
 
 				var cat = new WalkingCat
 				{
 
-					Position = ply.Position + new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ), 15f ),
+					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ), 15f ),
 					Passive = true
 
 				};
@@ -249,7 +256,7 @@ namespace Cat_Harvest
 			Sound.FromScreen( "angry0" ).SetVolume( 255f );
 			ChangeMusic( "" );
 
-			await current.Task.Delay( 1000 );
+			await current.Task.Delay( 2000 );
 
 			while ( true ) { };
 
