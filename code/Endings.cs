@@ -244,7 +244,8 @@ namespace Cat_Harvest
 
 			await current.Task.Delay( 2200 );
 
-			Sound.FromEntity( "sad0", ply ).SetVolume( 1f );
+			var sound = Sound.FromEntity( "sad0", ply ).SetVolume( 1f );
+			sound.SetPitch( 1.8f );
 
 			await current.Task.Delay( 800 );
 
