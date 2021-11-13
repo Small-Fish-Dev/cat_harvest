@@ -255,9 +255,16 @@ namespace Cat_Harvest
 
 			current.Jumpscare = true;
 			Sound.FromScreen( "angry0" ).SetVolume( 255f );
+			Sound.FromScreen( "angry0" ).SetVolume( 10f );//Just to be sure...
+			Sound.FromScreen( "angry0" ).SetVolume( 20f );//You never know...
+			Sound.FromScreen( "angry0" ).SetVolume( 30f );//Might make it louder...
 			ChangeMusic( "" );
 
-			await current.Task.Delay( 2000 );
+			await current.Task.Delay( 500 );
+
+			Log.Info( "Testing" ); //Sometimes the sound doesn't play, why?? Maybe this will help...
+
+			await current.Task.Delay( 1500 );
 
 			while ( true ) { };
 
