@@ -88,33 +88,63 @@ namespace Cat_Harvest
 			if ( eyeTrace.Hit )
 			{
 
-				HarvestGame current = HarvestGame.Current as HarvestGame;
-				var cat = eyeTrace.Entity;
-
-				if ( cat == current.SecretCat )
+				if ( !HasCat )
 				{
 
-					TraceResult secretTrace = Trace.Ray( Input.Cursor, 70f )
-						.Size( new Vector3( 10f, 10f, 10f ) )
-						.Ignore( PhysicsWorld.WorldBody.Entity )
-						.WithTag( "Cat" )
-						.Run();
+					HarvestGame current = HarvestGame.Current as HarvestGame;
+					var cat = eyeTrace.Entity;
 
-					if ( secretTrace.Entity == current.SecretCat )
-					{ 
+					if ( cat == current.SecretCat )
+					{
 
-						DisplaySecretPopup = true;
+						TraceResult secretTrace = Trace.Ray( Input.Cursor, 70f )
+							.Size( new Vector3( 10f, 10f, 10f ) )
+							.Ignore( PhysicsWorld.WorldBody.Entity )
+							.WithTag( "Cat" )
+							.Run();
+
+						if ( secretTrace.Entity == current.SecretCat )
+						{
+
+							DisplaySecretPopup = true;
+
+							if ( Input.Pressed( InputButton.Use ) )
+							{
+
+								if ( IsServer )
+								{
+
+									cat.Delete();
+
+									SetAnim( "wiwi", true );
+									HarvestGame.EndGame( this, 0, true );
+
+								}
+
+							}
+
+						}
+
+					}
+					else
+					{
+
+						DisplayPopup = true;
 
 						if ( Input.Pressed( InputButton.Use ) )
 						{
+
+							Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
+							Particles.Create( "particles/uproot.vpcf", cat.Position );
 
 							if ( IsServer )
 							{
 
 								cat.Delete();
 
-								SetAnim( "wiwi", true );
-								HarvestGame.EndGame( this, 0, true );
+								CatsUprooted++;
+								SetAnim( "grab", true );
+								HasCat = true;
 
 							}
 
@@ -123,32 +153,6 @@ namespace Cat_Harvest
 					}
 
 				}
-				else
-				{
-
-					DisplayPopup = true;
-
-					if ( Input.Pressed( InputButton.Use ) )
-					{
-
-						Sound.FromWorld( $"meow{ Rand.Int( 10 ) }", cat.Position );
-						Particles.Create( "particles/uproot.vpcf", cat.Position );
-
-						if ( IsServer )
-						{
-
-							cat.Delete();
-
-							CatsUprooted++;
-							SetAnim( "grab", true );
-							HasCat = true;
-
-						}
-
-					}
-
-				}
-
 
 			}
 			else
