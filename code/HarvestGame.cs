@@ -44,6 +44,8 @@ namespace Cat_Harvest
 
 			}
 
+			Precache.Add( "angry0" );
+			Precache.Add( "sounds/angry0.vsnd" ); //To be sure
 
 		}
 
