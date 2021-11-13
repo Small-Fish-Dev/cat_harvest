@@ -59,24 +59,6 @@ namespace Cat_Harvest
 
 		}
 
-		[ServerCmd( "spawncats" )]
-		public static void SpawnCats()
-		{
-
-			for ( int i = 0; i < 96; i++ )
-			{
-
-				var cat = new WalkingCat
-				{
-
-					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 15f )
-
-				};
-
-			}
-
-		}
-
 	}
 
 }

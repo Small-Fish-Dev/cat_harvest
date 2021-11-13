@@ -262,39 +262,6 @@ namespace Cat_Harvest
 
 		}
 
-		[ServerCmd( "ending" )] //TODO REMEMBER DELETE!!!
-		public static void DoEnding( string ending)
-		{
-
-			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
-
-			switch ( ending )
-			{
-
-				case "balanced":
-					BalancedEnding( ply );
-					break;
-
-				case "peaceful":
-					PeacefulEnding( ply );
-					break;
-
-				case "genocide":
-					GenocideEnding( ply );
-					break;
-
-				case "secret":
-					SecretEnding( ply );
-					break;
-
-				default:
-					NeutralEnding( ply );
-					break;
-
-			};
-				
-		}
-
 		[ClientRpc]
 		public static void ChangeMusic( string music )
 		{
