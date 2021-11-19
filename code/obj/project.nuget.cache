@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CPadZMvjsE93TLcdiRreeSpzg00V0b7X+V5n1BnO+4q83orZpCemPdFiVydnt1PMNdKxpG7ExsgUS6FOdXe75Q==",
+  "dgSpecHash": "QstwTUZVFeLZ7/AvIiz2vdiwkgpiuTpgY/hMVIj04livUwx3N/QKF8WSiHn5v/WNP/id6iqVFRLH7wSk2D4vAA==",
   "success": false,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\cat_harvest\\code\\cat_harvest.csproj",
   "expectedPackageFiles": [],
@@ -11,7 +11,7 @@
       "message": "Unable to find project information for 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
       "libraryId": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj",
       "targetGraphs": [
-        "net5.0"
+        "net6.0"
       ]
     }
   ]
