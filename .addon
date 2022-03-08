@@ -1,3 +1,13 @@
 {
-  "sharedassets":  "*.*"
+  "Title": "Cat Harvest",
+  "Type": "game",
+  "Org": "fish",
+  "Ident": "cat_harvest",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": null,
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Sandbox"
 }

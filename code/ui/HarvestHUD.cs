@@ -1,9 +1,10 @@
-﻿using Sandbox;
+﻿using Cat_Harvest;
+using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System.Collections.Generic;
 
-namespace Cat_Harvest
+namespace Sandbox.ui
 {
 
 	public class CatCounter : Panel
@@ -25,11 +26,11 @@ namespace Cat_Harvest
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			catsLabel.Text = $"{ply.CatsUprooted}/96";
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 			SetClass( "hidden", current.Finishing );
 
 		}
-		
+
 	}
 
 	public class Instructions : Panel
@@ -85,7 +86,7 @@ namespace Cat_Harvest
 
 			Panel itemsContainer = Add.Panel( "itemsContainer" );
 
-			for( int i = 0; i < 96; i++ )
+			for ( int i = 0; i < 96; i++ )
 			{
 
 				Panel slot = itemsContainer.Add.Panel( "item" );
@@ -102,10 +103,10 @@ namespace Cat_Harvest
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
 
-			for( int i = 0; i < 96; i++ )
+			for ( int i = 0; i < 96; i++ )
 			{
 
-				if( i < ply.CatsHarvested )
+				if ( i < ply.CatsHarvested )
 				{
 
 					items[i].SetClass( "hide", false );
@@ -120,7 +121,7 @@ namespace Cat_Harvest
 
 			}
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 			SetClass( "closed", !ply.OpenInventory || current.Finishing );
 
 		}
@@ -142,7 +143,7 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			SetClass( "closed", !ply.DisplayPopup || current.Finishing );
 
@@ -165,7 +166,7 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			SetClass( "closed", !ply.DisplaySecretPopup || current.Finishing );
 
@@ -179,19 +180,19 @@ namespace Cat_Harvest
 		public Choices()
 		{
 
-			Add.Button( "", "button", () => 
+			Add.Button( "", "button", () =>
 			{
 
 				HarvestPlayer.Harvest();
 
 			} ).Add.Label( "HARVEST", "title" );
 
-			Add.Button( "", "button", () => 
-			
+			Add.Button( "", "button", () =>
+
 			{
 
-				HarvestPlayer.Rescue(); 
-			
+				HarvestPlayer.Rescue();
+
 			} ).Add.Label( "RESCUE", "title" );
 
 		}
@@ -199,7 +200,7 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 			HarvestPlayer ply = Local.Pawn as HarvestPlayer;
 			SetClass( "closed", !ply.HasCat || current.Finishing );
 
@@ -225,11 +226,11 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 
 			SetClass( "hidden", !current.EndState );
-			title.Text = $"{ HarvestGame.EndingTitles[ current.Ending ] }";
-			subtitle.Text = $"{HarvestGame.EndingDescriptions[ current.Ending ] }";
+			title.Text = $"{ HarvestGame.EndingTitles[current.Ending] }";
+			subtitle.Text = $"{HarvestGame.EndingDescriptions[current.Ending] }";
 
 		}
 
@@ -247,7 +248,7 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 
 			SetClass( "hidden", !current.Jumpscare );
 
@@ -267,7 +268,7 @@ namespace Cat_Harvest
 		public override void Tick()
 		{
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+			HarvestGame current = Game.Current as HarvestGame;
 
 			SetClass( "hidden", current.Finishing );
 
@@ -276,7 +277,7 @@ namespace Cat_Harvest
 	}
 
 
-	public partial class HarvestHUD : Sandbox.HudEntity<RootPanel>
+	public partial class HarvestHUD : HudEntity<RootPanel>
 	{
 
 		public HarvestHUD()

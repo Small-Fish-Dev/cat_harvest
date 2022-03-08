@@ -27,6 +27,7 @@ namespace Cat_Harvest
 			SetModel( "models/cat/cat.vmdl" );
 
 			current.AllCats.Add( this );
+
 			
 		}
 
@@ -103,7 +104,7 @@ namespace Cat_Harvest
 			if ( traceGround.Hit )
 			{
 
-				Position = traceGround.EndPos;
+				Position = traceGround.EndPosition;
 				Position += Rotation.Forward * 10 * Velocity.Length * Time.Delta;
 
 				Rotation rotation = Velocity.EulerAngles.ToRotation();

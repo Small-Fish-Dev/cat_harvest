@@ -79,7 +79,7 @@ namespace Cat_Harvest
 			current.EndState = false;
 			current.Finishing = true;
 
-			ply.Camera = new BalancedEndingCamera();
+			ply.CameraMode = new BalancedEndingCamera();
 
 			current.Snappening = true;
 
@@ -158,7 +158,7 @@ namespace Cat_Harvest
 
 			}
 
-			ply.Camera = new PeacefulEndingCamera();
+			ply.CameraMode = new PeacefulEndingCamera();
 
 			current.EndState = false;
 

@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Cat_Harvest
+namespace Sandbox.entities
 {
 
 	public class HarvestViewModel : BaseViewModel
@@ -17,14 +17,17 @@ namespace Cat_Harvest
 
 			if ( !Local.Pawn.IsValid() ) { return; }
 
-			Rotation = Local.Pawn.EyeRot;
+			Entity ply = Local.Pawn;
+
+			Position = ply.EyePosition - ply.EyeRotation.Forward * 20;
+			Rotation = ply.EyeRotation;
 
 			// Thank you DM98 for this piece of code
-			var speed = Local.Client.Pawn.Velocity.Length / 300f;
+			var speed = ply.Velocity.Length / 300f;
 			var left = camSetup.Rotation.Left;
 			var up = camSetup.Rotation.Up;
 
-			if ( Local.Client.Pawn.GroundEntity != null )
+			if ( ply.GroundEntity != null )
 			{
 				walkBob += Time.Delta * 25.0f * speed;
 			}
@@ -32,7 +35,7 @@ namespace Cat_Harvest
 			Position += up * MathF.Sin( walkBob ) * speed * -1;
 			Position += left * MathF.Sin( walkBob * 0.6f ) * speed * -0.5f;
 
-			camSetup.ViewModel.FieldOfView = 30f;
+			camSetup.ViewModel.FieldOfView = 70f;
 
 		}
 

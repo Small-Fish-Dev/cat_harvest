@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Cat_Harvest
+namespace Sandbox.entities
 {
 	[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
 	[Hammer.EditorModel( "models/tail/tail.vmdl" )]

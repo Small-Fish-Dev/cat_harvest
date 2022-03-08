@@ -1,0 +1,14 @@
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\.vs\output\cat_harvest.xml
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\.vs\output\cat_harvest.deps.json
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\.vs\output\cat_harvest.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\.vs\output\ref\cat_harvest.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\.vs\output\cat_harvest.pdb
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\ref\cat_harvest.dll
+C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\cat_harvest\code\obj\Debug\cat_harvest.pdb

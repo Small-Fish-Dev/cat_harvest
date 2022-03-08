@@ -1,7 +1,7 @@
 ﻿using Sandbox;
+using Sandbox.entities;
 using System;
-using System.Linq;
-using System.Text.Json;
+using System.Collections.Generic;
 
 namespace Cat_Harvest
 {
@@ -30,7 +30,7 @@ namespace Cat_Harvest
 
 			Animator = new StandardPlayerAnimator();
 
-			Camera = new FirstPersonCamera();
+			CameraMode = new FirstPersonCamera();
 
 			CreateViewModel();
 
@@ -75,13 +75,13 @@ namespace Cat_Harvest
 
 			}
 
-			/*LookPos = Trace.Ray( Input.Cursor, 150f )
-				.Ignore( this )
-				.Run().EndPos;*/
+				/*LookPos = Trace.Ray( Input.Cursor, 150f )
+					.Ignore( this )
+					.Run().EndPos;*/
 
-			TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
+				TraceResult eyeTrace = Trace.Ray( Input.Cursor, 100f )
 				.Size( new Vector3( 20f, 20f, 20f ) )
-				.Ignore( PhysicsWorld.WorldBody.Entity )
+				.Ignore( Map.Entity )
 				.WithTag( "Cat" )
 				.Run();
 
@@ -99,7 +99,7 @@ namespace Cat_Harvest
 
 						TraceResult secretTrace = Trace.Ray( Input.Cursor, 70f )
 							.Size( new Vector3( 10f, 10f, 10f ) )
-							.Ignore( PhysicsWorld.WorldBody.Entity )
+							.Ignore( Map.Entity )
 							.WithTag( "Cat" )
 							.Run();
 
@@ -142,6 +142,7 @@ namespace Cat_Harvest
 
 								cat.Delete();
 
+								GameServices.SubmitScore( Client.PlayerId, 1 );
 								CatsUprooted++;
 								SetAnim( "grab", true );
 								HasCat = true;
@@ -192,7 +193,7 @@ namespace Cat_Harvest
 
 			Host.AssertClient();
 
-			ViewModel?.SetAnimBool( name, state );
+			(Local.Pawn as HarvestPlayer).ViewModel.SetAnimParameter( name, state );
 
 		}
 
@@ -252,7 +253,7 @@ namespace Cat_Harvest
 
 	}
 
-	public class BalancedEndingCamera : Camera
+	public class BalancedEndingCamera : CameraMode
 	{
 
 		float created = Time.Now;
@@ -260,8 +261,8 @@ namespace Cat_Harvest
 		public override void Update()
 		{
 
-			Pos = new Vector3( -300f + (Time.Now - created) * 50f, 0f, 300f + ( Time.Now - created ) * 50f );
-			Rot = Rotation.FromPitch( 80f );
+			Position = new Vector3( -300f + (Time.Now - created) * 50f, 0f, 300f + ( Time.Now - created ) * 50f );
+			Rotation = Rotation.FromPitch( 80f );
 
 			FieldOfView = 70f;
 
@@ -269,7 +270,7 @@ namespace Cat_Harvest
 
 	}
 
-	public class PeacefulEndingCamera : Camera
+	public class PeacefulEndingCamera : CameraMode
 	{
 
 		float created = Time.Now;
@@ -277,8 +278,8 @@ namespace Cat_Harvest
 		public override void Update()
 		{
 
-			Pos = new Vector3( 0f, -200f + (Time.Now - created) * 30f, 100f + (Time.Now - created) * 10f );
-			Rot = Rotation.From( new Angles( 20f, 90f, 0f ) );
+			Position = new Vector3( 0f, -200f + (Time.Now - created) * 30f, 100f + (Time.Now - created) * 10f );
+			Rotation = Rotation.From( new Angles( 20f, 90f, 0f ) );
 
 			FieldOfView = 70f;
 
