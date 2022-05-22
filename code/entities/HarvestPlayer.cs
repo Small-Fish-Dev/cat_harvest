@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Cat_Harvest
 {
 
-	public partial class HarvestPlayer : Sandbox.Player
+	public partial class HarvestPlayer : Player
 	{
 
 		[Net] public int CatsUprooted { get; set; } = 0;
@@ -197,7 +197,7 @@ namespace Cat_Harvest
 
 		}
 
-		[ServerCmd]
+		[ConCmd.Server]
 		public static void Harvest()
 		{
 
@@ -219,7 +219,7 @@ namespace Cat_Harvest
 
 		}
 
-		[ServerCmd]
+		[ConCmd.Server]
 		public static void Rescue()
 		{
 

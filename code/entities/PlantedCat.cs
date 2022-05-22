@@ -1,12 +1,16 @@
 ﻿using Sandbox;
 using System;
 using System.Linq;
+using SandboxEditor;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sandbox.entities
 {
 	[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
-	[Hammer.EditorModel( "models/tail/tail.vmdl" )]
-	public partial class PlantedCat : AnimEntity
+	[HammerEntity]
+	[Model( Model = "models/tail/tail.vmdl") ]
+	public partial class PlantedCat : AnimatedEntity
 	{
 
 		float playBack = Rand.Float( 1.5f ) + 0.2f;

@@ -62,6 +62,26 @@ namespace Cat_Harvest
 
 		}
 
+		[ConCmd.Server("spawncats")]
+		public static void SpawnCats()
+		{
+
+			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
+
+			for ( int i = 0; i < 1000; i++ )
+			{
+
+				var cat = new WalkingCat
+				{
+
+					Position = ply.Position + new Vector3( Rand.Float( -1000, 1000 ), Rand.Float( -1000, 1000 ) , Rand.Float( -500, 500 ) )
+
+				};
+
+			}
+
+		}
+
 	}
 
 }
