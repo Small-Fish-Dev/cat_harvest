@@ -1,6 +1,4 @@
-﻿using Sandbox;
-
-namespace CatHarvest;
+﻿namespace CatHarvest;
 
 public static class Cameras
 {

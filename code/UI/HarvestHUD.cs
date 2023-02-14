@@ -1,10 +1,4 @@
-﻿using CatHarvest.Entities;
-using Sandbox;
-using Sandbox.UI;
-using Sandbox.UI.Construct;
-using System.Collections.Generic;
-
-namespace CatHarvest.UI
+﻿namespace CatHarvest.UI
 {
 	public class CatCounter : Panel
 	{
@@ -18,7 +12,7 @@ namespace CatHarvest.UI
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			catsLabel.Text = $"{ply.CatsUprooted}/96";
 
 			SetClass( "hidden", HarvestGame.The.Finishing );
@@ -53,7 +47,7 @@ namespace CatHarvest.UI
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			SetClass( "closed", ply.CloseInstructions );
 		}
 	}
@@ -80,7 +74,7 @@ namespace CatHarvest.UI
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
 
 			for ( var i = 0; i < 96; i++ )
@@ -110,7 +104,7 @@ namespace CatHarvest.UI
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.Uproot || HarvestGame.The.Finishing );
 		}
 	}
@@ -126,7 +120,7 @@ namespace CatHarvest.UI
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.SecretPickUp || HarvestGame.The.Finishing );
 		}
 	}
@@ -135,14 +129,14 @@ namespace CatHarvest.UI
 	{
 		public Choices()
 		{
-			Add.Button( "", "button", () => { Entities.HarvestPlayer.Harvest(); } ).Add.Label( "HARVEST", "title" );
+			Add.Button( "", "button", () => { HarvestPlayer.Harvest(); } ).Add.Label( "HARVEST", "title" );
 
-			Add.Button( "", "button", () => { Entities.HarvestPlayer.Rescue(); } ).Add.Label( "RESCUE", "title" );
+			Add.Button( "", "button", () => { HarvestPlayer.Rescue(); } ).Add.Label( "RESCUE", "title" );
 		}
 
 		public override void Tick()
 		{
-			var ply = Game.LocalPawn as Entities.HarvestPlayer;
+			var ply = Game.LocalPawn as HarvestPlayer;
 			SetClass( "closed", !ply.HasCat || HarvestGame.The.Finishing );
 		}
 	}

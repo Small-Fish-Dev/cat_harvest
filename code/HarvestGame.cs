@@ -1,7 +1,12 @@
-﻿using CatHarvest.Entities;
-using CatHarvest.UI;
-using Sandbox;
-using System.Collections.Generic;
+﻿global using System;
+global using Sandbox;
+global using Sandbox.UI;
+global using Sandbox.UI.Construct;
+global using Editor;
+global using System.Collections.Generic;
+global using CatHarvest.Player;
+global using CatHarvest.UI;
+global using CatHarvest.Entities;
 
 namespace CatHarvest;
 

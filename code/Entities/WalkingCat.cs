@@ -1,7 +1,4 @@
-﻿using Sandbox;
-using System;
-
-namespace CatHarvest.Entities;
+﻿namespace CatHarvest.Entities;
 
 public partial class WalkingCat : AnimatedEntity
 {

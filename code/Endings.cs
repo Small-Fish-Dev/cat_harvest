@@ -1,5 +1,4 @@
-﻿using Sandbox;
-using WalkingCat = CatHarvest.Entities.WalkingCat;
+﻿using WalkingCat = CatHarvest.Entities.WalkingCat;
 
 namespace CatHarvest;
 
@@ -30,7 +29,7 @@ public partial class HarvestGame
 		"There are 5 total endings, will you find them all?"
 	};
 
-	public static void EndGame( Entities.HarvestPlayer ply, int harvested, bool secret = false )
+	public static void EndGame( HarvestPlayer ply, int harvested, bool secret = false )
 	{
 		if ( secret )
 		{
@@ -58,7 +57,7 @@ public partial class HarvestGame
 		}
 	}
 
-	public static async void BalancedEnding( Entities.HarvestPlayer ply )
+	public static async void BalancedEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
 
@@ -86,7 +85,7 @@ public partial class HarvestGame
 		CloseGame( ply );
 	}
 
-	public static async void NeutralEnding( Entities.HarvestPlayer ply )
+	public static async void NeutralEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
 
@@ -111,7 +110,7 @@ public partial class HarvestGame
 		CloseGame( ply );
 	}
 
-	public static async void PeacefulEnding( Entities.HarvestPlayer ply )
+	public static async void PeacefulEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
 
@@ -153,10 +152,9 @@ public partial class HarvestGame
 		CloseGame( ply );
 	}
 
-	public static async void GenocideEnding( Entities.HarvestPlayer ply )
+	public static async void GenocideEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
-		WalkController controller = ply.Controller as WalkController;
 		int totCats = ply.CatsHarvested;
 
 		current.EndState = true;
@@ -167,9 +165,7 @@ public partial class HarvestGame
 		current.EndState = false;
 		ChangeMusic( "horror" );
 		ply.Position = new Vector3( 0, 0, 30 );
-		controller.WalkSpeed = 30f;
-		controller.DefaultSpeed = 30f;
-		controller.SprintSpeed = 40f;
+		ply.Speed = 30f;
 
 		for ( int i = 0; i < totCats; i++ )
 		{
@@ -200,7 +196,7 @@ public partial class HarvestGame
 		CloseGame( ply );
 	}
 
-	public static async void SecretEnding( Entities.HarvestPlayer ply )
+	public static async void SecretEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
 
@@ -248,7 +244,7 @@ public partial class HarvestGame
 		current.Music = current.PlaySound( music );
 	}
 
-	public static void CloseGame( Entities.HarvestPlayer ply )
+	public static void CloseGame( HarvestPlayer ply )
 	{
 		HarvestGame current = HarvestGame.Current as HarvestGame;
 
