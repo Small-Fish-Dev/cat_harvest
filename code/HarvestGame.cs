@@ -1,87 +1,65 @@
-﻿
-using Sandbox;
-using Sandbox.UI.Construct;
-using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using Sandbox;
 using System.Collections.Generic;
-using Sandbox.ui;
+using CatHarvest.UI;
+using CatHarvest.Entities;
 
-namespace Cat_Harvest
+namespace CatHarvest;
+
+public partial class HarvestGame : GameManager
 {
+    public static HarvestGame The { get; private set; }
 
-	public partial class HarvestGame : Sandbox.Game
-	{
+    [Net] public IList<WalkingCat> AllCats { get; set; } = new List<WalkingCat>();
+    [Net] public WalkingCat SecretCat { get; set; }
+    [Net] public bool Finishing { get; set; } = false;
+    public Sound Music { get; set; }
 
-		[Net] public List<WalkingCat> AllCats { get; set; } = new();
-		[Net] public WalkingCat SecretCat { get; set; }
-		[Net] public bool Finishing { get; set; } = false;
-		public HarvestHUD HUD { get; set; }
-		public Sound Music { get; set; }
+    public HarvestGame()
+    {
+        The = this;
+        
+        if (Game.IsServer)
+        {
+            _ = new HarvestHUD();
 
-		public HarvestGame()
-		{
+            SecretCat = new WalkingCat
+            {
+                Position = new Vector3(Game.Random.Float(1500f) - 800f, Game.Random.Float(1500f), 25f),
+                Scale = 0.1f
+            };
 
-			if ( IsServer )
-			{
+            SecretCat.SetupPhysicsFromAABB(PhysicsMotionType.Static, new Vector3(-0.5f, -0.5f, -0.5f),
+                new Vector3(0.5f, 0.5f, 0f)); //Needs physics to be able to be picked up;
+        }
+        else
+        {
+            Music = PlaySound("relax");
+        }
 
-				HUD = new HarvestHUD();
+        Precache.Add("angry0");
+        Precache.Add("sounds/angry0.vsnd"); //To be sure
+    }
 
-				SecretCat = new WalkingCat
-				{
+    public override void ClientJoined(IClient client)
+    {
+        base.ClientJoined(client);
 
-					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ), 25f ),
-					Scale = 0.1f
+        var player = new HarvestPlayer();
+        client.Pawn = player;
+    }
 
-				};
+    [ConCmd.Server("spawncats")]
+    public static void SpawnCats()
+    {
+        var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
 
-				SecretCat.SetupPhysicsFromAABB( PhysicsMotionType.Static, new Vector3( -0.5f, -0.5f, -0.5f ), new Vector3( 0.5f, 0.5f, 0f ) ); //Needs physics to be able to be picked up;
-
-			}
-			else
-			{
-
-				Music = PlaySound( "relax" );
-
-			}
-
-			Precache.Add( "angry0" );
-			Precache.Add( "sounds/angry0.vsnd" ); //To be sure
-
-		}
-
-		public override void ClientJoined( Client client )
-		{
-
-			base.ClientJoined( client );
-
-			var player = new HarvestPlayer();
-			client.Pawn = player;
-
-			player.Respawn();
-
-		}
-
-		[ConCmd.Server("spawncats")]
-		public static void SpawnCats()
-		{
-
-			var ply = ConsoleSystem.Caller.Pawn as HarvestPlayer;
-
-			for ( int i = 0; i < 1000; i++ )
-			{
-
-				var cat = new WalkingCat
-				{
-
-					Position = ply.Position + new Vector3( Rand.Float( -1000, 1000 ), Rand.Float( -1000, 1000 ) , Rand.Float( -500, 500 ) )
-
-				};
-
-			}
-
-		}
-
-	}
-
+        for (var i = 0; i < 1000; i++)
+        {
+            var cat = new WalkingCat
+            {
+                Position = ply.Position +
+                           new Vector3(Game.Random.Float(-1000, 1000), Game.Random.Float(-1000, 1000), Game.Random.Float(-500, 500))
+            };
+        }
+    }
 }

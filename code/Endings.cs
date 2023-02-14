@@ -1,319 +1,279 @@
-﻿
-using Sandbox;
-using Sandbox.UI.Construct;
-using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using Sandbox;
+using WalkingCat = CatHarvest.Entities.WalkingCat;
 
-namespace Cat_Harvest
+namespace CatHarvest;
+
+public partial class HarvestGame
 {
+    [Net] public bool EndState { get; set; } = false;
+    [Net] public int Ending { get; set; } = 0;
+    [Net] public bool Jumpscare { get; set; } = false;
+    public bool Snappening = false;
 
-	public partial class HarvestGame : Sandbox.Game
-	{
+    public static readonly string[] EndingTitles = new string[]
+    {
+        "NEUTRAL ENDING",
+        "PEACEFUL ENDING",
+        "BALANCED ENDING",
+        "GENOCIDE ENDING",
+        "SECRET ENDING",
+        "Thank you for playing"
+    };
 
-		[Net] public bool EndState { get; set; } = false;
-		[Net] public int Ending { get; set; } = 0;
-		[Net] public bool Jumpscare { get; set; } = false;
-		public bool Snappening = false;
-		public static readonly string[] EndingTitles = new string[] {
-			"NEUTRAL ENDING",
-			"PEACEFUL ENDING",
-			"BALANCED ENDING",
-			"GENOCIDE ENDING",
-			"SECRET ENDING",
-			"Thank you for playing"
-		};
-		public static readonly string[] EndingDescriptions = new string[] {
-			"After a hard day of work, you went back home to sleep.",
-			"The world has been restored - and everyone is much happier.",
-			"Perfectly balanced, as all things should be.",
-			"Run.",
-			"You found El Wiwi. You passed out not long after.",
-			"There are 5 total endings, will you find them all?"
-		};
+    public static readonly string[] EndingDescriptions = new string[]
+    {
+        "After a hard day of work, you went back home to sleep.",
+        "The world has been restored - and everyone is much happier.",
+        "Perfectly balanced, as all things should be.",
+        "Run.",
+        "You found El Wiwi. You passed out not long after.",
+        "There are 5 total endings, will you find them all?"
+    };
 
-		public static void EndGame( HarvestPlayer ply, int harvested, bool secret = false )
-		{
+    public static void EndGame(Entities.HarvestPlayer ply, int harvested, bool secret = false)
+    {
+        if (secret)
+        {
+            SecretEnding(ply);
+            return;
+        }
 
-			if ( secret )
-			{
+        switch (harvested)
+        {
+            case 48:
+                BalancedEnding(ply);
+                break;
 
-				SecretEnding( ply );
-				return;
+            case <= 0:
+                PeacefulEnding(ply);
+                break;
 
-			}
+            case >= 96:
+                GenocideEnding(ply);
+                break;
 
-			switch ( harvested )
-			{
+            default:
+                NeutralEnding(ply);
+                break;
+        }
+    }
 
-				case 48:
-					BalancedEnding( ply );
-					break;
+    public static async void BalancedEnding(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
-				case <= 0:
-					PeacefulEnding( ply );
-					break;
+        current.EndState = true;
+        current.Ending = 2;
 
-				case >= 96:
-					GenocideEnding( ply );
-					break;
+        await current.Task.Delay(5000);
 
-				default:
-					NeutralEnding( ply );
-					break;
+        current.EndState = false;
+        current.Finishing = true;
 
-			}
+        ply.OverrideCamera = new Cameras.BalancedEndingCamera();
 
-		}
+        current.Snappening = true;
 
-		public static async void BalancedEnding( HarvestPlayer ply )
-		{
+        ChangeMusic("political");
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+        await current.Task.Delay(8000);
 
-			current.EndState = true;
-			current.Ending = 2;
+        current.EndState = true;
+        current.Ending = 5;
 
-			await current.Task.Delay( 5000 );
+        await current.Task.Delay(6000);
 
-			current.EndState = false;
-			current.Finishing = true;
+        CloseGame(ply);
+    }
 
-			ply.CameraMode = new BalancedEndingCamera();
+    public static async void NeutralEnding(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
-			current.Snappening = true;
+        current.EndState = true;
+        current.Ending = 0;
 
-			ChangeMusic( "political" );
+        ChangeMusic("bravo");
 
-			await current.Task.Delay( 8000 );
+        await current.Task.Delay(4000);
 
-			current.EndState = true;
-			current.Ending = 5;
+        current.EndState = false;
+        current.Ending = 0;
+        current.Finishing = true;
 
-			await current.Task.Delay( 6000 );
+        await current.Task.Delay(3000);
 
-			CloseGame( ply );
+        current.EndState = true;
+        current.Ending = 5;
 
-		}
+        await current.Task.Delay(5000);
 
-		public static async void NeutralEnding( HarvestPlayer ply  )
-		{
+        CloseGame(ply);
+    }
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+    public static async void PeacefulEnding(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
-			current.EndState = true;
-			current.Ending = 0;
+        current.EndState = true;
+        current.Ending = 1;
 
-			ChangeMusic( "bravo" );
+        ChangeMusic("silly");
 
-			await current.Task.Delay( 4000 );
+        await current.Task.Delay(5000);
 
-			current.EndState = false;
-			current.Ending = 0;
-			current.Finishing = true;
+        int totCats = ply.CatsUprooted;
+        current.Finishing = true;
 
-			await current.Task.Delay( 3000 );
+        foreach (WalkingCat cat in current.AllCats)
+        {
+            cat.Delete();
+        }
 
-			current.EndState = true;
-			current.Ending = 5;
+        for (int i = 0; i < totCats; i++)
+        {
+            var cat = new WalkingCat
+            {
+                Position = new Vector3(Game.Random.Float(1500f) - 800f, Game.Random.Float(1500f), 15f),
+                Passive = true
+            };
+        }
 
-			await current.Task.Delay( 5000 );
+        ply.OverrideCamera = new Cameras.PeacefulEndingCamera();
 
-			CloseGame( ply );
+        current.EndState = false;
 
-		}
+        await current.Task.Delay(7000);
 
-		public static async void PeacefulEnding( HarvestPlayer ply  )
-		{
+        current.EndState = true;
+        current.Ending = 5;
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
+        await current.Task.Delay(5000);
 
-			current.EndState = true;
-			current.Ending = 1;
+        CloseGame(ply);
+    }
 
-			ChangeMusic( "silly" );
+    public static async void GenocideEnding(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
+        WalkController controller = ply.Controller as WalkController;
+        int totCats = ply.CatsHarvested;
 
-			await current.Task.Delay( 5000 );
+        current.EndState = true;
+        current.Ending = 3;
 
-			int totCats = ply.CatsUprooted;
-			current.Finishing = true;
+        await current.Task.Delay(5000);
 
-			foreach ( WalkingCat cat in current.AllCats )
-			{
+        current.EndState = false;
+        ChangeMusic("horror");
+        ply.Position = new Vector3(0, 0, 30);
+        controller.WalkSpeed = 30f;
+        controller.DefaultSpeed = 30f;
+        controller.SprintSpeed = 40f;
 
-				cat.Delete();
+        for (int i = 0; i < totCats; i++)
+        {
+            var cat = new WalkingCat
+            {
+                Position = ply.Position + new Vector3(Game.Random.Float(1500f) - 800f, Game.Random.Float(1500f) - 800f, 15f),
+                Aggressive = true,
+                Victim = ply
+            };
+        }
 
-			}
-			
-			for ( int i = 0; i < totCats; i++ )
-			{
 
-				var cat = new WalkingCat
-				{
+        for (int i = 0; i < totCats; i++)
+        {
+            ply.CatsHarvested--;
+            ply.CatsUprooted--;
 
-					Position = new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ), 15f ),
-					Passive = true
+            await current.Task.Delay(25);
+        }
 
-				};
+        await current.Task.Delay(4000);
 
-			}
+        current.EndState = true;
+        current.Ending = 5;
 
-			ply.CameraMode = new PeacefulEndingCamera();
+        await current.Task.Delay(6000);
 
-			current.EndState = false;
+        CloseGame(ply);
+    }
 
-			await current.Task.Delay( 7000 );
+    public static async void SecretEnding(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
-			current.EndState = true;
-			current.Ending = 5;
+        ChangeMusic("wonders");
+        current.Finishing = true;
 
-			await current.Task.Delay( 5000 );
+        await current.Task.Delay(2000);
 
-			CloseGame( ply );
+        current.EndState = true;
+        current.Ending = 4;
 
-		}
+        await current.Task.Delay(2200);
 
-		public static async void GenocideEnding( HarvestPlayer ply  )
-		{
+        var sound = Sound.FromEntity("sad0", ply).SetVolume(1f);
+        sound.SetPitch(1.8f);
 
-			HarvestGame current = HarvestGame.Current as HarvestGame;
-			WalkController controller = ply.Controller as WalkController;
-			int totCats = ply.CatsHarvested;
+        await current.Task.Delay(800);
 
-			current.EndState = true;
-			current.Ending = 3;
+        Sound.FromEntity("munch", ply).SetVolume(3f);
 
-			await current.Task.Delay( 5000 );
+        await current.Task.Delay(3000);
 
-			current.EndState = false;
-			ChangeMusic( "horror" );
-			ply.Position = new Vector3( 0, 0, 30 );
-			controller.WalkSpeed = 30f;
-			controller.DefaultSpeed = 30f;
-			controller.SprintSpeed = 40f;
+        current.Jumpscare = true;
+        Sound.FromScreen("angry0").SetVolume(255f);
+        Sound.FromScreen("angry0").SetVolume(1f);
+        Sound.FromScreen("angry0").SetVolume(10f);
+        Sound.FromScreen("angry0").SetVolume(50f); //Just to be sure, not sure why it doesn't play sometimes
+        ChangeMusic("");
 
-			for ( int i = 0; i < totCats; i++ )
-			{
+        await current.Task.Delay(2000);
 
-				var cat = new WalkingCat
-				{
+        while (true)
+        {
+        }
 
-					Position = ply.Position + new Vector3( Rand.Float( 1500f ) - 800f, Rand.Float( 1500f ) - 800f, 15f ),
-					Aggressive = true,
-					Victim = ply
+        ;
+    }
 
-				};
+    [ClientRpc]
+    public static void ChangeMusic(string music)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
-			}
+        current.Music.Stop();
+        current.Music = current.PlaySound(music);
+    }
 
+    public static void CloseGame(Entities.HarvestPlayer ply)
+    {
+        HarvestGame current = HarvestGame.Current as HarvestGame;
 
+        ply.Client.Kick();
+        current.Delete();
+    }
 
-			for ( int i = 0; i < totCats; i++ )
-			{
+    float lastSnap = 0f;
 
-				ply.CatsHarvested--;
-				ply.CatsUprooted--;
+    [Event.Tick.Server]
+    public void OnTick()
+    {
+        if (Snappening && lastSnap <= Time.Now)
+        {
+            HarvestGame current = HarvestGame.Current as HarvestGame;
 
-				await current.Task.Delay( 25 );
+            if (AllCats.Count > 0)
+            {
+                int randomCat = Game.Random.Int(AllCats.Count - 1);
+                WalkingCat cat = AllCats[randomCat];
 
-			}
+                cat.Snap();
+            }
 
-			await current.Task.Delay( 4000 );
-
-			current.EndState = true;
-			current.Ending = 5;
-
-			await current.Task.Delay( 6000 );
-
-			CloseGame( ply );
-
-		}
-
-		public static async void SecretEnding( HarvestPlayer ply )
-		{
-
-			HarvestGame current = HarvestGame.Current as HarvestGame;
-
-			ChangeMusic( "wonders" );
-			current.Finishing = true;
-
-			await current.Task.Delay( 2000 );
-
-			current.EndState = true;
-			current.Ending = 4;
-
-			await current.Task.Delay( 2200 );
-
-			var sound = Sound.FromEntity( "sad0", ply ).SetVolume( 1f );
-			sound.SetPitch( 1.8f );
-
-			await current.Task.Delay( 800 );
-
-			Sound.FromEntity( "munch", ply ).SetVolume( 3f );
-
-			await current.Task.Delay( 3000 );
-
-			current.Jumpscare = true;
-			Sound.FromScreen( "angry0" ).SetVolume( 255f );
-			Sound.FromScreen( "angry0" ).SetVolume( 1f );
-			Sound.FromScreen( "angry0" ).SetVolume( 10f );
-			Sound.FromScreen( "angry0" ).SetVolume( 50f ); //Just to be sure, not sure why it doesn't play sometimes
-			ChangeMusic( "" );
-
-			await current.Task.Delay( 2000 );
-
-			while ( true ) { };
-
-		}
-
-		[ClientRpc]
-		public static void ChangeMusic( string music )
-		{
-
-			HarvestGame current = HarvestGame.Current as HarvestGame;
-
-			current.Music.Stop();
-			current.Music = current.PlaySound( music );
-
-		}
-
-		public static void CloseGame( HarvestPlayer ply )
-		{
-
-			HarvestGame current = HarvestGame.Current as HarvestGame;
-
-			ply.Client.Kick();
-			current.Delete();
-
-		}
-
-		float lastSnap = 0f;
-
-		[Event.Tick.Server]
-		public void OnTick()
-		{
-
-			if( Snappening && lastSnap <= Time.Now )
-			{ 
-
-				HarvestGame current = HarvestGame.Current as HarvestGame;
-
-				if ( AllCats.Count > 0 )
-				{
-
-					int randomCat = Rand.Int(AllCats.Count - 1 );
-					WalkingCat cat = AllCats[randomCat];
-
-					cat.Snap();
-
-				}
-
-				lastSnap = Time.Now + 0.3f;
-
-			}
-
-		}
-
-	}
-
+            lastSnap = Time.Now + 0.3f;
+        }
+    }
 }
