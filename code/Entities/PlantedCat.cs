@@ -5,7 +5,7 @@ namespace CatHarvest.Entities
 {
 	[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
 	[HammerEntity]
-	[Model( Model = "models/tail/tail.vmdl") ]
+	[Model( Model = "models/tail/tail.vmdl" )]
 	public partial class PlantedCat : AnimatedEntity
 	{
 
@@ -20,7 +20,7 @@ namespace CatHarvest.Entities
 
 			SetModel( "models/tail/tail.vmdl" );
 			Scale = 1.5f;
-			
+
 			PlaybackRate = playBack;
 			Position -= Vector3.Up * 1; //Plant them a bit deeper
 			Rotation = Rotation.FromYaw( Game.Random.Float( 360f ) ); //Random rotate

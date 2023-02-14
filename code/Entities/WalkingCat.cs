@@ -1,5 +1,5 @@
-﻿using System;
-using Sandbox;
+﻿using Sandbox;
+using System;
 
 namespace CatHarvest.Entities;
 
@@ -29,7 +29,7 @@ public partial class WalkingCat : AnimatedEntity
 	RealTimeSince frameTime = 0f;
 	float lastDistance = 0f;
 	float nextFrame = 0f;
-		
+
 	[Event.Tick.Client]
 	public void ClientTick()
 	{
@@ -42,7 +42,7 @@ public partial class WalkingCat : AnimatedEntity
 		{
 			CurrentSequence.Time = (CurrentSequence.Time + frameTime) % CurrentSequence.Duration;
 			lastDistance = Math.Max( Camera.Position.Distance( Position ) - minDistanceFalloff, 1f );
-			nextFrame = frameDelta.LerpTo(minFps, lastDistance / maxDistanceFalloff );
+			nextFrame = frameDelta.LerpTo( minFps, lastDistance / maxDistanceFalloff );
 
 			frameTime = 0f;
 		}
@@ -66,9 +66,9 @@ public partial class WalkingCat : AnimatedEntity
 	{
 		if ( IsDying )
 		{
-			RenderColor = RenderColor.WithAlpha( ( hourOfDeath - Time.Now ) * 5 );
+			RenderColor = RenderColor.WithAlpha( (hourOfDeath - Time.Now) * 5 );
 
-			if( hourOfDeath <= 0 )
+			if ( hourOfDeath <= 0 )
 			{
 				Delete();
 			}

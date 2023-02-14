@@ -1,5 +1,5 @@
-﻿using System;
-using Sandbox;
+﻿using Sandbox;
+using System;
 
 namespace CatHarvest.Entities;
 
@@ -10,8 +10,8 @@ public class HarvestViewModel : BaseViewModel
 	public override void Spawn()
 	{
 		base.Spawn();
-		
-		SetModel("models/viewmodel/viewmodel.vmdl");
+
+		SetModel( "models/viewmodel/viewmodel.vmdl" );
 	}
 
 	public override void PlaceViewmodel()
