@@ -59,6 +59,9 @@
           "r": "Collide"
         }
       ]
-    }
+    },
+    "Summary": "A chill gamemode where you harvest cats like the meme.",
+    "Description": "Will you [HARVEST] or will you [RESCUE]?\r\nDiscover all 5 endings in this relaxing and cute adventure!\r\n\r\nThis was originally a small game jam for the weekend, ended up being polished the rest of the week before release.\r\n\r\nGame made by the team at SmallFish.\r\nMap, Particles, Code by @ubre\r\nModels, Animations, Textures by @Grodbert\r\nSounds from Youtube\r\nMusic by Kevin Macleod\r\n",
+    "Public": true
   }
 }

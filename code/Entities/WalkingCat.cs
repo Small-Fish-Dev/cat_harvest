@@ -26,22 +26,82 @@ public partial class WalkingCat : AnimatedEntity
 	RealTimeSince frameTime = 0f;
 	float lastDistance = 0f;
 	float nextFrame = 0f;
+	float nextMove = 0f;
 
-	[Event.Tick.Client]
-	public void ClientTick()
+	[Event.Tick]
+	public void Tick()
 	{
-		float frameDelta = 1f / 24f;
-		float minFps = 1f;
-		float minDistanceFalloff = 300f;
-		float maxDistanceFalloff = 2000f;
-
-		if ( frameTime >= nextFrame )
+		if ( Game.IsClient )
 		{
-			CurrentSequence.Time = (CurrentSequence.Time + frameTime) % CurrentSequence.Duration;
-			lastDistance = Math.Max( Camera.Position.Distance( Position ) - minDistanceFalloff, 1f );
-			nextFrame = frameDelta.LerpTo( minFps, lastDistance / maxDistanceFalloff );
+			float frameDelta = 1f / 24f;
+			float minFps = 1f;
+			float minDistanceFalloff = 300f;
+			float maxDistanceFalloff = 2000f;
 
-			frameTime = 0f;
+			if ( frameTime >= nextFrame )
+			{
+				CurrentSequence.Time = (CurrentSequence.Time + frameTime) % CurrentSequence.Duration;
+				lastDistance = Math.Max( Camera.Position.Distance( Position ) - minDistanceFalloff, 1f );
+				nextFrame = frameDelta.LerpTo( minFps, lastDistance / maxDistanceFalloff );
+
+				frameTime = 0f;
+			}
+
+			return;
+		}
+
+		if ( nextMove <= Time.Now )
+		{
+			if ( !Passive )
+			{
+				if ( Position.x <= minBounds.x || Position.x >= maxBounds.x || Position.y <= minBounds.y || Position.y >= maxBounds.y )
+				{
+					Velocity = (Vector3.Zero - Position).Normal * (IsSecret() ? 1.5f : 4);
+				}
+				else
+				{
+					if ( Aggressive )
+					{
+						if ( Victim.IsValid() )
+						{
+							Velocity = ((Victim.Position + new Vector3( Game.Random.Float( 30f ) - 15f, Game.Random.Float( 30f ) - 15f, 0 )) - Position).Normal * 2;
+						}
+
+						Sound.FromEntity( $"angry{Game.Random.Int( 1 )}", this );
+					}
+					else
+					{
+						Velocity = new Vector3( Game.Random.Float( 2f ) - 1f, Game.Random.Float( 2f ) - 1f, 0f ).Normal * (IsSecret() ? 0.3f : 2);
+						var meow = Sound.FromEntity( $"meow{Game.Random.Int( 10 )}", this ).SetVolume( IsSecret() ? 0.3f : 0.15f );
+
+						if ( IsSecret() )
+						{
+							meow.SetPitch( 2f );
+						}
+					}
+				}
+
+				nextMove = Time.Now + Game.Random.Float( 2f ) + (Aggressive ? 0f : 6f);
+			}
+			else
+			{
+				Velocity = new Vector3( 0f, 4f, 0f );
+			}
+		}
+
+		var traceGround = Trace.Ray( Position + Vector3.Up * 16, Position + Vector3.Down * 32 )
+			.Ignore( this )
+			.WithoutTags( "Player" )
+			.WithoutTags( "Cat" )
+			.Run();
+
+		if ( traceGround.Hit )
+		{
+			Position = traceGround.EndPosition;
+			Position += Rotation.Forward * 10 * Velocity.Length * Time.Delta;
+
+			Rotation rotation = Velocity.EulerAngles.ToRotation();
+			Rotation = Rotation.Slerp( Rotation, rotation, 2 * Time.Delta );
 		}
 	}
 

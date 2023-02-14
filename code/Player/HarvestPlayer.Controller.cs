@@ -72,9 +72,6 @@ partial class HarvestPlayer
 			.Size( CollisionBox.Mins, CollisionBox.Maxs )
 			.Ignore( this );
 
-		if ( helper.HitWall )
-			helper.ApplyFriction( 5f, Time.Delta );
-
 		helper.TryUnstuck();
 		helper.TryMoveWithStep( Time.Delta, stepSize );
 

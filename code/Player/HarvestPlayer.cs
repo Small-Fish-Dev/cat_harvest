@@ -102,7 +102,7 @@ public partial class HarvestPlayer : AnimatedEntity
 					.Run();
 				walkingCat = secretTrace.Entity as WalkingCat;
 
-				if ( walkingCat.IsSecret() )
+				if ( walkingCat?.IsSecret() ?? false )
 				{
 					Popup = PopupType.SecretPickUp;
 
