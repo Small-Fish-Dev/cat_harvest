@@ -26,14 +26,14 @@
 			var titleContainer = Add.Panel( "titleContainer" );
 			titleContainer.Add.Label( "Instructions", "title" );
 
-			var forward = Input.GetKeyWithBinding( "iv_forward" ).ToUpper();
-			var left = Input.GetKeyWithBinding( "iv_left" ).ToUpper();
-			var back = Input.GetKeyWithBinding( "iv_back" ).ToUpper();
-			var right = Input.GetKeyWithBinding( "iv_right" ).ToUpper();
-			var sprint = Input.GetKeyWithBinding( "iv_sprint" ).ToUpper();
-			var use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
-			var attack = Input.GetKeyWithBinding( "iv_attack" ).ToUpper();
-			var score = Input.GetKeyWithBinding( "iv_score" ).ToUpper();
+			var forward = Input.GetButtonOrigin("forward").ToUpper();
+			var left = Input.GetButtonOrigin("left").ToUpper();
+			var back = Input.GetButtonOrigin("backward").ToUpper();
+			var right = Input.GetButtonOrigin("right").ToUpper();
+			var sprint = Input.GetButtonOrigin("run").ToUpper();
+			var use = Input.GetButtonOrigin("use").ToUpper();
+			var attack = Input.GetButtonOrigin("attack1").ToUpper();
+			var score = Input.GetButtonOrigin("score").ToUpper();
 
 
 			var descriptionContainer = Add.Panel( "descriptionContainer" ); // Haha, fuck centering text
@@ -97,7 +97,7 @@
 	{
 		public Popup()
 		{
-			var use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
+			var use = Input.GetButtonOrigin("use").ToUpper();
 
 			Add.Label( $"Uproot the cat [ {use} ]", "title" );
 		}
@@ -113,7 +113,7 @@
 	{
 		public SecretPopup()
 		{
-			var use = Input.GetKeyWithBinding( "iv_use" ).ToUpper();
+			var use = Input.GetButtonOrigin("use").ToUpper();
 
 			Add.Label( $"Pick up El Wiwi [ {use} ]", "title" );
 		}
