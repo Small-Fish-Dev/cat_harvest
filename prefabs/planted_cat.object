@@ -1,0 +1,41 @@
+{
+  "RootObject": {
+    "Id": "56f1dfc1-a284-4d79-9f01-def1436e1a7c",
+    "Name": "planted_cat",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ColliderBoxComponent",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Scale": "2,2,10",
+        "Static": false,
+        "Surface": null
+      }
+    ],
+    "Children": [
+      {
+        "Id": "931d6d0e-ba66-49be-9458-b57c307ff55a",
+        "Name": "Model",
+        "Position": "0,0,-3.697685",
+        "Scale": "2,2,2",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": null,
+            "Model": "models/tail/tail.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
