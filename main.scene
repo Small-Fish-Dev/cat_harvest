@@ -821,12 +821,12 @@
   ],
   "SceneProperties": {
     "TimeScale": 1,
-    "Lerping": true,
-    "UseFixedUpdate": true,
-    "ThreadedAnimation": true,
     "MaxFixedUpdates": 5,
     "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "NetworkFrequency": 60,
+    "Lerping": true,
+    "UseFixedUpdate": true,
+    "ThreadedAnimation": true
   },
   "Title": "main",
   "Description": "",
