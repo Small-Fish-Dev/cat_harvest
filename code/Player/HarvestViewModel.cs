@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest.Player;
-
+/*
 public class HarvestViewModel : BaseViewModel
 {
 	float walkBob = 0f;
@@ -37,3 +37,5 @@ public class HarvestViewModel : BaseViewModel
 		Position += left * MathF.Sin( walkBob * 0.6f ) * speed * -0.5f;
 	}
 }
+
+*/

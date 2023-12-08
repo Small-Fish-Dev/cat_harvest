@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest.Entities;
-
+/*
 [Library( "harvest_planted", Description = "Planted kitten to uproot." )]
 [HammerEntity]
 [Model( Model = "models/tail/tail.vmdl" )]
@@ -38,3 +38,4 @@ public partial class PlantedCat : AnimatedEntity
 	}
 
 }
+*/

@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest;
-
+/*
 public static class Cameras
 {
 	public abstract class BaseCamera : BaseNetworkable
@@ -40,3 +40,5 @@ public static class Cameras
 		}
 	}
 }
+
+*/

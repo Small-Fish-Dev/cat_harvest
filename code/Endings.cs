@@ -1,4 +1,4 @@
-﻿using WalkingCat = CatHarvest.Entities.WalkingCat;
+﻿/*using WalkingCat = CatHarvest.Entities.WalkingCat;
 
 namespace CatHarvest;
 
@@ -273,3 +273,5 @@ public partial class HarvestGame
 		}
 	}
 }
+
+*/

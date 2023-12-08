@@ -1,4 +1,5 @@
-﻿namespace CatHarvest.UI
+﻿/*
+namespace CatHarvest.UI
 {
 	public class CatCounter : Panel
 	{
@@ -197,3 +198,4 @@
 		}
 	}
 }
+*/

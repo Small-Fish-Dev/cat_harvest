@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest.Player;
-
+/*
 partial class HarvestPlayer
 {
 	public Vector3 WishVelocity { get; set; }
@@ -97,3 +97,5 @@ partial class HarvestPlayer
 			GroundEntity = null;
 	}
 }
+
+*/

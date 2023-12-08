@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest.Player;
-
+/*
 public partial class HarvestPlayer : AnimatedEntity
 {
 	[Net] public int CatsUprooted { get; set; } = 0;
@@ -238,3 +238,5 @@ public partial class HarvestPlayer : AnimatedEntity
 		//Don't die! wtf
 	}
 }
+
+*/

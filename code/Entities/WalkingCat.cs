@@ -1,5 +1,5 @@
 ﻿namespace CatHarvest.Entities;
-
+/*
 public partial class WalkingCat : AnimatedEntity
 {
 
@@ -132,3 +132,4 @@ public partial class WalkingCat : AnimatedEntity
 		}
 	}
 }
+*/
