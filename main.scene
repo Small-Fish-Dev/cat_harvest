@@ -13,6 +13,16 @@
           "LightColor": "0.95545,0.73361,0.63854,1",
           "Shadows": true,
           "SkyColor": "0.34653,0.30866,0.26419,1"
+        },
+        {
+          "__type": "GradientFog",
+          "__enabled": true,
+          "Color": "0.24823,0.19731,0.4802,1",
+          "EndDistance": 5000,
+          "FalloffExponent": 0.8,
+          "Height": 1500,
+          "StartDistance": 600,
+          "VerticalFalloffExponent": 2
         }
       ]
     },
@@ -817,6 +827,29 @@
       "Rotation": "0.008728832,0.02892578,-0.2887661,0.9569228",
       "Enabled": true,
       "__Prefab": "prefabs/planted_cat.object"
+    },
+    {
+      "Id": "9c2ea7c7-373f-43be-bcf0-616d7d4bb663",
+      "Name": "Camera",
+      "Position": "574.3884,784.4146,295.6756",
+      "Rotation": "-0.0000000520876,0.0000000000000000614387,-0.8738848,0.4861331",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__enabled": true,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
     }
   ],
   "SceneProperties": {
