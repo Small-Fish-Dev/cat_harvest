@@ -1,0 +1,62 @@
+{
+  "GameObjects": [
+    {
+      "Id": "4e5e47d8-4fa7-45b0-808c-15f97de3394e",
+      "Name": "Sun",
+      "Position": "154.5355,104.5603,-193.5236",
+      "Rotation": "-0.00000001489472,0.2498919,-0.00000000000000008844498,0.9682738",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "a0b0c4a8-3253-4c5d-b640-913b0e6f5d2c",
+      "Name": "Plane",
+      "Position": "164.2568,130.3084,-252.7132",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "59702828-2a0c-43b5-9f19-c9f0c953db7f",
+      "Name": "Object",
+      "Position": "258.9454,224.9455,-386.0661",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__enabled": true,
+          "MapName": "field"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "TimeScale": 1,
+    "Lerping": true,
+    "UseFixedUpdate": true,
+    "ThreadedAnimation": true,
+    "MaxFixedUpdates": 5,
+    "FixedUpdateFrequency": 50,
+    "NetworkFrequency": 60
+  },
+  "Title": "main",
+  "Description": "",
+  "__references": []
+}
