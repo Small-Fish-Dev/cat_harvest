@@ -1,11 +1,15 @@
-﻿namespace CatHarvest.Entities;
-/*
-[Library( "harvest_planted", Description = "Planted kitten to uproot." )]
-[HammerEntity]
-[Model( Model = "models/tail/tail.vmdl" )]
-public partial class PlantedCat : AnimatedEntity
+﻿public sealed class HarvestableCat : Component
 {
+	[Property] public SkinnedModelRenderer Renderer { get; set; }
 
+	protected override void OnFixedUpdate()
+	{
+		Transform.Scale = Transform.Scale + 1 / 300f * Time.Delta; // Grow 100% every 300 seconds
+	}
+}
+
+
+/*
 	float playBack = Game.Random.Float( 1.5f ) + 0.2f;
 
 	public override void Spawn()
@@ -38,4 +42,5 @@ public partial class PlantedCat : AnimatedEntity
 	}
 
 }
+
 */

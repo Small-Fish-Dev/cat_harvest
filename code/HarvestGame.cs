@@ -5,10 +5,10 @@ global using Sandbox.UI.Construct;
 global using Editor;
 global using System.Collections.Generic;
 global using CatHarvest.Player;
-//global using CatHarvest.UI;
 global using CatHarvest.Entities;
 
 namespace CatHarvest;
+
 /*
 public partial class HarvestGame : GameManager
 {

@@ -61,774 +61,6 @@
       ]
     },
     {
-      "Id": "0d984183-8930-4c2f-b454-95380acf168f",
-      "Name": "planted_cat",
-      "Position": "670.8299,-659.189,24.02589",
-      "Rotation": "0.01065841,0.02234107,-0.4304543,0.9022729",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "442641da-d239-4fe1-aa98-972de3fe51ea",
-      "Name": "planted_cat",
-      "Position": "674.5826,-530.692,21.93812",
-      "Rotation": "0.008002341,0.01481214,-0.4752501,0.8796896",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "3bc44965-c209-496f-b7f9-2441773d9f38",
-      "Name": "planted_cat",
-      "Position": "689.4814,-400.596,22.63418",
-      "Rotation": "-0.004526995,0.02188754,0.2024907,0.9790291",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "588840b1-1ec8-4466-8dd3-cbcac3721530",
-      "Name": "planted_cat",
-      "Position": "690.5131,-263.4342,28.17136",
-      "Rotation": "0.04421595,0.05121019,-0.6520292,0.7551692",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "4f50f28d-2151-41a5-8a61-340339325554",
-      "Name": "planted_cat",
-      "Position": "715.753,-133.7486,21.2865",
-      "Rotation": "-0.1005024,0.09679577,0.7132177,0.6869135",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d8bbf8cf-5c5e-4b88-9ada-6ee1afd630dd",
-      "Name": "planted_cat",
-      "Position": "672.0025,-1.235378,23.75202",
-      "Rotation": "-0.01079857,-0.0001175515,0.9998823,-0.01088441",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d76a9e12-fb13-4b22-8dba-5a4523be1e9a",
-      "Name": "planted_cat",
-      "Position": "645.0565,101.9284,33.21539",
-      "Rotation": "-0.01555912,0.03935134,0.3673621,0.9291148",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "6178a89f-b1e4-4178-9bdb-b50ed5157b84",
-      "Name": "planted_cat",
-      "Position": "694.3732,249.6175,27.97477",
-      "Rotation": "0.03759572,0.04929379,-0.6052684,0.7936037",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "1868eb0c-d552-4987-b5de-adfed8dce7ce",
-      "Name": "planted_cat",
-      "Position": "669.5353,368.6255,28.39819",
-      "Rotation": "0.01475179,0.03822538,-0.3597345,0.9321547",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "843d1193-0bac-4f86-b490-753cacb32e84",
-      "Name": "planted_cat",
-      "Position": "669.6472,503.6171,24.86383",
-      "Rotation": "0.01758642,0.04726765,-0.3482614,0.9360397",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "66752a61-963f-4452-8d7e-8455f490030a",
-      "Name": "planted_cat",
-      "Position": "685.7039,616.9243,21.78852",
-      "Rotation": "0.00616166,0.02700838,-0.2223357,0.9745765",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d4a02861-5371-4738-a125-4ab7277e478e",
-      "Name": "planted_cat",
-      "Position": "687.9927,760.4995,25.80268",
-      "Rotation": "-0.08222046,0.1037093,0.6157826,0.7767212",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "7390de40-7421-43e0-ad62-e547e881c5ac",
-      "Name": "planted_cat",
-      "Position": "-734.6279,-646.778,22.72036",
-      "Rotation": "-0.03939825,-0.03537202,0.7430621,-0.6671246",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "3832514c-ea1a-4542-b721-21662462ff12",
-      "Name": "planted_cat",
-      "Position": "-682.9926,-516.8843,26.74869",
-      "Rotation": "-0.09275046,0.09192017,0.7041967,0.6978934",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "fdc40714-dcdc-4dd5-9561-ede6acc3876c",
-      "Name": "planted_cat",
-      "Position": "-691.2645,-387.4651,24.91522",
-      "Rotation": "0.03835168,0.05077237,-0.6015143,0.7963239",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "dcfd0869-4813-4d98-be84-b4a34d5f5114",
-      "Name": "planted_cat",
-      "Position": "-689.4305,-254.7994,26.89764",
-      "Rotation": "-0.07438755,0.03906818,0.8821954,0.4633265",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "207a532a-ee2a-4d8e-a650-40d1bd3ce958",
-      "Name": "planted_cat",
-      "Position": "-692.2274,-120.4559,25.57122",
-      "Rotation": "-0.01435262,0.03872755,0.3472094,0.9368777",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d6ee70eb-707b-4fae-a12d-be3564d86bd7",
-      "Name": "planted_cat",
-      "Position": "-709.7533,-31.60373,29.87545",
-      "Rotation": "-0.06346643,-0.02592739,0.9235535,-0.3772911",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c6098f29-d8fc-4a29-8296-ec6162a980ee",
-      "Name": "planted_cat",
-      "Position": "-703.5964,132.3293,32.04707",
-      "Rotation": "0.001021668,0.008003414,-0.1266285,0.9919174",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "db8f8ffb-3062-481b-b2ee-12719a3af821",
-      "Name": "planted_cat",
-      "Position": "-691.4282,239.8857,35.49886",
-      "Rotation": "-0.09163982,-0.06894252,0.7938375,-0.5972195",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "2745c8f5-9918-4691-bf27-59dbee18da44",
-      "Name": "planted_cat",
-      "Position": "-732.0618,386.2308,25.81935",
-      "Rotation": "-0.05702347,0.04573959,0.7779754,0.6240276",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "1d52f60f-5b50-40ab-af33-f76536b1b08a",
-      "Name": "planted_cat",
-      "Position": "-723.9009,515.1467,28.182",
-      "Rotation": "-0.04031134,-0.02374394,0.8606974,-0.5069627",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f474da27-3042-4b89-b559-2e6eb843453d",
-      "Name": "planted_cat",
-      "Position": "-706.5647,637.6442,27.53045",
-      "Rotation": "-0.0220257,-0.0176166,0.7806324,-0.6243536",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d8cdfb14-4bac-4f5a-b65f-2071b7e058b7",
-      "Name": "planted_cat",
-      "Position": "-708.6669,750.6907,21.27874",
-      "Rotation": "0.1015868,0.1072252,-0.6802185,0.7179732",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "e4e0bc72-3fd2-4a07-a8ae-649c7dc41ef4",
-      "Name": "planted_cat",
-      "Position": "-121.7909,758.1752,27.75349",
-      "Rotation": "-0.02081914,0.03695744,0.4903665,0.8704833",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "980e2fc0-282b-4344-9906-3a0628fffdde",
-      "Name": "planted_cat",
-      "Position": "120.642,758.6472,28.55098",
-      "Rotation": "-0.02023873,-0.008111045,0.928013,-0.3719093",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c569f324-e79a-4075-8e7a-89b092949629",
-      "Name": "planted_cat",
-      "Position": "-113.8713,631.9557,36.81915",
-      "Rotation": "0.04415965,0.04755935,-0.6789933,0.7312702",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "0939ba6f-e41a-416b-861f-24662a47cf30",
-      "Name": "planted_cat",
-      "Position": "-92.94834,502.7364,35.96206",
-      "Rotation": "0.01615164,0.01992637,-0.6294692,0.7766019",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "472beb89-969f-40bc-961b-3af5ae3ef86f",
-      "Name": "planted_cat",
-      "Position": "116.6077,631.0942,30.20144",
-      "Rotation": "0.004417151,0.01587632,-0.2679956,0.9632792",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "6533b979-468e-4c2d-abbe-34aed7edee96",
-      "Name": "planted_cat",
-      "Position": "129.2864,494.9183,38.25486",
-      "Rotation": "-0.00812909,-0.005485505,0.8288939,-0.5593197",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "df91055e-d5d7-442d-b836-ddee62f957df",
-      "Name": "planted_cat",
-      "Position": "341.1916,765.7195,30.66851",
-      "Rotation": "0.008044749,0.01093856,-0.5924106,0.8055217",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "8c816a77-2760-486e-a7f9-54cf90b7b50f",
-      "Name": "planted_cat",
-      "Position": "549.0885,764.2198,28.9084",
-      "Rotation": "-0.04750615,0.00897035,0.9814866,0.1853284",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f9f05172-66fb-49ae-8cfe-83f7a59124c1",
-      "Name": "planted_cat",
-      "Position": "332.6276,628.5875,29.40574",
-      "Rotation": "-0.0153251,0.008647352,0.8707889,0.4913422",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "b67e047f-8c2a-4481-999d-cb66d251a2e8",
-      "Name": "planted_cat",
-      "Position": "527.4134,621.6015,28.75428",
-      "Rotation": "-0.04523605,0.03200981,0.8150458,0.5767404",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d33ba07a-ec8d-4f19-91e8-86e57c970aa8",
-      "Name": "planted_cat",
-      "Position": "541.3923,508.1086,29.57743",
-      "Rotation": "-0.04880786,0.05689606,0.6492646,0.7568593",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c25607cf-3429-472e-bd20-da9d5cce0a6f",
-      "Name": "planted_cat",
-      "Position": "322.6897,504.4279,40.08222",
-      "Rotation": "-0.03329927,0.04133505,0.6264623,0.7776423",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "496e82c4-9ebd-41bf-b5fc-e944e11eb62b",
-      "Name": "planted_cat",
-      "Position": "-550.1957,517.2111,29.58151",
-      "Rotation": "0.01952696,0.02211472,-0.661587,0.749288",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "0c2a7c25-4723-4965-882c-d53c5b848d9b",
-      "Name": "planted_cat",
-      "Position": "-294.0118,508.6367,34.91063",
-      "Rotation": "-0.01733205,0.01093417,0.8455948,0.5334318",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "68a72604-2138-4aec-9a66-2fdc3f2ba6b7",
-      "Name": "planted_cat",
-      "Position": "-295.6307,642.1169,30.14256",
-      "Rotation": "-0.008998215,0.01757187,0.4556978,0.8899156",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "b4a3d88f-1cca-4f11-8995-c724f81c8e5b",
-      "Name": "planted_cat",
-      "Position": "-534.7449,636.0123,29.43116",
-      "Rotation": "-0.006327689,-0.0003330447,0.9985982,-0.05254999",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "1bc58fbb-733e-4bbe-8d17-21478ec61e46",
-      "Name": "planted_cat",
-      "Position": "-549.0235,745.6985,24.18079",
-      "Rotation": "-0.0879598,-0.07026216,0.7763596,-0.6201547",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "528d3a97-4ba5-4dc0-a591-a543197818f4",
-      "Name": "planted_cat",
-      "Position": "-316.398,759.3268,27.07501",
-      "Rotation": "-0.02716434,0.03244644,0.6413573,0.7660744",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "8cc06b21-4408-41b9-a21b-82976eb2e6f2",
-      "Name": "planted_cat",
-      "Position": "-556.1298,379.2506,33.00378",
-      "Rotation": "-0.03619435,-0.001702406,0.9982397,-0.04695236",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "a82c5233-1a98-4fcb-8b06-b3f945c56dd2",
-      "Name": "planted_cat",
-      "Position": "-506.5608,233.0704,40.01831",
-      "Rotation": "-0.02899414,-0.01506279,0.8869207,-0.4607646",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "33a910bd-de68-4af1-9f52-dc8e0c0b8252",
-      "Name": "planted_cat",
-      "Position": "-86.63229,223.2013,44.29916",
-      "Rotation": "-0.0806002,-0.06000161,0.7980784,-0.5941165",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "faf978ea-9a3a-46f8-90d6-124ec7160e5c",
-      "Name": "planted_cat",
-      "Position": "118.9561,229.6013,40.09772",
-      "Rotation": "-0.07189631,-0.03325674,0.9047526,-0.4185064",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "1cb86b90-3772-4d1e-ad97-1cee48145081",
-      "Name": "planted_cat",
-      "Position": "-291.0247,239.3501,43.23508",
-      "Rotation": "-0.02559873,-0.005613223,0.9764579,-0.2141102",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "1925369a-6491-4cf0-ac29-de70de8f79dd",
-      "Name": "planted_cat",
-      "Position": "134.4616,364.5361,38.53193",
-      "Rotation": "-0.03837296,-0.03142911,0.7726784,-0.6328568",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "3e9632ca-b120-427f-8560-9abdf7485a49",
-      "Name": "planted_cat",
-      "Position": "-91.01296,370.7126,35.20612",
-      "Rotation": "-0.0223617,0.01854655,0.7693883,0.6381205",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "3bfd5d9e-9ef2-482e-8a74-2d7bada8800b",
-      "Name": "planted_cat",
-      "Position": "-296.2816,378.3258,41.43479",
-      "Rotation": "-0.03032205,0.02592039,0.7595192,0.6492606",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "ba80c1b6-39ff-48f3-9a31-8f84f9bbe7d8",
-      "Name": "planted_cat",
-      "Position": "346.2307,364.0624,37.38217",
-      "Rotation": "0.02268481,0.0218493,-0.7198901,0.693373",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "e94eac0c-2315-417b-aee0-c5f32f185eab",
-      "Name": "planted_cat",
-      "Position": "513.8423,380.2786,28.76676",
-      "Rotation": "-0.03440365,0.03538936,0.6961983,0.7161506",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "43f18da1-c95d-433e-ba24-771c80657c42",
-      "Name": "planted_cat",
-      "Position": "304.611,235.3233,39.9931",
-      "Rotation": "0.02021247,0.02508977,-0.6270211,0.7783358",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c116d857-12b9-4f66-9659-cf7b8db73cd7",
-      "Name": "planted_cat",
-      "Position": "509.4423,244.8065,37.20699",
-      "Rotation": "-0.04772866,-0.03355724,0.8166533,-0.5741718",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "70986922-7063-48db-8cfc-070ce7d78eb5",
-      "Name": "planted_cat",
-      "Position": "-496.9791,128.0159,36.29979",
-      "Rotation": "-0.02126941,0.01553708,0.8072234,0.589658",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "56e2636c-c999-4615-8157-0614f3824680",
-      "Name": "planted_cat",
-      "Position": "-297.6944,124.7799,40.59909",
-      "Rotation": "-0.003420297,0.0299747,0.1133181,0.9931006",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f4f7e0b5-b246-470c-836b-2a65c3e32184",
-      "Name": "planted_cat",
-      "Position": "-492.5226,-41.82074,30.79667",
-      "Rotation": "0.06612682,0.06122828,-0.7307764,0.6766418",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "86b8f58c-5bca-4b21-9859-ec8a6630175f",
-      "Name": "planted_cat",
-      "Position": "-287.2808,-43.96231,33.45759",
-      "Rotation": "0.06878212,0.09053355,-0.6010302,0.7910976",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "04fbba3a-8c11-4e31-a7e0-16192ce7e8fc",
-      "Name": "planted_cat",
-      "Position": "-70.9261,-30.54114,33.90894",
-      "Rotation": "-0.02558008,0.03377265,0.6032363,0.7964364",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "93786eb2-10c6-4bff-9bd6-79b7814bb1e5",
-      "Name": "planted_cat",
-      "Position": "-83.07449,119.3123,42.20399",
-      "Rotation": "-0.02461565,0.03257653,0.6023617,0.7971783",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "008a9059-0f2d-441d-8ecd-be2cac2c817b",
-      "Name": "planted_cat",
-      "Position": "124.323,116.5123,38.08757",
-      "Rotation": "-0.05287805,-0.04609746,0.7519258,-0.6555046",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "b52a5a70-5afc-4f6a-a7e1-9871913071a0",
-      "Name": "planted_cat",
-      "Position": "119.5388,-35.00284,27.97395",
-      "Rotation": "-0.08465803,-0.05725819,0.8239937,-0.557305",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "74679835-9091-43f2-8d6f-9416eeb4fe33",
-      "Name": "planted_cat",
-      "Position": "306.6227,105.9795,35.11696",
-      "Rotation": "-0.005549721,0.02260768,0.2383338,0.9709042",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "13474b0e-5220-4826-8dcb-99a8875c79f7",
-      "Name": "planted_cat",
-      "Position": "488.6879,99.91072,37.41537",
-      "Rotation": "0.008003205,0.01112822,-0.5837919,0.8117877",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c9988461-055f-44f6-9d46-cd655ee848a3",
-      "Name": "planted_cat",
-      "Position": "312.5607,-35.03731,20.19067",
-      "Rotation": "0.1126732,0.1213277,-0.6710964,0.7226437",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "0708b11c-c884-4010-91ef-dbf510dbc822",
-      "Name": "planted_cat",
-      "Position": "501.7536,-16.40779,25.46112",
-      "Rotation": "0.03584936,0.04333547,-0.636405,0.7693018",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "6ecbd24e-cfed-4354-a955-8297b3a0a158",
-      "Name": "planted_cat",
-      "Position": "506.201,-152.1927,24.17836",
-      "Rotation": "-0.08663297,0.09804252,0.6564661,0.7429229",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "08df068e-32b1-4afd-9a72-e1b334cc2442",
-      "Name": "planted_cat",
-      "Position": "309.1853,-146.5413,28.44773",
-      "Rotation": "-0.09341958,0.1020901,0.6685892,0.7306427",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d3a12807-cac6-484b-95e7-0b9cf08117dd",
-      "Name": "planted_cat",
-      "Position": "525.3934,-267.5922,29.31027",
-      "Rotation": "-0.01079497,0.03919458,0.2653116,0.9633052",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f6a17d2f-b42e-43c7-bbc7-bc9b76c93a00",
-      "Name": "planted_cat",
-      "Position": "317.6511,-247.901,24.50734",
-      "Rotation": "-0.04671073,0.05571955,0.6407354,0.7643112",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "890a5699-0153-49ef-9c69-c2e893e14fbd",
-      "Name": "planted_cat",
-      "Position": "114.0227,-276.2498,32.12424",
-      "Rotation": "-0.02698895,-0.01651579,0.8525372,-0.5217078",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "d254ec9f-907f-48f4-8a21-1c9d3cce2adc",
-      "Name": "planted_cat",
-      "Position": "-85.523,-280.7729,24.86724",
-      "Rotation": "0.05801436,0.0544304,-0.7269625,0.6820536",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "58a85818-4001-4420-ad9b-153795aadca4",
-      "Name": "planted_cat",
-      "Position": "-80.80761,-149.789,33.28797",
-      "Rotation": "0.04132068,0.04556048,-0.6705285,0.7393296",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f69ff872-6db5-4e7a-9b4a-9ba90ffc387d",
-      "Name": "planted_cat",
-      "Position": "136.6672,-148.8214,29.22466",
-      "Rotation": "-0.0100726,0.02909759,0.3269672,0.9445339",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "60e1154f-ad6a-425f-8271-a40ef79c3acc",
-      "Name": "planted_cat",
-      "Position": "-482.5414,-137.5979,29.57417",
-      "Rotation": "-0.04018736,-0.01966493,0.8973279,-0.4390908",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "67891eb2-05f0-4844-9bbe-65d077724f64",
-      "Name": "planted_cat",
-      "Position": "-289.2436,-138.0819,31.54655",
-      "Rotation": "-0.01602486,-0.001280788,0.9966924,-0.07966004",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "32c0937a-cce8-4792-861d-e5ffad96dfa1",
-      "Name": "planted_cat",
-      "Position": "-485.9097,-251.7606,26.8457",
-      "Rotation": "-0.04916567,0.06458294,0.6037294,0.7930464",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "ae808e45-32c6-4e48-8cf7-3fadf811e9f3",
-      "Name": "planted_cat",
-      "Position": "-295.1253,-270.2148,30.66191",
-      "Rotation": "0.02846053,0.03687042,-0.6103782,0.7907395",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c6cb1634-affb-48bb-9245-88cec6e8c833",
-      "Name": "planted_cat",
-      "Position": "-460.8741,-383.0592,22.07208",
-      "Rotation": "0.008278728,0.01893061,-0.4005899,0.9160244",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "36f12f86-b6c3-4a94-8031-4680f7b28731",
-      "Name": "planted_cat",
-      "Position": "-476.0484,-531.5833,23.44351",
-      "Rotation": "0.04630902,0.05585381,-0.6365813,0.7677891",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "f4ac8cd8-5644-4a3b-ae6f-d8ab15341fae",
-      "Name": "planted_cat",
-      "Position": "-481.1419,-658.4475,20.92614",
-      "Rotation": "0.0713155,0.08323848,-0.6467035,0.7548244",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "57c5e83a-eeb4-4611-b41a-6aa2b0f6d240",
-      "Name": "planted_cat",
-      "Position": "-268.798,-377.6391,22.10691",
-      "Rotation": "-0.03601491,0.03648034,0.7016287,0.7106963",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "c98ebaf2-e2e7-4cdc-bfca-de757302fc90",
-      "Name": "planted_cat",
-      "Position": "-239.3578,-540.7454,21.64904",
-      "Rotation": "0.01747015,0.01749703,-0.7063385,0.7074423",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "92952437-2817-4082-8def-a2aeb1b56786",
-      "Name": "planted_cat",
-      "Position": "-281.459,-634.257,21.62802",
-      "Rotation": "0.0256775,0.03742418,-0.5651709,0.8237244",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "e774fb67-e7e7-498c-a50c-da69d6531ad9",
-      "Name": "planted_cat",
-      "Position": "-64.35149,-389.4831,22.65999",
-      "Rotation": "-0.01328516,-0.001762018,0.9912316,-0.1314545",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "bdc81ee4-8bac-4987-9e3d-dd300e2bf1f8",
-      "Name": "planted_cat",
-      "Position": "-46.11867,-527.071,23.2965",
-      "Rotation": "-0.05781564,0.06031215,0.6895882,0.7193664",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "b46fd93c-80ac-405d-b21b-dec6330105fe",
-      "Name": "planted_cat",
-      "Position": "-57.28946,-644.0898,21.00682",
-      "Rotation": "-0.03687295,-0.02774525,0.7982084,-0.6006114",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "6cdbbf67-e88e-4bef-9b54-b0eb9b461972",
-      "Name": "planted_cat",
-      "Position": "117.7717,-379.9092,24.19125",
-      "Rotation": "-0.02250043,0.03005633,0.5988622,0.7999716",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "249c511c-c401-45e6-847e-e9de0be24a80",
-      "Name": "planted_cat",
-      "Position": "312.0753,-394.7918,23.80031",
-      "Rotation": "-0.03967518,0.03853729,0.7162206,0.6956786",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "13787009-b6fb-4a6a-be1f-1b09ba6c4318",
-      "Name": "planted_cat",
-      "Position": "513.299,-403.3241,27.63603",
-      "Rotation": "-0.03202164,0.03516179,0.6725577,0.738515",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "b32d71fd-97e8-4ada-ada8-4f456777521d",
-      "Name": "planted_cat",
-      "Position": "108.7208,-520.9161,23.43012",
-      "Rotation": "-0.01699498,0.01124865,0.8337198,0.5518113",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "347502d2-efc8-41a3-b7af-ba396d610cc2",
-      "Name": "planted_cat",
-      "Position": "310.8703,-531.6239,22.32758",
-      "Rotation": "0.02074468,0.02224296,-0.6817248,0.7309761",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "299f1827-c4ed-488a-9fe6-42b4d387484f",
-      "Name": "planted_cat",
-      "Position": "512.5186,-520.8782,24.16515",
-      "Rotation": "-0.009864658,-0.002500832,0.9692843,-0.2457323",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "8437b266-081a-4d6a-a218-4c5ce8bf9841",
-      "Name": "planted_cat",
-      "Position": "118.0034,-648.1401,21.63296",
-      "Rotation": "0.07471839,0.07403192,-0.7064219,0.6999317",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "e3ea09e4-6973-4a02-9bc0-247578e64b88",
-      "Name": "planted_cat",
-      "Position": "312.8099,-650.3926,24.21086",
-      "Rotation": "0.0513652,0.04909459,-0.7210774,0.6892014",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
-      "Id": "56f1dfc1-a284-4d79-9f01-def1436e1a7c",
-      "Name": "planted_cat",
-      "Position": "495.1442,-654.5416,24.79903",
-      "Rotation": "0.008728832,0.02892578,-0.2887661,0.9569228",
-      "Enabled": true,
-      "__Prefab": "prefabs/planted_cat.object"
-    },
-    {
       "Id": "9c2ea7c7-373f-43be-bcf0-616d7d4bb663",
       "Name": "Camera",
       "Position": "574.3884,784.4146,295.6756",
@@ -850,16 +82,792 @@
           "ZNear": 10
         }
       ]
+    },
+    {
+      "Id": "ac0080d4-5bf4-48b1-a6d7-50d83690f60f",
+      "Name": "Cats",
+      "Position": "959.8115,878.1681,314.8896",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "56f1dfc1-a284-4d79-9f01-def1436e1a7c",
+          "Name": "planted_cat",
+          "Position": "-464.6673,-1532.71,-290.0906",
+          "Rotation": "0.008728832,0.02892578,-0.2887661,0.9569228",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "36f12f86-b6c3-4a94-8031-4680f7b28731",
+          "Name": "planted_cat",
+          "Position": "-1435.86,-1409.751,-291.4461",
+          "Rotation": "0.04630902,0.05585381,-0.6365813,0.7677891",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f4ac8cd8-5644-4a3b-ae6f-d8ab15341fae",
+          "Name": "planted_cat",
+          "Position": "-1440.953,-1536.616,-293.9635",
+          "Rotation": "0.0713155,0.08323848,-0.6467035,0.7548244",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "57c5e83a-eeb4-4611-b41a-6aa2b0f6d240",
+          "Name": "planted_cat",
+          "Position": "-1228.609,-1255.807,-292.7827",
+          "Rotation": "-0.03601491,0.03648034,0.7016287,0.7106963",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c98ebaf2-e2e7-4cdc-bfca-de757302fc90",
+          "Name": "planted_cat",
+          "Position": "-1199.169,-1418.914,-293.2406",
+          "Rotation": "0.01747015,0.01749703,-0.7063385,0.7074423",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "92952437-2817-4082-8def-a2aeb1b56786",
+          "Name": "planted_cat",
+          "Position": "-1241.271,-1512.425,-293.2616",
+          "Rotation": "0.0256775,0.03742418,-0.5651709,0.8237244",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "e774fb67-e7e7-498c-a50c-da69d6531ad9",
+          "Name": "planted_cat",
+          "Position": "-1024.163,-1267.651,-292.2296",
+          "Rotation": "-0.01328516,-0.001762018,0.9912316,-0.1314545",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "bdc81ee4-8bac-4987-9e3d-dd300e2bf1f8",
+          "Name": "planted_cat",
+          "Position": "-1005.93,-1405.239,-291.5931",
+          "Rotation": "-0.05781564,0.06031215,0.6895882,0.7193664",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "b46fd93c-80ac-405d-b21b-dec6330105fe",
+          "Name": "planted_cat",
+          "Position": "-1017.101,-1522.258,-293.8828",
+          "Rotation": "-0.03687295,-0.02774525,0.7982084,-0.6006114",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "6cdbbf67-e88e-4bef-9b54-b0eb9b461972",
+          "Name": "planted_cat",
+          "Position": "-842.0398,-1258.077,-290.6984",
+          "Rotation": "-0.02250043,0.03005633,0.5988622,0.7999716",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "249c511c-c401-45e6-847e-e9de0be24a80",
+          "Name": "planted_cat",
+          "Position": "-647.7362,-1272.96,-291.0893",
+          "Rotation": "-0.03967518,0.03853729,0.7162206,0.6956786",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "13787009-b6fb-4a6a-be1f-1b09ba6c4318",
+          "Name": "planted_cat",
+          "Position": "-446.5125,-1281.492,-287.2536",
+          "Rotation": "-0.03202164,0.03516179,0.6725577,0.738515",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "b32d71fd-97e8-4ada-ada8-4f456777521d",
+          "Name": "planted_cat",
+          "Position": "-851.0907,-1399.084,-291.4595",
+          "Rotation": "-0.01699498,0.01124865,0.8337198,0.5518113",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "347502d2-efc8-41a3-b7af-ba396d610cc2",
+          "Name": "planted_cat",
+          "Position": "-648.9412,-1409.792,-292.562",
+          "Rotation": "0.02074468,0.02224296,-0.6817248,0.7309761",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "299f1827-c4ed-488a-9fe6-42b4d387484f",
+          "Name": "planted_cat",
+          "Position": "-447.2929,-1399.046,-290.7245",
+          "Rotation": "-0.009864658,-0.002500832,0.9692843,-0.2457323",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "8437b266-081a-4d6a-a218-4c5ce8bf9841",
+          "Name": "planted_cat",
+          "Position": "-841.8081,-1526.308,-293.2567",
+          "Rotation": "0.07471839,0.07403192,-0.7064219,0.6999317",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "e3ea09e4-6973-4a02-9bc0-247578e64b88",
+          "Name": "planted_cat",
+          "Position": "-647.0016,-1528.561,-290.6788",
+          "Rotation": "0.0513652,0.04909459,-0.7210774,0.6892014",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f69ff872-6db5-4e7a-9b4a-9ba90ffc387d",
+          "Name": "planted_cat",
+          "Position": "-823.1443,-1026.99,-285.6649",
+          "Rotation": "-0.0100726,0.02909759,0.3269672,0.9445339",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "58a85818-4001-4420-ad9b-153795aadca4",
+          "Name": "planted_cat",
+          "Position": "-1040.619,-1027.957,-281.6017",
+          "Rotation": "0.04132068,0.04556048,-0.6705285,0.7393296",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d254ec9f-907f-48f4-8a21-1c9d3cce2adc",
+          "Name": "planted_cat",
+          "Position": "-1045.334,-1158.941,-290.0224",
+          "Rotation": "0.05801436,0.0544304,-0.7269625,0.6820536",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "890a5699-0153-49ef-9c69-c2e893e14fbd",
+          "Name": "planted_cat",
+          "Position": "-845.7888,-1154.418,-282.7654",
+          "Rotation": "-0.02698895,-0.01651579,0.8525372,-0.5217078",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f6a17d2f-b42e-43c7-bbc7-bc9b76c93a00",
+          "Name": "planted_cat",
+          "Position": "-642.1604,-1126.069,-290.3823",
+          "Rotation": "-0.04671073,0.05571955,0.6407354,0.7643112",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d3a12807-cac6-484b-95e7-0b9cf08117dd",
+          "Name": "planted_cat",
+          "Position": "-434.4182,-1145.76,-285.5793",
+          "Rotation": "-0.01079497,0.03919458,0.2653116,0.9633052",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "08df068e-32b1-4afd-9a72-e1b334cc2442",
+          "Name": "planted_cat",
+          "Position": "-650.6262,-1024.709,-286.4419",
+          "Rotation": "-0.09341958,0.1020901,0.6685892,0.7306427",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "6ecbd24e-cfed-4354-a955-8297b3a0a158",
+          "Name": "planted_cat",
+          "Position": "-453.6105,-1030.361,-290.7112",
+          "Rotation": "-0.08663297,0.09804252,0.6564661,0.7429229",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "0708b11c-c884-4010-91ef-dbf510dbc822",
+          "Name": "planted_cat",
+          "Position": "-458.0579,-894.5759,-289.4285",
+          "Rotation": "0.03584936,0.04333547,-0.636405,0.7693018",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c9988461-055f-44f6-9d46-cd655ee848a3",
+          "Name": "planted_cat",
+          "Position": "-647.2509,-913.2054,-294.6989",
+          "Rotation": "0.1126732,0.1213277,-0.6710964,0.7226437",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "13474b0e-5220-4826-8dcb-99a8875c79f7",
+          "Name": "planted_cat",
+          "Position": "-471.1236,-778.2574,-277.4742",
+          "Rotation": "0.008003205,0.01112822,-0.5837919,0.8117877",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "74679835-9091-43f2-8d6f-9416eeb4fe33",
+          "Name": "planted_cat",
+          "Position": "-653.1888,-772.1886,-279.7726",
+          "Rotation": "-0.005549721,0.02260768,0.2383338,0.9709042",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "b52a5a70-5afc-4f6a-a7e1-9871913071a0",
+          "Name": "planted_cat",
+          "Position": "-840.2727,-913.1709,-286.9157",
+          "Rotation": "-0.08465803,-0.05725819,0.8239937,-0.557305",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "008a9059-0f2d-441d-8ecd-be2cac2c817b",
+          "Name": "planted_cat",
+          "Position": "-835.4885,-761.6558,-276.8021",
+          "Rotation": "-0.05287805,-0.04609746,0.7519258,-0.6555046",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "93786eb2-10c6-4bff-9bd6-79b7814bb1e5",
+          "Name": "planted_cat",
+          "Position": "-1042.886,-758.8558,-272.6856",
+          "Rotation": "-0.02461565,0.03257653,0.6023617,0.7971783",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "04fbba3a-8c11-4e31-a7e0-16192ce7e8fc",
+          "Name": "planted_cat",
+          "Position": "-1030.738,-908.7092,-280.9807",
+          "Rotation": "-0.02558008,0.03377265,0.6032363,0.7964364",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c6cb1634-affb-48bb-9245-88cec6e8c833",
+          "Name": "planted_cat",
+          "Position": "-1420.686,-1261.227,-292.8175",
+          "Rotation": "0.008278728,0.01893061,-0.4005899,0.9160244",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "60e1154f-ad6a-425f-8271-a40ef79c3acc",
+          "Name": "planted_cat",
+          "Position": "-1442.353,-1015.766,-285.3155",
+          "Rotation": "-0.04018736,-0.01966493,0.8973279,-0.4390908",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "67891eb2-05f0-4844-9bbe-65d077724f64",
+          "Name": "planted_cat",
+          "Position": "-1249.055,-1016.25,-283.3431",
+          "Rotation": "-0.01602486,-0.001280788,0.9966924,-0.07966004",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "32c0937a-cce8-4792-861d-e5ffad96dfa1",
+          "Name": "planted_cat",
+          "Position": "-1445.721,-1129.929,-288.0439",
+          "Rotation": "-0.04916567,0.06458294,0.6037294,0.7930464",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "ae808e45-32c6-4e48-8cf7-3fadf811e9f3",
+          "Name": "planted_cat",
+          "Position": "-1254.937,-1148.383,-284.2277",
+          "Rotation": "0.02846053,0.03687042,-0.6103782,0.7907395",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f4f7e0b5-b246-470c-836b-2a65c3e32184",
+          "Name": "planted_cat",
+          "Position": "-1452.334,-919.9888,-284.093",
+          "Rotation": "0.06612682,0.06122828,-0.7307764,0.6766418",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "56e2636c-c999-4615-8157-0614f3824680",
+          "Name": "planted_cat",
+          "Position": "-1257.506,-753.3882,-274.2905",
+          "Rotation": "-0.003420297,0.0299747,0.1133181,0.9931006",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "70986922-7063-48db-8cfc-070ce7d78eb5",
+          "Name": "planted_cat",
+          "Position": "-1456.791,-750.1522,-278.5898",
+          "Rotation": "-0.02126941,0.01553708,0.8072234,0.589658",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c116d857-12b9-4f66-9659-cf7b8db73cd7",
+          "Name": "planted_cat",
+          "Position": "-450.3692,-633.3616,-277.6826",
+          "Rotation": "-0.04772866,-0.03355724,0.8166533,-0.5741718",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "43f18da1-c95d-433e-ba24-771c80657c42",
+          "Name": "planted_cat",
+          "Position": "-655.2006,-642.8448,-274.8965",
+          "Rotation": "0.02021247,0.02508977,-0.6270211,0.7783358",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "e94eac0c-2315-417b-aee0-c5f32f185eab",
+          "Name": "planted_cat",
+          "Position": "-445.9692,-497.8895,-286.1229",
+          "Rotation": "-0.03440365,0.03538936,0.6961983,0.7161506",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "ba80c1b6-39ff-48f3-9a31-8f84f9bbe7d8",
+          "Name": "planted_cat",
+          "Position": "-613.5808,-514.1057,-277.5074",
+          "Rotation": "0.02268481,0.0218493,-0.7198901,0.693373",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "3bfd5d9e-9ef2-482e-8a74-2d7bada8800b",
+          "Name": "planted_cat",
+          "Position": "-1256.093,-499.8423,-273.4548",
+          "Rotation": "-0.03032205,0.02592039,0.7595192,0.6492606",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "3e9632ca-b120-427f-8560-9abdf7485a49",
+          "Name": "planted_cat",
+          "Position": "-1050.824,-507.4555,-279.6835",
+          "Rotation": "-0.0223617,0.01854655,0.7693883,0.6381205",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "1925369a-6491-4cf0-ac29-de70de8f79dd",
+          "Name": "planted_cat",
+          "Position": "-825.3499,-513.632,-276.3577",
+          "Rotation": "-0.03837296,-0.03142911,0.7726784,-0.6328568",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "1cb86b90-3772-4d1e-ad97-1cee48145081",
+          "Name": "planted_cat",
+          "Position": "-1250.836,-638.818,-271.6545",
+          "Rotation": "-0.02559873,-0.005613223,0.9764579,-0.2141102",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "86b8f58c-5bca-4b21-9859-ec8a6630175f",
+          "Name": "planted_cat",
+          "Position": "-1247.092,-922.1304,-281.432",
+          "Rotation": "0.06878212,0.09053355,-0.6010302,0.7910976",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "33a910bd-de68-4af1-9f52-dc8e0c0b8252",
+          "Name": "planted_cat",
+          "Position": "-1046.444,-654.9668,-270.5905",
+          "Rotation": "-0.0806002,-0.06000161,0.7980784,-0.5941165",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "a82c5233-1a98-4fcb-8b06-b3f945c56dd2",
+          "Name": "planted_cat",
+          "Position": "-1466.372,-645.0977,-274.8713",
+          "Rotation": "-0.02899414,-0.01506279,0.8869207,-0.4607646",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "8cc06b21-4408-41b9-a21b-82976eb2e6f2",
+          "Name": "planted_cat",
+          "Position": "-1515.941,-498.9175,-281.8858",
+          "Rotation": "-0.03619435,-0.001702406,0.9982397,-0.04695236",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "528d3a97-4ba5-4dc0-a591-a543197818f4",
+          "Name": "planted_cat",
+          "Position": "-1276.209,-118.8413,-287.8146",
+          "Rotation": "-0.02716434,0.03244644,0.6413573,0.7660744",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "1bc58fbb-733e-4bbe-8d17-21478ec61e46",
+          "Name": "planted_cat",
+          "Position": "-1508.835,-132.4696,-290.7088",
+          "Rotation": "-0.0879598,-0.07026216,0.7763596,-0.6201547",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "b4a3d88f-1cca-4f11-8995-c724f81c8e5b",
+          "Name": "planted_cat",
+          "Position": "-1494.556,-242.1558,-285.4585",
+          "Rotation": "-0.006327689,-0.0003330447,0.9985982,-0.05254999",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "68a72604-2138-4aec-9a66-2fdc3f2ba6b7",
+          "Name": "planted_cat",
+          "Position": "-1255.442,-236.0512,-284.7471",
+          "Rotation": "-0.008998215,0.01757187,0.4556978,0.8899156",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "0c2a7c25-4723-4965-882c-d53c5b848d9b",
+          "Name": "planted_cat",
+          "Position": "-1253.823,-369.5314,-279.979",
+          "Rotation": "-0.01733205,0.01093417,0.8455948,0.5334318",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "496e82c4-9ebd-41bf-b5fc-e944e11eb62b",
+          "Name": "planted_cat",
+          "Position": "-1510.007,-360.957,-285.3081",
+          "Rotation": "0.01952696,0.02211472,-0.661587,0.749288",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c25607cf-3429-472e-bd20-da9d5cce0a6f",
+          "Name": "planted_cat",
+          "Position": "-637.1218,-373.7402,-274.8074",
+          "Rotation": "-0.03329927,0.04133505,0.6264623,0.7776423",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d33ba07a-ec8d-4f19-91e8-86e57c970aa8",
+          "Name": "planted_cat",
+          "Position": "-418.4193,-370.0595,-285.3122",
+          "Rotation": "-0.04880786,0.05689606,0.6492646,0.7568593",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "b67e047f-8c2a-4481-999d-cb66d251a2e8",
+          "Name": "planted_cat",
+          "Position": "-432.3981,-256.5666,-286.1353",
+          "Rotation": "-0.04523605,0.03200981,0.8150458,0.5767404",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f9f05172-66fb-49ae-8cfe-83f7a59124c1",
+          "Name": "planted_cat",
+          "Position": "-627.184,-249.5806,-285.4839",
+          "Rotation": "-0.0153251,0.008647352,0.8707889,0.4913422",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "8c816a77-2760-486e-a7f9-54cf90b7b50f",
+          "Name": "planted_cat",
+          "Position": "-410.723,-113.9483,-285.9812",
+          "Rotation": "-0.04750615,0.00897035,0.9814866,0.1853284",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "df91055e-d5d7-442d-b836-ddee62f957df",
+          "Name": "planted_cat",
+          "Position": "-618.6199,-112.4486,-284.2211",
+          "Rotation": "0.008044749,0.01093856,-0.5924106,0.8055217",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "6533b979-468e-4c2d-abbe-34aed7edee96",
+          "Name": "planted_cat",
+          "Position": "-830.5251,-383.2498,-276.6348",
+          "Rotation": "-0.00812909,-0.005485505,0.8288939,-0.5593197",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "472beb89-969f-40bc-961b-3af5ae3ef86f",
+          "Name": "planted_cat",
+          "Position": "-843.2039,-247.0739,-284.6882",
+          "Rotation": "0.004417151,0.01587632,-0.2679956,0.9632792",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "0939ba6f-e41a-416b-861f-24662a47cf30",
+          "Name": "planted_cat",
+          "Position": "-1052.76,-375.4317,-278.9276",
+          "Rotation": "0.01615164,0.01992637,-0.6294692,0.7766019",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c569f324-e79a-4075-8e7a-89b092949629",
+          "Name": "planted_cat",
+          "Position": "-1073.683,-246.2124,-278.0705",
+          "Rotation": "0.04415965,0.04755935,-0.6789933,0.7312702",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "980e2fc0-282b-4344-9906-3a0628fffdde",
+          "Name": "planted_cat",
+          "Position": "-839.1696,-119.5209,-286.3386",
+          "Rotation": "-0.02023873,-0.008111045,0.928013,-0.3719093",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "e4e0bc72-3fd2-4a07-a8ae-649c7dc41ef4",
+          "Name": "planted_cat",
+          "Position": "-1081.602,-119.9929,-287.1361",
+          "Rotation": "-0.02081914,0.03695744,0.4903665,0.8704833",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d8cdfb14-4bac-4f5a-b65f-2071b7e058b7",
+          "Name": "planted_cat",
+          "Position": "-1668.478,-127.4774,-293.6109",
+          "Rotation": "0.1015868,0.1072252,-0.6802185,0.7179732",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "f474da27-3042-4b89-b559-2e6eb843453d",
+          "Name": "planted_cat",
+          "Position": "-1666.376,-240.5239,-287.3592",
+          "Rotation": "-0.0220257,-0.0176166,0.7806324,-0.6243536",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "1d52f60f-5b50-40ab-af33-f76536b1b08a",
+          "Name": "planted_cat",
+          "Position": "-1683.712,-363.0214,-286.7076",
+          "Rotation": "-0.04031134,-0.02374394,0.8606974,-0.5069627",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "2745c8f5-9918-4691-bf27-59dbee18da44",
+          "Name": "planted_cat",
+          "Position": "-1691.873,-491.9373,-289.0703",
+          "Rotation": "-0.05702347,0.04573959,0.7779754,0.6240276",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "db8f8ffb-3062-481b-b2ee-12719a3af821",
+          "Name": "planted_cat",
+          "Position": "-1651.24,-638.2824,-279.3907",
+          "Rotation": "-0.09163982,-0.06894252,0.7938375,-0.5972195",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "c6098f29-d8fc-4a29-8296-ec6162a980ee",
+          "Name": "planted_cat",
+          "Position": "-1663.408,-745.8388,-282.8426",
+          "Rotation": "0.001021668,0.008003414,-0.1266285,0.9919174",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d6ee70eb-707b-4fae-a12d-be3564d86bd7",
+          "Name": "planted_cat",
+          "Position": "-1669.565,-909.7719,-285.0142",
+          "Rotation": "-0.06346643,-0.02592739,0.9235535,-0.3772911",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "207a532a-ee2a-4d8e-a650-40d1bd3ce958",
+          "Name": "planted_cat",
+          "Position": "-1652.039,-998.624,-289.3184",
+          "Rotation": "-0.01435262,0.03872755,0.3472094,0.9368777",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "dcfd0869-4813-4d98-be84-b4a34d5f5114",
+          "Name": "planted_cat",
+          "Position": "-1649.242,-1132.968,-287.992",
+          "Rotation": "-0.07438755,0.03906818,0.8821954,0.4633265",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "fdc40714-dcdc-4dd5-9561-ede6acc3876c",
+          "Name": "planted_cat",
+          "Position": "-1651.076,-1265.633,-289.9744",
+          "Rotation": "0.03835168,0.05077237,-0.6015143,0.7963239",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "faf978ea-9a3a-46f8-90d6-124ec7160e5c",
+          "Name": "planted_cat",
+          "Position": "-840.8554,-648.5668,-274.7919",
+          "Rotation": "-0.07189631,-0.03325674,0.9047526,-0.4185064",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "3832514c-ea1a-4542-b721-21662462ff12",
+          "Name": "planted_cat",
+          "Position": "-1642.804,-1395.052,-288.1409",
+          "Rotation": "-0.09275046,0.09192017,0.7041967,0.6978934",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "0d984183-8930-4c2f-b454-95380acf168f",
+          "Name": "planted_cat",
+          "Position": "-288.9816,-1537.357,-290.8637",
+          "Rotation": "0.01065841,0.02234107,-0.4304543,0.9022729",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "442641da-d239-4fe1-aa98-972de3fe51ea",
+          "Name": "planted_cat",
+          "Position": "-285.2289,-1408.86,-292.9515",
+          "Rotation": "0.008002341,0.01481214,-0.4752501,0.8796896",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "3bc44965-c209-496f-b7f9-2441773d9f38",
+          "Name": "planted_cat",
+          "Position": "-270.3301,-1278.764,-292.2554",
+          "Rotation": "-0.004526995,0.02188754,0.2024907,0.9790291",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "588840b1-1ec8-4466-8dd3-cbcac3721530",
+          "Name": "planted_cat",
+          "Position": "-269.2984,-1141.602,-286.7182",
+          "Rotation": "0.04421595,0.05121019,-0.6520292,0.7551692",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "4f50f28d-2151-41a5-8a61-340339325554",
+          "Name": "planted_cat",
+          "Position": "-244.0585,-1011.917,-293.6031",
+          "Rotation": "-0.1005024,0.09679577,0.7132177,0.6869135",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d8bbf8cf-5c5e-4b88-9ada-6ee1afd630dd",
+          "Name": "planted_cat",
+          "Position": "-287.809,-879.4034,-291.1376",
+          "Rotation": "-0.01079857,-0.0001175515,0.9998823,-0.01088441",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d76a9e12-fb13-4b22-8dba-5a4523be1e9a",
+          "Name": "planted_cat",
+          "Position": "-314.755,-776.2397,-281.6742",
+          "Rotation": "-0.01555912,0.03935134,0.3673621,0.9291148",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "6178a89f-b1e4-4178-9bdb-b50ed5157b84",
+          "Name": "planted_cat",
+          "Position": "-265.4383,-628.5506,-286.9148",
+          "Rotation": "0.03759572,0.04929379,-0.6052684,0.7936037",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "1868eb0c-d552-4987-b5de-adfed8dce7ce",
+          "Name": "planted_cat",
+          "Position": "-290.2762,-509.5426,-286.4914",
+          "Rotation": "0.01475179,0.03822538,-0.3597345,0.9321547",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "843d1193-0bac-4f86-b490-753cacb32e84",
+          "Name": "planted_cat",
+          "Position": "-290.1643,-374.551,-290.0258",
+          "Rotation": "0.01758642,0.04726765,-0.3482614,0.9360397",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "66752a61-963f-4452-8d7e-8455f490030a",
+          "Name": "planted_cat",
+          "Position": "-274.1076,-261.2438,-293.1011",
+          "Rotation": "0.00616166,0.02700838,-0.2223357,0.9745765",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "d4a02861-5371-4738-a125-4ab7277e478e",
+          "Name": "planted_cat",
+          "Position": "-271.8188,-117.6686,-289.0869",
+          "Rotation": "-0.08222046,0.1037093,0.6157826,0.7767212",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        },
+        {
+          "Id": "7390de40-7421-43e0-ad62-e547e881c5ac",
+          "Name": "planted_cat",
+          "Position": "-1694.439,-1524.946,-292.1692",
+          "Rotation": "-0.03939825,-0.03537202,0.7430621,-0.6671246",
+          "Enabled": true,
+          "__Prefab": "prefabs/planted_cat.object"
+        }
+      ]
     }
   ],
   "SceneProperties": {
+    "Lerping": true,
+    "UseFixedUpdate": true,
+    "ThreadedAnimation": true,
     "TimeScale": 1,
     "MaxFixedUpdates": 5,
     "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60,
-    "Lerping": true,
-    "UseFixedUpdate": true,
-    "ThreadedAnimation": true
+    "NetworkFrequency": 60
   },
   "Title": "main",
   "Description": "",

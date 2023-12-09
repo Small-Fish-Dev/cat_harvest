@@ -22,9 +22,11 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "ModelRenderer",
+            "__type": "SkinnedModelRenderer",
             "__enabled": true,
             "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
             "MaterialOverride": null,
             "Model": "models/tail/tail.vmdl",
             "ShouldCastShadows": true,
