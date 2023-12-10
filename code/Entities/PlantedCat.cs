@@ -2,6 +2,15 @@
 {
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		Transform.Rotation = Rotation.FromYaw( Game.Random.Float( 360f ) ); // Random yaw
+		Transform.Rotation *= Rotation.FromPitch( Game.Random.Float( 15f ) ); // Some random pitch
+		Transform.Rotation *= Rotation.FromRoll( Game.Random.Float( 15f ) ); // Some random roll
+	}
+
 	protected override void OnFixedUpdate()
 	{
 		Transform.Scale = Transform.Scale + 1 / 300f * Time.Delta; // Grow 100% every 300 seconds

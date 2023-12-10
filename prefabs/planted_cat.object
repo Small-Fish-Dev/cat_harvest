@@ -31,6 +31,56 @@
             "Model": "models/tail/tail.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "HarvestableCat",
+            "__enabled": true,
+            "Renderer": "931d6d0e-ba66-49be-9458-b57c307ff55a"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "d85e5d7f-29ea-4bf0-a1a6-cbafb3ee8cdc",
+            "Name": "pelvis",
+            "Position": "0.2499987,-0.008049149,-0.8445913",
+            "Rotation": "0.6018648,0.6018654,-0.3711583,-0.3711583",
+            "Enabled": true,
+            "Children": [
+              {
+                "Id": "472cd53e-00e6-4113-942c-81a298f842d4",
+                "Name": "tail_1",
+                "Position": "-0.00000002778637,-0.8025758,-0.2141756",
+                "Rotation": "-0.9846154,0.008853972,0.04180847,0.1694288",
+                "Enabled": true,
+                "Children": [
+                  {
+                    "Id": "c5684542-53f7-44b4-be0e-903511742921",
+                    "Name": "tail_2",
+                    "Position": "-0.0000005066394,1.704893,-0.0000002086162",
+                    "Rotation": "0.06512825,-0.005376756,0.05128744,0.9965435",
+                    "Enabled": true,
+                    "Children": [
+                      {
+                        "Id": "c1ada3d1-c023-42c0-9be5-8cdfa41a9272",
+                        "Name": "tail_3",
+                        "Position": "-0.00000166893,1.875436,-0.0000006025655",
+                        "Rotation": "0.07997055,-0.01366487,0.06815884,0.9943703",
+                        "Enabled": true,
+                        "Children": [
+                          {
+                            "Id": "f0750b8d-005e-4256-8d80-200bee5ce9bc",
+                            "Name": "tail_4",
+                            "Position": "-0.000002324581,1.737005,-0.0000004470347",
+                            "Rotation": "-0.007442802,0.00000002980232,0.0000001043081,0.9999723",
+                            "Enabled": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

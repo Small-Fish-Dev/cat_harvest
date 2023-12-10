@@ -858,16 +858,53 @@
           "__Prefab": "prefabs/planted_cat.object"
         }
       ]
+    },
+    {
+      "Id": "700fc25a-acea-45c4-854d-342b6b8a40c3",
+      "Name": "Player",
+      "Position": "368.8182,357.5375,42.63593",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "83081b32-dccc-4f29-a3f5-2b6e2fdb65fa",
+          "Name": "Body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CharacterController",
+              "__enabled": true,
+              "Acceleration": 10,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "",
+              "Radius": 16,
+              "StepHeight": 18
+            },
+            {
+              "__type": "SkinnedModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
-    "Lerping": true,
     "UseFixedUpdate": true,
+    "Lerping": true,
+    "NetworkFrequency": 60,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "MaxFixedUpdates": 5,
-    "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "FixedUpdateFrequency": 50
   },
   "Title": "main",
   "Description": "",
