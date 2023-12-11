@@ -864,33 +864,44 @@
       "Name": "Player",
       "Position": "368.8182,357.5375,42.63593",
       "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "FirstPersonController",
+          "__enabled": true,
+          "Body": "700fc25a-acea-45c4-854d-342b6b8a40c3",
+          "Camera": "bcf936aa-8366-4177-a4a2-67668d4afcb2"
+        }
+      ],
       "Children": [
         {
-          "Id": "83081b32-dccc-4f29-a3f5-2b6e2fdb65fa",
-          "Name": "Body",
-          "Position": "0,0,0",
+          "Id": "bcf936aa-8366-4177-a4a2-67668d4afcb2",
+          "Name": "Camera",
+          "Position": "0,0,50",
           "Enabled": true,
           "Components": [
             {
-              "__type": "CharacterController",
+              "__type": "CameraComponent",
               "__enabled": true,
-              "Acceleration": 10,
-              "GroundAngle": 45,
-              "Height": 64,
-              "IgnoreLayers": "",
-              "Radius": 16,
-              "StepHeight": 18
-            },
-            {
-              "__type": "SkinnedModelRenderer",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": null,
-              "CreateBoneObjects": false,
-              "MaterialOverride": null,
-              "Model": "models/citizen/citizen.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "ZFar": 10000,
+              "ZNear": 10
             }
           ]
         }

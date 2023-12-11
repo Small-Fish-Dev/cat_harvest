@@ -1,4 +1,7 @@
-﻿public sealed class HarvestableCat : Component
+﻿using Sandbox;
+using System;
+
+public sealed class HarvestableCat : Component
 {
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 
