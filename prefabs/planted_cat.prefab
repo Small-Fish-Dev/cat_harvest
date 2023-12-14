@@ -2,6 +2,7 @@
   "RootObject": {
     "Id": "56f1dfc1-a284-4d79-9f01-def1436e1a7c",
     "Name": "planted_cat",
+    "Tags": "cat",
     "Enabled": true,
     "Components": [
       {
@@ -27,6 +28,7 @@
             "BodyGroups": 18446744073709551615,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
+            "MaterialGroup": null,
             "MaterialOverride": null,
             "Model": "models/tail/tail.vmdl",
             "ShouldCastShadows": true,
