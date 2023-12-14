@@ -7,6 +7,8 @@ public class FirstPersonController : Component
 {
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Camera { get; set; }
+	[Property] public float WalkSpeed { get; set; } = 200f;
+	[Property] public float RunSpeed { get; set; } = 400f;
 
 	public Angles EyeAngles;
 	public Rotation EyeRotation => EyeAngles.ToRotation();
@@ -34,22 +36,6 @@ public class FirstPersonController : Component
 			EyeAngles.roll = 0;
 
 			Camera.Transform.Rotation = EyeRotation;
-		}
-
-		if ( Controller != null )
-		{
-			float rotateDifference = 0;
-			var targetAngle = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-
-			var horizontalVelocity = Controller.Velocity.WithZ( 0 );
-
-			if ( horizontalVelocity.Length > 10.0f )
-				targetAngle = Rotation.LookAt( horizontalVelocity, Vector3.Up );
-
-			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
-
-			if ( rotateDifference > 50.0f || Controller.Velocity.Length > 10.0f )
-				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 2.0f );
 		}
 	}
 
@@ -95,8 +81,8 @@ public class FirstPersonController : Component
 		WishVelocity = WishVelocity.WithZ( 0 );
 
 		if ( !WishVelocity.IsNearZeroLength )
-			WishVelocity = WishVelocity.Normal; // Garry what is this???
+			WishVelocity = WishVelocity.Normal;
 
-		WishVelocity *= 110.0f;
+		WishVelocity *= Input.Down( "Run" ) ? RunSpeed : WalkSpeed;
 	}
 }
