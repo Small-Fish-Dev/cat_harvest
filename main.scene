@@ -843,22 +843,23 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "FirstPersonController",
-          "__enabled": true,
-          "Body": "700fc25a-acea-45c4-854d-342b6b8a40c3",
-          "Camera": "bcf936aa-8366-4177-a4a2-67668d4afcb2",
-          "RunSpeed": 400,
-          "WalkSpeed": 200
-        },
-        {
           "__type": "CharacterController",
           "__enabled": true,
           "Acceleration": 10,
           "GroundAngle": 45,
           "Height": 64,
-          "IgnoreLayers": "",
+          "IgnoreLayers": "cat",
           "Radius": 16,
           "StepHeight": 18
+        },
+        {
+          "__type": "FirstPersonController",
+          "__enabled": true,
+          "Camera": "bcf936aa-8366-4177-a4a2-67668d4afcb2",
+          "CharacterController": "700fc25a-acea-45c4-854d-342b6b8a40c3",
+          "JumpStrength": 300,
+          "RunSpeed": 250,
+          "WalkSpeed": 120
         }
       ],
       "Children": [
