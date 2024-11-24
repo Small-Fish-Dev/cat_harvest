@@ -9,7 +9,6 @@ using System;
 public sealed class HarvestableCat : Component
 {
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
-	private TimeSince spawn;
 	protected override void OnStart()
 	{
 		base.OnStart();

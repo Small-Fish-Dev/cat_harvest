@@ -1,5 +1,7 @@
-using Sandbox;
-
+/// <summary>
+/// This is for placing down cats, enable it in the "Harvestable Cats" GameObject
+/// when you want to see the current Cat Count
+/// </summary>
 public sealed class Catcheck : Component, Component.ExecuteInEditor
 {
 	private List<GameObject> cats;
@@ -9,6 +11,6 @@ public sealed class Catcheck : Component, Component.ExecuteInEditor
 		var allObjects = Scene.Directory.FindByName( "plantedcat" );
 		
 		cats = allObjects.Where(obj => obj.Name == "plantedcat").ToList();
-		// Log.Info($"Found {cats.Count} cats.");
+		Log.Info($"Found {cats.Count} cats.");
 	}
 }
