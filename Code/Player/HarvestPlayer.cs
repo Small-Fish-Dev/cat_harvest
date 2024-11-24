@@ -4,6 +4,7 @@ using CatHarvest.UI;
 using CatHarvest.Util.Particles;
 using Sandbox;
 using Sandbox.Entities;
+using Sandbox.Services;
 
 public sealed class HarvestPlayer : Component
 {
@@ -83,7 +84,7 @@ public sealed class HarvestPlayer : Component
 					
 					cat.Destroy();
 					// GameServices.SubmitScore( Client.PlayerId, 1 );
-					Log.Info( "TODO: scoreboard" );
+					Sandbox.Services.Stats.Increment("total_cats_uprooted",1);
 					CatsUprooted++;
 					GetComponentInChildren<SkinnedModelRenderer>().Set( "grab", true );
 					HasCat = true;
@@ -110,7 +111,8 @@ public sealed class HarvestPlayer : Component
 		ply.CatsHarvested++;
 		ply.HasCat = false;
 		ply.GetComponentInChildren<SkinnedModelRenderer>().Set("finished", true);
-
+		Sandbox.Services.Stats.Increment("cats_harvested",1);
+		
 		Sound.Play( $"sad{Game.Random.Int( 1 )}", ply.WorldPosition );
 		var particle = LegacyParticle.Create( "particles/dollars.vpcf", ply.WorldPosition + Game.ActiveScene.Scene.Camera.WorldRotation.Forward * 32f + ply.WorldRotation.Up * 48f);
 		particle.GameObject.DestroyAsync(3);
@@ -129,7 +131,8 @@ public sealed class HarvestPlayer : Component
 		particle.GameObject.DestroyAsync(3);
 		ply.HasCat = false;
 		ply.GetComponentInChildren<SkinnedModelRenderer>().Set( "finished", true );
-
+		Sandbox.Services.Stats.Increment("cats_rescued",1);
+		
 		if ( ply.CatsUprooted == 96 )
 		{
 			HarvestGame.EndGame( ply, ply.CatsHarvested );

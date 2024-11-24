@@ -82,8 +82,8 @@ public partial class HarvestGame
 		current.EndState = true;
 		current.Ending = 5;
 
+		Sandbox.Services.Achievements.Unlock( "balanced_ending" );
 		await current.Task.Delay( 6000 );
-
 		CloseGame( ply );
 	}
 
@@ -106,7 +106,7 @@ public partial class HarvestGame
 
 		current.EndState = true;
 		current.Ending = 5;
-
+		Sandbox.Services.Achievements.Unlock( "neutral_ending" );
 		await current.Task.Delay( 5000 );
 
 		CloseGame( ply );
@@ -148,7 +148,7 @@ public partial class HarvestGame
 
 		current.EndState = true;
 		current.Ending = 5;
-
+		Sandbox.Services.Achievements.Unlock( "peaceful_ending" );
 		await current.Task.Delay( 5000 );
 
 		CloseGame( ply );
@@ -192,6 +192,7 @@ public partial class HarvestGame
 		current.EndState = true;
 		current.Ending = 5;
 
+		Sandbox.Services.Achievements.Unlock( "genocide_ending" );
 		await current.Task.Delay( 6000 );
 
 		CloseGame( ply );
@@ -227,7 +228,7 @@ public partial class HarvestGame
 		Sound.Play( "angry0" ).Volume = 10f;
 		Sound.Play( "angry0" ).Volume = 50f; //Just to be sure, not sure why it doesn't play sometimes
 		ChangeMusic( "" );
-
+		Sandbox.Services.Achievements.Unlock( "secret_ending" );
 		await current.Task.Delay( 2000 );
 
 		//real funny
