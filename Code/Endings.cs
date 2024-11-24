@@ -201,7 +201,6 @@ public partial class HarvestGame
 	public static async void SecretEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
-		Sandbox.Services.Achievements.Unlock( "secret_ending" );
 
 		ChangeMusic( "sounds/wonders.sound" );
 		current.Finishing = true;
@@ -220,16 +219,14 @@ public partial class HarvestGame
 		await current.Task.Delay( 800 );
 
 		Sound.Play( "munch", ply.WorldPosition ).Volume = 3;
+		Sandbox.Services.Achievements.Unlock( "secret_ending" );
 
 		await current.Task.Delay( 3000 );
 
 		current.Jumpscare = true;
 		Sound.Play( "angry0" ).Volume = 255f;
-		Sound.Play( "angry0" ).Volume = 1f;
-		Sound.Play( "angry0" ).Volume = 10f;
-		Sound.Play( "angry0" ).Volume = 50f; //Just to be sure, not sure why it doesn't play sometimes
 		ChangeMusic( "" );
-		await current.Task.Delay( 2000 );
+		await current.Task.Delay( 4000 );
 
 		//real funny
 		if ( Game.IsEditor )
