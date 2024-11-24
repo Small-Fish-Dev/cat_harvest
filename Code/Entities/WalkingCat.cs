@@ -132,8 +132,4 @@ public class WalkingCat : Component
 
 		HarvestGame.The.AllCats.Remove( this.GameObject );
 	}
-
-	public void OnTick()
-	{
-	}
 }
