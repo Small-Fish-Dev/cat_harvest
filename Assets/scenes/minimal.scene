@@ -25,48 +25,19 @@
       "__guid": "3d714d9e-e3f4-4107-95b4-d2cfcbd4a986",
       "Flags": 0,
       "Name": "Sun",
-      "Position": "-751.515,-13.02222,559.1125",
-      "Rotation": "-0.21468,0.07945929,0.8718367,0.433013",
+      "Position": "75.66315,415.3544,261.4277",
+      "Rotation": "0.07072825,0.07072841,-0.7493318,0.6545974",
       "Tags": "light_directional,light",
+      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.DirectionalLight",
           "__guid": "ce433599-2f30-4375-9320-308316eeac6e",
-          "__enabled": false,
           "FogMode": "Enabled",
           "FogStrength": 1,
-          "LightColor": "1,0.86279,0.72558,1",
-          "Shadows": true,
-          "SkyColor": "0,0,0,0"
-        }
-      ]
-    },
-    {
-      "__guid": "955373be-7a1e-42f3-9643-bcf8c52ab3b0",
-      "Flags": 0,
-      "Name": "Envmap Probe",
-      "Position": "-6.939163,9.035938,157.6279",
-      "Components": [
-        {
-          "__type": "Sandbox.EnvmapProbe",
-          "__guid": "93c3feff-ac80-4eba-a714-aaa6b0b368c1",
-          "__enabled": false,
-          "Texture": "textures/cubemaps/default2.vtex",
-          "Bounds": {
-            "Mins": "-1000,-1000,-1000",
-            "Maxs": "1000,1000,1000"
-          },
-          "DelayBetweenUpdates": 0.1,
-          "Feathering": 0.02,
-          "FrameInterval": 5,
-          "MaxDistance": 512,
-          "MultiBounce": false,
-          "Projection": "Box",
-          "RenderDynamically": true,
-          "TintColor": "1,0.77829,0.48837,1",
-          "UpdateStrategy": "OnEnabled",
-          "ZFar": 4096,
-          "ZNear": 16
+          "LightColor": "1,0.31667,0,1",
+          "Shadows": false,
+          "SkyColor": "0.30233,0.28147,0.17718,0"
         }
       ]
     },
@@ -179,6 +150,84 @@
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
               "ZNear": 10
+            },
+            {
+              "__type": "Sandbox.AmbientOcclusion",
+              "__guid": "19486f62-fb9b-40ec-b855-775c784627e5",
+              "FalloffDistance": 1,
+              "Intensity": 16,
+              "Quality": "High",
+              "Radius": 32
+            },
+            {
+              "__type": "Sandbox.Tonemapping",
+              "__guid": "3458fb3e-e596-4e6e-87e2-6a8dd7bd59ce",
+              "__version": 1,
+              "AutoExposureEnabled": true,
+              "ExposureBias": 2,
+              "ExposureCompensation": 0,
+              "ExposureMethod": "RGB",
+              "MaximumExposure": 2,
+              "MinimumExposure": 0,
+              "Mode": "ACES",
+              "Rate": 0.28
+            },
+            {
+              "__type": "Sandbox.Bloom",
+              "__guid": "8e2901bd-f4d1-4dcd-9924-6ec25c45f98a",
+              "BloomColor": {
+                "blend": "Linear",
+                "color": [
+                  {
+                    "t": 0,
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": null
+              },
+              "BloomCurve": [
+                {
+                  "x": 0,
+                  "y": 0.5,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 1,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 5,
+              "Threshold": 0.48,
+              "ThresholdWidth": 0.13
+            },
+            {
+              "__type": "Sandbox.Vignette",
+              "__guid": "ec49c11f-f3a9-4459-b905-5025bc1b61dd",
+              "Center": "0.5,0.5",
+              "Color": "0,0,0,1",
+              "Intensity": 0.67,
+              "Roundness": 0,
+              "Smoothness": 0.97
+            },
+            {
+              "__type": "Sandbox.DepthOfField",
+              "__guid": "d51941ba-e07b-4a48-af30-0c7e9ce658a8",
+              "BackBlur": true,
+              "BlurSize": 3,
+              "FocalDistance": 1500,
+              "FocusRange": 1000,
+              "FrontBlur": false,
+              "QualityLevel": "High"
             }
           ],
           "Children": [
@@ -211,78 +260,6 @@
                   "Viewport": "0,0,1,1",
                   "ZFar": 10000,
                   "ZNear": 10
-                },
-                {
-                  "__type": "Sandbox.Bloom",
-                  "__guid": "936563e7-cef6-44a4-9b64-57a298b57c4b",
-                  "BloomColor": {
-                    "blend": "Linear",
-                    "color": [
-                      {
-                        "t": 0,
-                        "c": "1,1,1,1"
-                      },
-                      {
-                        "t": 1,
-                        "c": "1,1,1,1"
-                      }
-                    ],
-                    "alpha": null
-                  },
-                  "BloomCurve": [
-                    {
-                      "x": 0,
-                      "y": 0.5,
-                      "in": 0,
-                      "out": 0,
-                      "mode": "Mirrored"
-                    },
-                    {
-                      "x": 1,
-                      "y": 1,
-                      "in": 0,
-                      "out": 0,
-                      "mode": "Mirrored"
-                    }
-                  ],
-                  "Mode": "Additive",
-                  "Strength": 1,
-                  "Threshold": 0.5,
-                  "ThresholdWidth": 0
-                },
-                {
-                  "__type": "Sandbox.Tonemapping",
-                  "__guid": "fb71d704-bb01-4544-96bc-973187712f85",
-                  "__version": 1,
-                  "AutoExposureEnabled": false,
-                  "ExposureBias": 2,
-                  "ExposureCompensation": 0,
-                  "ExposureMethod": "RGB",
-                  "MaximumExposure": 3,
-                  "MinimumExposure": 1,
-                  "Mode": "ACES",
-                  "Rate": 1
-                },
-                {
-                  "__type": "Sandbox.CubemapFog",
-                  "__guid": "5a471e25-226b-465a-99d2-6f667beac736",
-                  "Blur": 0.88,
-                  "EndDistance": 10000,
-                  "FalloffExponent": 0.70000046,
-                  "HeightExponent": 0.7000043,
-                  "HeightStart": 1989.7001,
-                  "HeightWidth": -1.4000001,
-                  "Sky": "materials/skybox/skybox_sunrise_01.vmat",
-                  "StartDistance": 1156.7993,
-                  "Tint": "0.74419,0.53478,0.32537,1"
-                },
-                {
-                  "__type": "Sandbox.AmbientOcclusion",
-                  "__guid": "b722b7fe-8014-4ed6-9b19-094d7cb676b1",
-                  "FalloffDistance": 1,
-                  "Intensity": 12,
-                  "Quality": "High",
-                  "Radius": 32
                 },
                 {
                   "__type": "Viewmodelcamhack",
@@ -1306,6 +1283,49 @@
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
+        }
+      ]
+    },
+    {
+      "__guid": "817f0b73-1fb1-428c-9c0c-155ad95f3f0f",
+      "Flags": 0,
+      "Name": "Sky",
+      "Position": "77.5491,639.4644,240.7687",
+      "Rotation": "0,0,-0.3826834,0.9238796",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "4dff08a5-97e8-47aa-8552-fd0a8364f08d",
+          "SkyIndirectLighting": false,
+          "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
+          "Tint": "0.20465,0.0752,0.1766,1"
+        }
+      ]
+    },
+    {
+      "__guid": "60c0f80c-fc20-4525-bd23-8483bd3f0967",
+      "Flags": 0,
+      "Name": "Ambient",
+      "Position": "81.4346,829.194,254.453",
+      "Rotation": "0,0,-0.5,0.8660254",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.AmbientLight",
+          "__guid": "a31e4542-a814-4aff-a186-9ec0e1097949",
+          "Color": "0.32213,0.07085,0.6093,1"
+        },
+        {
+          "__type": "Sandbox.GradientFog",
+          "__guid": "c4e21293-7f10-478a-9e63-db1d0da36f54",
+          "Color": "0.66747,0.27786,0.78605,0.3",
+          "EndDistance": 3000,
+          "FalloffExponent": 0.83999985,
+          "Height": 2500,
+          "StartDistance": 500,
+          "VerticalFalloffExponent": 1.7999998
         }
       ]
     }
