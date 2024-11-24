@@ -1,6 +1,4 @@
-﻿using System;
-using System.Transactions;
-using CatHarvest;
+﻿using CatHarvest;
 using CatHarvest.Util.Particles;
 
 namespace Sandbox.Entities;
@@ -20,19 +18,18 @@ public class WalkingCat : Component
 		base.OnStart();
 		Tags.Add( "cat" );
 	}
-	
+
 	RealTimeSince frameTime = 0f;
 	float lastDistance = 0f;
 	float nextFrame = 0f;
 	float nextMove = 0f;
 	[Property] public bool IsSecret;
 
-	
+
 	protected override void OnFixedUpdate()
 	{
-		OnTick();
 		if ( !GameObject.IsValid() || GameObject.IsDestroyed ) return;
-		var traceGround = Scene.Trace.Ray(WorldPosition + Vector3.Up * 16, WorldPosition + Vector3.Down * 32f)
+		var traceGround = Scene.Trace.Ray( WorldPosition + Vector3.Up * 16, WorldPosition + Vector3.Down * 32f )
 			.IgnoreGameObjectHierarchy( this.GameObject.Root )
 			.WithoutTags( "Player" )
 			.WithoutTags( "Cat" )
@@ -60,7 +57,7 @@ public class WalkingCat : Component
 			if ( !Passive )
 			{
 				if ( WorldPosition.x <= minBounds.x || WorldPosition.x >= maxBounds.x ||
-				     WorldPosition.y <= minBounds.y || WorldPosition.y >= maxBounds.y )
+					 WorldPosition.y <= minBounds.y || WorldPosition.y >= maxBounds.y )
 				{
 					_characterController.Velocity = (Vector3.Zero - WorldPosition).Normal * (IsSecret ? 1.5f : 4);
 				}
@@ -108,10 +105,10 @@ public class WalkingCat : Component
 			Rotation rotation = _characterController.Velocity.EulerAngles.ToRotation();
 			WorldRotation = Rotation.Slerp( WorldRotation, rotation, 2 * Time.Delta );
 		}
-		
+
 		if ( IsDying )
 		{
-			Log.Info("test");
+			Log.Info( "test" );
 			GetComponent<SkinnedModelRenderer>().Tint = Color.FromBytes( 255, 255, 255, (int)(hourOfDeath - Time.Now) * 5 );
 
 			if ( hourOfDeath <= 0 )
@@ -120,13 +117,13 @@ public class WalkingCat : Component
 			}
 		}
 	}
-	
+
 	TimeUntil hourOfDeath = 0f;
 
 	public void Snap()
 	{
 		var particle = LegacyParticle.Create( "particles/ashes.vpcf", WorldPosition );
-		particle.GameObject.DestroyAsync(3);
+		particle.GameObject.DestroyAsync( 3 );
 		hourOfDeath = 0.2f;
 		IsDying = true;
 
