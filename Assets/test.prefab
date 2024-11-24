@@ -1,0 +1,15 @@
+{
+  "RootObject": {
+    "__guid": "229820fa-93c9-4372-be8a-2e233dd458fa",
+    "Flags": 0,
+    "Name": "Object",
+    "Enabled": true
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "Title": "prefab_placer",
+  "Type": "library",
+  "Org": "ketal",
+  "Ident": "prefabplacer",
+  "Schema": 1,
+  "IncludeSourceFiles": true,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "IsWhitelistDisabled": false,
+  "Metadata": {
+    "CsProjName": ""
+  }
+}

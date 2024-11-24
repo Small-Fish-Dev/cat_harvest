@@ -1,0 +1,105 @@
+{
+  "RootObject": {
+    "__guid": "7ca96807-0c4d-444c-80a3-95c9f1b07299",
+    "Flags": 0,
+    "Name": "walkingcat",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "acd65313-fea7-40e6-b807-86bf2bd320ce",
+        "AnimationGraph": "animgraphs/walkingcat.vanmgrph",
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "CreateBoneObjects": false,
+        "Model": "models/cat/cat.vmdl",
+        "Morphs": {},
+        "Parameters": {
+          "bools": {},
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Sequence": {
+          "Name": null
+        },
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "Sandbox.Entities.WalkingCat",
+        "__guid": "bc809ab5-8bef-4a11-89ff-fd9bab69b21d",
+        "IsSecret": false,
+        "_characterController": {
+          "_type": "component",
+          "component_id": "a8e71eed-a5a8-4a56-bc59-7467f5a9aed1",
+          "go": "7ca96807-0c4d-444c-80a3-95c9f1b07299",
+          "component_type": "CharacterController"
+        },
+        "Aggressive": false,
+        "IsDying": false,
+        "Passive": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "ec7c1112-c070-4840-8203-5474ca09d738",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "32,32,32",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "a8e71eed-a5a8-4a56-bc59-7467f5a9aed1",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 15.66,
+        "Radius": 6.83,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      }
+    ],
+    "Children": [],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

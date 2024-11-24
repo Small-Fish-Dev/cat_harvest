@@ -1,0 +1,12 @@
+{
+	"sounds":
+	[
+		"sounds/meow5.vsnd"
+	],
+	"UI": false,
+	"Volume": 0.300000,
+	"VolumeRandom": 0.100000,
+	"Pitch": 1.000000,
+	"PitchRandom": 0.300000,
+	"DistanceMax": 200.000000
+}
