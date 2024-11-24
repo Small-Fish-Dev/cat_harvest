@@ -8,7 +8,8 @@ public class ShrimpleWalker : Component
     [RequireComponent]
     public CitizenAnimationHelper AnimationHelper { get; set; }
     public SkinnedModelRenderer Renderer { get; set; }
-   [Property]  public GameObject Camera { get; set; }
+    [Property] 
+    public GameObject Camera { get; set; }
 
     [Property]
     [Range(50f, 200f, 10f)]
@@ -35,6 +36,7 @@ public class ShrimpleWalker : Component
         Renderer = Components.Get<SkinnedModelRenderer>(FindMode.EverythingInSelfAndDescendants);
         var cameraComponent = Camera.Components.Get<CameraComponent>();
         cameraComponent.ZFar = 32768f;
+        cameraComponent.FieldOfView = Preferences.FieldOfView;
     }
 
     protected override void OnFixedUpdate()
@@ -67,7 +69,6 @@ public class ShrimpleWalker : Component
     protected override void OnUpdate()
     {
         base.OnUpdate();
-
         EyeAngles += Input.AnalogLook;
         EyeAngles = EyeAngles.WithPitch(MathX.Clamp(EyeAngles.pitch, -89f, 89f));
         Renderer.WorldRotation = Rotation.Slerp(Renderer.WorldRotation, Rotation.FromYaw(EyeAngles.yaw), Time.Delta * 5f);
