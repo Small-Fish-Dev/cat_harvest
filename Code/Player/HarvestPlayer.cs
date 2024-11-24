@@ -45,6 +45,7 @@ public sealed class HarvestPlayer : Component
 	protected override void OnFixedUpdate()
 	{
 		if ( IsProxy ) return;
+		if ( !GameObject.IsValid() ) return;
 		if ( HarvestGame.The.Finishing ) return;
 		OpenInventory = Input.Down( "Score" );
 		if ( autoClose >= 15f || OpenInventory)
@@ -108,6 +109,7 @@ public sealed class HarvestPlayer : Component
 	public static void Harvest()
 	{
 		var ply = Game.ActiveScene.Scene.GetComponentInChildren<HarvestPlayer>();
+		if ( !ply.IsValid() ) return;
 		ply.CatsHarvested++;
 		ply.HasCat = false;
 		ply.GetComponentInChildren<SkinnedModelRenderer>().Set("finished", true);

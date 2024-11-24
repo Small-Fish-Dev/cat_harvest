@@ -108,6 +108,17 @@ public class WalkingCat : Component
 			Rotation rotation = _characterController.Velocity.EulerAngles.ToRotation();
 			WorldRotation = Rotation.Slerp( WorldRotation, rotation, 2 * Time.Delta );
 		}
+		
+		if ( IsDying )
+		{
+			Log.Info("test");
+			GetComponent<SkinnedModelRenderer>().Tint = Color.FromBytes( 255, 255, 255, (int)(hourOfDeath - Time.Now) * 5 );
+
+			if ( hourOfDeath <= 0 )
+			{
+				Destroy();
+			}
+		}
 	}
 	
 	TimeUntil hourOfDeath = 0f;
@@ -124,14 +135,5 @@ public class WalkingCat : Component
 
 	public void OnTick()
 	{
-		if ( IsDying )
-		{
-			GetComponent<SkinnedModelRenderer>().Tint = Color.FromBytes( 255, 255, 255, (int)(hourOfDeath - Time.Now) * 5 );
-
-			if ( hourOfDeath <= 0 )
-			{
-				Destroy();
-			}
-		}
 	}
 }

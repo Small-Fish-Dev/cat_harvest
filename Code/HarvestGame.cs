@@ -25,9 +25,9 @@ public partial class HarvestGame : Component
 		SecretCat = GameObject.Clone( "prefabs/walkingcat.prefab" )
 			.Clone( new Vector3( Game.Random.Float( 1500f ) - 800f, Game.Random.Float( 1500f ), 25f ) )
 			.GetComponent<WalkingCat>();
+		SecretCat.WorldScale = 0.1f;
 		SecretCat.IsSecret = true;
 		Music = Sound.Play( "sounds/relax.sound" );
-		Log.Info(Music);
 	}
 
 	protected override void OnFixedUpdate()
@@ -38,6 +38,8 @@ public partial class HarvestGame : Component
 			.Where( x => x.Tags.Has( "cat") && x.GetComponent<WalkingCat>().IsValid() );
 		
 		AllCats = allObjects.ToList();
+		
+		TheSnappening();
 	}
 
 	[ConCmd( "spawncats" )]

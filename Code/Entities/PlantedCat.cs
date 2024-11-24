@@ -20,6 +20,7 @@ public sealed class HarvestableCat : Component
 
 	protected override void OnFixedUpdate()
 	{
-		WorldScale += 1 / 300f * Time.Delta; // Grow 100% every 300 seconds
+		if ( WorldScale.Length >= 5.19f ) return;
+		WorldScale += 1 / 199f * Time.Delta;
 	}
 }

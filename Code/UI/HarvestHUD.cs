@@ -18,6 +18,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			catsLabel.Text = $"{ply.CatsUprooted}/96";
 
 			SetClass( "hidden", HarvestGame.The.Finishing );
@@ -53,6 +54,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			SetClass( "closed", ply.CloseInstructions );
 		}
 	}
@@ -80,6 +82,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			inventoryLabel.Text = $"Inventory ({ply.CatsHarvested}/96)";
 
 			for ( var i = 0; i < 96; i++ )
@@ -110,6 +113,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.Uproot || HarvestGame.The.Finishing);
 		}
 	}
@@ -126,6 +130,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.SecretPickUp || HarvestGame.The.Finishing);
 		}
 	}
@@ -142,6 +147,7 @@ namespace CatHarvest.UI
 		public override void Tick()
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
+			if ( !ply.IsValid() ) return;
 			SetClass( "closed", !ply.HasCat || HarvestGame.The.Finishing );
 		}
 	}

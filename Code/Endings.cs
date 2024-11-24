@@ -256,13 +256,11 @@ public partial class HarvestGame
 	}
 
 	float lastSnap = 0f;
-
-	public void OnTick()
+	
+	public void TheSnappening()
 	{
 		if ( Snappening && lastSnap <= Time.Now )
 		{
-			HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
-
 			if ( AllCats.Count > 0 )
 			{
 				int randomCat = Game.Random.Int( AllCats.Count - 1 );
