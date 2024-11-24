@@ -15,7 +15,7 @@
 						[
 							{
 								from = "rust_hands.vmat"
-								to = "models/first_person/arms_materials/first_person_arms_light.vmat"
+								to = "materials/hands.vmat"
 							},
 							{
 								from = "cat.vmat"
