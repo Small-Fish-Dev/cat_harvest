@@ -120,12 +120,13 @@ HarvestHUD {
 	}
 
 	.Instructions {
-		position: absolute;
-		top: 300px;
+		position:absolute;
+		z-index: -10;
 		height: 100%;
 		width: 600px;
 		flex-direction: column;
-		transition: all 1s ease-in;
+		transition: all 0.5s ease-in;
+		margin-top: 300px;
 
 		.titleContainer {
 			background-color: rgba( 40 40 40, 0.95);
@@ -176,7 +177,7 @@ HarvestHUD {
 		}
 
 		&.closed {
-			top: 70%;
+			margin-top: 500px;
 			opacity: 0;
 		}
 	}
