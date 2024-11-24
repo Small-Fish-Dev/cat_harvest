@@ -1308,26 +1308,6 @@
           "ZIndex": 100
         }
       ]
-    },
-    {
-      "__guid": "af36fb7f-5af2-4ace-be34-6bb2c84515d2",
-      "Flags": 0,
-      "Name": "cat plane",
-      "Position": "0,0,23.52718",
-      "Scale": "37.55379,33.42014,1",
-      "Tags": "catplane",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.PlaneCollider",
-          "__guid": "bb3d2101-d835-42f7-8105-05a1ce084a7a",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50",
-          "Static": false,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ]
     }
   ],
   "SceneProperties": {
