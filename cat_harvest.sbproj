@@ -5,7 +5,7 @@
   "Ident": "cat_harvest",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": null,
+  "Resources": "\nui/*",
   "PackageReferences": [],
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
