@@ -106,10 +106,10 @@ public sealed class HarvestPlayer : Component
 	{
 		var ply = Game.ActiveScene.Scene.GetComponentInChildren<HarvestPlayer>();
 		if ( !ply.IsValid() ) return;
+		Sandbox.Services.Stats.Increment( "cats_harvested", 1 );
 		ply.CatsHarvested++;
 		ply.HasCat = false;
 		ply.GetComponentInChildren<SkinnedModelRenderer>().Set( "finished", true );
-		Sandbox.Services.Stats.Increment( "cats_harvested", 1 );
 
 		Sound.Play( $"sad{Game.Random.Int( 1 )}", ply.WorldPosition );
 		var particle = LegacyParticle.Create( "particles/dollars.vpcf", ply.WorldPosition + Game.ActiveScene.Scene.Camera.WorldRotation.Forward * 32f + ply.WorldRotation.Up * 48f );
@@ -123,13 +123,13 @@ public sealed class HarvestPlayer : Component
 	public static void Rescue()
 	{
 		var ply = Game.ActiveScene.Scene.GetComponentInChildren<HarvestPlayer>();
-
+		if ( !ply.IsValid() ) return;
 		var cat = GameObject.Clone( "prefabs/walkingcat.prefab", ply.WorldTransform );
+		Sandbox.Services.Stats.Increment( "cats_rescued", 1 );
 		var particle = LegacyParticle.Create( "particles/hearts.vpcf", cat.WorldPosition + Game.ActiveScene.Scene.Camera.WorldRotation.Forward * 32f + ply.WorldRotation.Up * 48f );
 		particle.GameObject.DestroyAsync( 3 );
 		ply.HasCat = false;
 		ply.GetComponentInChildren<SkinnedModelRenderer>().Set( "finished", true );
-		Sandbox.Services.Stats.Increment( "cats_rescued", 1 );
 
 		if ( ply.CatsUprooted == 96 )
 		{

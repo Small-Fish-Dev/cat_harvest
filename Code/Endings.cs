@@ -61,6 +61,7 @@ public partial class HarvestGame
 	public static async void BalancedEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
+		Sandbox.Services.Achievements.Unlock( "balanced_ending" );
 
 		current.EndState = true;
 		current.Ending = 2;
@@ -72,7 +73,7 @@ public partial class HarvestGame
 
 		Game.ActiveScene.Scene.GetComponentInChildren<EndingCam>().IsBalancedEnding = true;
 		Game.ActiveScene.Scene.GetComponentInChildren<EndingCam>().tsCreated = 0;
-		
+
 		current.Snappening = true;
 
 		ChangeMusic( "political" );
@@ -82,7 +83,6 @@ public partial class HarvestGame
 		current.EndState = true;
 		current.Ending = 5;
 
-		Sandbox.Services.Achievements.Unlock( "balanced_ending" );
 		await current.Task.Delay( 6000 );
 		CloseGame( ply );
 	}
@@ -90,6 +90,7 @@ public partial class HarvestGame
 	public static async void NeutralEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
+		Sandbox.Services.Achievements.Unlock( "neutral_ending" );
 
 		current.EndState = true;
 		current.Ending = 0;
@@ -106,7 +107,6 @@ public partial class HarvestGame
 
 		current.EndState = true;
 		current.Ending = 5;
-		Sandbox.Services.Achievements.Unlock( "neutral_ending" );
 		await current.Task.Delay( 5000 );
 
 		CloseGame( ply );
@@ -115,6 +115,7 @@ public partial class HarvestGame
 	public static async void PeacefulEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
+		Sandbox.Services.Achievements.Unlock( "pacifist_ending" );
 
 		current.EndState = true;
 		current.Ending = 1;
@@ -133,7 +134,7 @@ public partial class HarvestGame
 
 		for ( int i = 0; i < totCats; i++ )
 		{
-			var cat = Sandbox.GameObject.Clone( "prefabs/walkingcat.prefab");
+			var cat = Sandbox.GameObject.Clone( "prefabs/walkingcat.prefab" );
 			cat.WorldPosition =
 				new Vector3( Game.Random.Float( 1500f ) - 800f, Game.Random.Float( 1500f ), 15f );
 			cat.GetComponent<WalkingCat>().Passive = true;
@@ -148,7 +149,6 @@ public partial class HarvestGame
 
 		current.EndState = true;
 		current.Ending = 5;
-		Sandbox.Services.Achievements.Unlock( "peaceful_ending" );
 		await current.Task.Delay( 5000 );
 
 		CloseGame( ply );
@@ -157,6 +157,7 @@ public partial class HarvestGame
 	public static async void GenocideEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
+		Sandbox.Services.Achievements.Unlock( "genocide_ending" );
 		int totCats = ply.CatsHarvested;
 
 		current.EndState = true;
@@ -172,7 +173,7 @@ public partial class HarvestGame
 
 		for ( int i = 0; i < totCats; i++ )
 		{
-			var cat = Sandbox.GameObject.Clone( "prefabs/walkingcat.prefab");
+			var cat = Sandbox.GameObject.Clone( "prefabs/walkingcat.prefab" );
 			cat.WorldPosition =
 				ply.WorldPosition + new Vector3( Game.Random.Float( 1500f ) - 800f, Game.Random.Float( 1500f ) - 800f, 15f );
 			cat.GetComponent<WalkingCat>().Aggressive = true;
@@ -192,7 +193,6 @@ public partial class HarvestGame
 		current.EndState = true;
 		current.Ending = 5;
 
-		Sandbox.Services.Achievements.Unlock( "genocide_ending" );
 		await current.Task.Delay( 6000 );
 
 		CloseGame( ply );
@@ -201,6 +201,7 @@ public partial class HarvestGame
 	public static async void SecretEnding( HarvestPlayer ply )
 	{
 		HarvestGame current = Game.ActiveScene.Scene.GetComponentInChildren<HarvestGame>();
+		Sandbox.Services.Achievements.Unlock( "secret_ending" );
 
 		ChangeMusic( "sounds/wonders.sound" );
 		current.Finishing = true;
@@ -228,7 +229,6 @@ public partial class HarvestGame
 		Sound.Play( "angry0" ).Volume = 10f;
 		Sound.Play( "angry0" ).Volume = 50f; //Just to be sure, not sure why it doesn't play sometimes
 		ChangeMusic( "" );
-		Sandbox.Services.Achievements.Unlock( "secret_ending" );
 		await current.Task.Delay( 2000 );
 
 		//real funny
@@ -247,7 +247,7 @@ public partial class HarvestGame
 
 		current.Music.Stop();
 		var Song = Sound.Play( music );
-		
+
 	}
 
 	public static void CloseGame( HarvestPlayer ply )
@@ -256,7 +256,7 @@ public partial class HarvestGame
 	}
 
 	float lastSnap = 0f;
-	
+
 	public void TheSnappening()
 	{
 		if ( Snappening && lastSnap <= Time.Now )
