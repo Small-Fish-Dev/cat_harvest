@@ -1,0 +1,32 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "field",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "field",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.beech_bush_large#60666",
+        "facepunch.beech_bush_medium#29083",
+        "facepunch.beech_bush_regular_medium_b#60672",
+        "facepunch.beech_bush_small#29089",
+        "facepunch.floor_grass_dirt_blend_a#18649",
+        "facepunch.pine_bush_low_b#29106",
+        "facepunch.pine_bush_regular_a#29107",
+        "facepunch.pine_bush_regular_b#29109",
+        "fish.gt_twig_fence#23012",
+        "rust.bush_spicebush_a#25041",
+        "rust.bush_willow_c#25045"
+      ],
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "maps/field.vmap"
+      }
+    }
+  }
+}
