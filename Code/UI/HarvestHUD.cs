@@ -1,9 +1,4 @@
-﻿
-using Sandbox.Razor;
-using Sandbox.UI;
-using Sandbox.UI.Construct;
-
-namespace CatHarvest.UI
+﻿namespace CatHarvest.UI
 {
 	public class CatCounter : Panel
 	{
@@ -32,21 +27,19 @@ namespace CatHarvest.UI
 			var titleContainer = Add.Panel( "titleContainer" );
 			titleContainer.Add.Label( "Instructions", "title" );
 
-			var forward = Input.GetButtonOrigin("forward").ToUpper();
-			var left = Input.GetButtonOrigin("left").ToUpper();
-			var back = Input.GetButtonOrigin("backward").ToUpper();
-			var right = Input.GetButtonOrigin("right").ToUpper();
-			var sprint = Input.GetButtonOrigin("run").ToUpper();
-			var use = Input.GetButtonOrigin("use").ToUpper();
-			var attack = Input.GetButtonOrigin("attack1").ToUpper();
-			var score = Input.GetButtonOrigin("score").ToUpper();
+			var forward = Input.GetButtonOrigin( "Forward" ).ToUpper();
+			var left = Input.GetButtonOrigin( "Left" ).ToUpper();
+			var back = Input.GetButtonOrigin( "Backward" ).ToUpper();
+			var right = Input.GetButtonOrigin( "Right" ).ToUpper();
+			var sprint = Input.GetButtonOrigin( "Run" ).ToUpper();
+			var use = Input.GetButtonOrigin( "Pick" ).ToUpper();
+			var score = Input.GetButtonOrigin( "Inventory" ).ToUpper();
 
 
 			var descriptionContainer = Add.Panel( "descriptionContainer" ); // Haha, fuck centering text
 			descriptionContainer.Add.Label( $"[ {forward} ] [ {left} ] [ {back} ] [ {right} ] to walk.", "description" );
 			descriptionContainer.Add.Label( $"Use [ {sprint} ] to run.", "description" );
 			descriptionContainer.Add.Label( $"Uproot the cats by pressing [ {use} ]", "description" );
-			descriptionContainer.Add.Label( $"Decide their fate with your cursor and press [ {attack} ]", "description" );
 			descriptionContainer.Add.Label( $"Open the inventory by pressing [ {score} ]", "description" );
 			descriptionContainer.Add.Label( $"Uproot all the cats and find all the 5 endings", "objective" );
 		}
@@ -105,7 +98,7 @@ namespace CatHarvest.UI
 	{
 		public Popup()
 		{
-			var use = Input.GetButtonOrigin("use").ToUpper();
+			var use = Input.GetButtonOrigin( "Pick" ).ToUpper();
 
 			Add.Label( $"Uproot the cat [ {use} ]", "title" );
 		}
@@ -114,7 +107,7 @@ namespace CatHarvest.UI
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
 			if ( !ply.IsValid() ) return;
-			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.Uproot || HarvestGame.The.Finishing);
+			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.Uproot || HarvestGame.The.Finishing );
 		}
 	}
 
@@ -122,7 +115,7 @@ namespace CatHarvest.UI
 	{
 		public SecretPopup()
 		{
-			var use = Input.GetButtonOrigin("use").ToUpper();
+			var use = Input.GetButtonOrigin( "Pick" ).ToUpper();
 
 			Add.Label( $"Pick up El Wiwi [ {use} ]", "title" );
 		}
@@ -131,7 +124,7 @@ namespace CatHarvest.UI
 		{
 			var ply = Scene.GetComponentInChildren<HarvestPlayer>();
 			if ( !ply.IsValid() ) return;
-			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.SecretPickUp || HarvestGame.The.Finishing);
+			SetClass( "closed", ply.Popup != HarvestPlayer.PopupType.SecretPickUp || HarvestGame.The.Finishing );
 		}
 	}
 
@@ -204,5 +197,5 @@ namespace CatHarvest.UI
 			Panel.AddChild<Jumpscare>( "Jumpscare" );
 		}
 	}
-	
+
 }
