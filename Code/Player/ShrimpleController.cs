@@ -20,10 +20,6 @@ public class ShrimpleWalker : Component
     public float RunSpeed { get; set; } = 300f;
 
     [Property]
-    [Range(25f, 100f, 5f)]
-    public float DuckSpeed { get; set; } = 50f;
-
-    [Property]
     [Range(200f, 500f, 20f)]
     public float JumpStrength { get; set; } = 350f;
 
@@ -44,10 +40,8 @@ public class ShrimpleWalker : Component
         base.OnFixedUpdate();
 
         var wishDirection = Input.AnalogMove.Normal * Rotation.FromYaw(EyeAngles.yaw);
-        var isDucking = Input.Down("Duck");
         var isRunning = Input.Down("Run");
-        var wishSpeed = isDucking ? DuckSpeed :
-            isRunning ? RunSpeed : WalkSpeed;
+        var wishSpeed = isRunning ? RunSpeed : WalkSpeed;
 
         Controller.WishVelocity = wishDirection * wishSpeed;
         Controller.Move();
@@ -62,7 +56,6 @@ public class ShrimpleWalker : Component
 
         AnimationHelper.WithWishVelocity(Controller.WishVelocity);
         AnimationHelper.WithVelocity(Controller.Velocity);
-        AnimationHelper.DuckLevel = isDucking ? 1f : 0f;
         AnimationHelper.IsGrounded = Controller.IsOnGround;
     }
 

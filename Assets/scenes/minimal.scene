@@ -1283,6 +1283,16 @@
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
+        },
+        {
+          "__type": "Sandbox.HarvestControllerHUD",
+          "__guid": "647b376a-2067-40a3-9a2c-e7c013792590",
+          "HarvestPlayer": {
+            "_type": "component",
+            "component_id": "c8657ccc-cb8f-4ebb-8304-1bf3653d5f9a",
+            "go": "7027777f-eaab-46c0-a135-ed9c580259ce",
+            "component_type": "HarvestPlayer"
+          }
         }
       ]
     },

@@ -1,0 +1,38 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+@if ( HarvestPlayer.HasCat && Input.UsingController )
+{
+	<root>
+		<div class="Choices-buttons">
+				<img src=@HarvestButton.ResourcePath>
+				<img src=@RescueButton.ResourcePath>
+		</div>
+	</root>
+}
+
+
+@code
+{
+
+	[Property] public HarvestPlayer HarvestPlayer { get; set; } 
+	private Texture HarvestButton { get; set; }
+	private Texture RescueButton { get; set; }
+
+	protected override void OnFixedUpdate()
+	{
+		HarvestButton = Input.GetGlyph( "Harvest", InputGlyphSize.Medium, false );
+		RescueButton = Input.GetGlyph( "Rescue", InputGlyphSize.Medium, false );
+		
+		Mouse.Visible = !Input.UsingController && HarvestPlayer.HasCat;
+		//otherwise the cursor type will always default to pointer, for some reason? 
+		Mouse.CursorType = null;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( RescueButton, HarvestButton, HarvestPlayer.HasCat );
+}
