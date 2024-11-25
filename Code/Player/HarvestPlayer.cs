@@ -93,6 +93,8 @@ public sealed class HarvestPlayer : Component
 		{
 			Popup = PopupType.None;
 		}
+		
+		ControllerChoices();
 
 		if ( _playerController.Velocity.Length > 0f && lastStep >= 70 / _playerController.Velocity.Length && _playerController.IsOnGround )
 		{
@@ -137,6 +139,14 @@ public sealed class HarvestPlayer : Component
 		}
 	}
 
+	public void ControllerChoices()
+	{
+		if ( !Input.UsingController ) return;
+		if ( !HasCat ) return;
+		
+		if (Input.Pressed("Harvest")) Harvest();
+		if (Input.Pressed("Rescue")) Rescue();
+	}
 
 	public void OnKilled()
 	{
