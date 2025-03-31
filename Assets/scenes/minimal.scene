@@ -14,6 +14,12 @@
           "EnableCollision": true,
           "MapName": "maps/field.vmap",
           "NoOrigin": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
@@ -36,6 +42,12 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1,0.31667,0,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "Shadows": false,
           "SkyColor": "0.30233,0.28147,0.17718,0"
         }
@@ -57,6 +69,12 @@
             "go": "7027777f-eaab-46c0-a135-ed9c580259ce",
             "component_type": "ShrimpleCharacterController"
           },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "OpenInventory": false
         },
         {
@@ -79,6 +97,12 @@
           "MaxBounces": 5,
           "MaxGroundAngle": 60,
           "MaxUnstuckTries": 20,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "PseudoStepsEnabled": true,
           "PushEnabled": false,
           "PushTagsWeight": {
@@ -105,7 +129,19 @@
           },
           "EyesWeight": 1,
           "HeadWeight": 1,
+          "Height": null,
+          "IkLeftFoot": null,
+          "IkLeftHand": null,
+          "IkRightFoot": null,
+          "IkRightHand": null,
+          "LookAt": null,
           "LookAtEnabled": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "Target": {
             "_type": "component",
             "component_id": "476b2387-3e60-440a-9fec-9b3966b21ba2",
@@ -122,6 +158,12 @@
           },
           "DuckSpeed": 50,
           "JumpStrength": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "RunSpeed": 200,
           "WalkSpeed": 100
         }
@@ -140,7 +182,14 @@
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
               "FieldOfView": 90,
+              "FovAxis": "Horizontal",
               "IsMainCamera": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Orthographic": false,
               "OrthographicHeight": 1204,
               "Priority": 1,
@@ -154,61 +203,53 @@
             {
               "__type": "Sandbox.AmbientOcclusion",
               "__guid": "19486f62-fb9b-40ec-b855-775c784627e5",
-              "FalloffDistance": 1,
-              "Intensity": 16,
+              "__version": 1,
+              "DenoiseMode": "Temporal",
+              "FalloffRange": 0.75,
+              "Intensity": 0.15,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Quality": "High",
-              "Radius": 32
+              "Radius": 128,
+              "ThinCompensation": 0
             },
             {
               "__type": "Sandbox.Tonemapping",
               "__guid": "3458fb3e-e596-4e6e-87e2-6a8dd7bd59ce",
-              "__version": 1,
+              "__version": 3,
               "AutoExposureEnabled": true,
-              "ExposureBias": 2,
               "ExposureCompensation": 0,
               "ExposureMethod": "RGB",
               "MaximumExposure": 2,
               "MinimumExposure": 0,
               "Mode": "ACES",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Rate": 0.28
             },
             {
               "__type": "Sandbox.Bloom",
               "__guid": "8e2901bd-f4d1-4dcd-9924-6ec25c45f98a",
-              "BloomColor": {
-                "blend": "Linear",
-                "color": [
-                  {
-                    "t": 0,
-                    "c": "1,1,1,1"
-                  },
-                  {
-                    "t": 1,
-                    "c": "1,1,1,1"
-                  }
-                ],
-                "alpha": null
-              },
-              "BloomCurve": [
-                {
-                  "x": 0,
-                  "y": 0.5,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 1,
-                  "y": 1,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                }
-              ],
+              "__version": 1,
+              "Gamma": 2.2,
               "Mode": "Additive",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Strength": 5,
-              "Threshold": 0.48,
-              "ThresholdWidth": 0.13
+              "Threshold": 1.24,
+              "Tint": "1,1,1,1"
             },
             {
               "__type": "Sandbox.Vignette",
@@ -216,6 +257,12 @@
               "Center": "0.5,0.5",
               "Color": "0,0,0,1",
               "Intensity": 0.67,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Roundness": 0,
               "Smoothness": 0.97
             },
@@ -227,6 +274,12 @@
               "FocalDistance": 1500,
               "FocusRange": 1000,
               "FrontBlur": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "QualityLevel": "High"
             }
           ],
@@ -250,7 +303,14 @@
                   "BackgroundColor": "0.33333,0.46275,0.52157,1",
                   "ClearFlags": "All",
                   "FieldOfView": 30,
-                  "IsMainCamera": true,
+                  "FovAxis": "Horizontal",
+                  "IsMainCamera": false,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
                   "Orthographic": false,
                   "OrthographicHeight": 1204,
                   "Priority": 1,
@@ -263,17 +323,32 @@
                 },
                 {
                   "__type": "Viewmodelcamhack",
-                  "__guid": "f85dc0e4-007d-4ef4-8218-a5720d148353"
+                  "__guid": "f85dc0e4-007d-4ef4-8218-a5720d148353",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
                 },
                 {
                   "__type": "Sandbox.SkinnedModelRenderer",
                   "__guid": "d0cff7e0-c147-4aed-ae14-eb141b9d1227",
                   "AnimationGraph": "models/viewmodel/view_anim.vanmgrph",
                   "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": null,
                   "CreateAttachments": false,
                   "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
                   "Model": "models/viewmodel/viewmodel.vmdl",
                   "Morphs": {},
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
                   "Parameters": {
                     "bools": {},
                     "ints": {},
@@ -281,6 +356,7 @@
                     "vectors": {},
                     "rotations": {}
                   },
+                  "PlaybackRate": 1,
                   "RenderOptions": {
                     "GameLayer": true,
                     "OverlayLayer": false,
@@ -308,11 +384,21 @@
             {
               "__type": "Sandbox.SkinnedModelRenderer",
               "__guid": "476b2387-3e60-440a-9fec-9b3966b21ba2",
+              "AnimationGraph": null,
               "BodyGroups": 341,
+              "BoneMergeTarget": null,
               "CreateAttachments": false,
               "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
               "Morphs": {},
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Parameters": {
                 "bools": {},
                 "ints": {},
@@ -320,6 +406,7 @@
                 "vectors": {},
                 "rotations": {}
               },
+              "PlaybackRate": 1,
               "RenderOptions": {
                 "GameLayer": true,
                 "OverlayLayer": false,
@@ -345,7 +432,13 @@
       "Components": [
         {
           "__type": "Catcheck",
-          "__guid": "38fb3bf9-25a5-4d6b-a32a-2afd795f8e1d"
+          "__guid": "38fb3bf9-25a5-4d6b-a32a-2afd795f8e1d",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
@@ -1224,7 +1317,13 @@
         {
           "__type": "CatHarvest.HarvestGame",
           "__guid": "eb05bca6-94a2-4840-a4d7-02ea60068aef",
-          "AllCats": []
+          "AllCats": [],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     },
@@ -1241,7 +1340,14 @@
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
-          "IsMainCamera": true,
+          "FovAxis": "Horizontal",
+          "IsMainCamera": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
@@ -1260,7 +1366,13 @@
             "component_id": "b7feede7-3dac-43c1-a407-751525914c54",
             "go": "6935506d-626a-44e8-a0d9-3ca7737b5fbf",
             "component_type": "CameraComponent"
-          }
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     },
@@ -1273,15 +1385,33 @@
       "Components": [
         {
           "__type": "CatHarvest.UI.HarvestHUD",
-          "__guid": "6dcd42c5-85ca-47ed-97ed-8d19d2efe539"
+          "__guid": "6dcd42c5-85ca-47ed-97ed-8d19d2efe539",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         },
         {
           "__type": "Sandbox.ScreenPanel",
           "__guid": "4fba3954-ef15-44b9-a897-6ecfb52b6071",
           "AutoScreenScale": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "Opacity": 1,
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
+          "TargetCamera": {
+            "_type": "component",
+            "component_id": "00cbe842-f3d6-42ba-92ec-3843d6987535",
+            "go": "b973f525-44f6-4b83-b4b5-bfbd74483af0",
+            "component_type": "CameraComponent"
+          },
           "ZIndex": 100
         }
       ]
@@ -1298,6 +1428,12 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "4dff08a5-97e8-47aa-8552-fd0a8364f08d",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "SkyIndirectLighting": false,
           "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
           "Tint": "0.20465,0.0752,0.1766,1"
@@ -1315,7 +1451,13 @@
         {
           "__type": "Sandbox.AmbientLight",
           "__guid": "a31e4542-a814-4aff-a186-9ec0e1097949",
-          "Color": "0.32213,0.07085,0.6093,1"
+          "Color": "0.32213,0.07085,0.6093,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         },
         {
           "__type": "Sandbox.GradientFog",
@@ -1324,6 +1466,12 @@
           "EndDistance": 3000,
           "FalloffExponent": 0.83999985,
           "Height": 2500,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "StartDistance": 500,
           "VerticalFalloffExponent": 1.7999998
         }
