@@ -300,8 +300,8 @@
                 {
                   "__type": "Sandbox.CameraComponent",
                   "__guid": "e2c70e4f-08c4-4a07-b846-ab9d67a143ce",
-                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                  "ClearFlags": "All",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,0",
+                  "ClearFlags": "Depth, Stencil",
                   "FieldOfView": 30,
                   "FovAxis": "Horizontal",
                   "IsMainCamera": false,
@@ -313,23 +313,13 @@
                   "OnComponentUpdate": null,
                   "Orthographic": false,
                   "OrthographicHeight": 1204,
-                  "Priority": 1,
+                  "Priority": 3,
                   "RenderExcludeTags": "body",
                   "RenderTags": "viewmodel,light",
                   "TargetEye": "None",
                   "Viewport": "0,0,1,1",
                   "ZFar": 10000,
                   "ZNear": 1
-                },
-                {
-                  "__type": "Viewmodelcamhack",
-                  "__guid": "f85dc0e4-007d-4ef4-8218-a5720d148353",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null
                 },
                 {
                   "__type": "Sandbox.SkinnedModelRenderer",
@@ -1350,7 +1340,7 @@
           "OnComponentUpdate": null,
           "Orthographic": false,
           "OrthographicHeight": 1204,
-          "Priority": 1,
+          "Priority": 2,
           "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
@@ -1408,8 +1398,8 @@
           "ScaleStrategy": "ConsistentHeight",
           "TargetCamera": {
             "_type": "component",
-            "component_id": "00cbe842-f3d6-42ba-92ec-3843d6987535",
-            "go": "b973f525-44f6-4b83-b4b5-bfbd74483af0",
+            "component_id": "e2c70e4f-08c4-4a07-b846-ab9d67a143ce",
+            "go": "34ee1639-8c03-4282-a04c-f247f1ac8561",
             "component_type": "CameraComponent"
           },
           "ZIndex": 100
