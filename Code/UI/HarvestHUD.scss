@@ -219,8 +219,7 @@ HarvestHUD {
 		width: 50%;
 		position: absolute;
 		bottom: 150px;
-		pointer-events: all;
-
+		cursor: none;
 		.button {
 			border-radius: 30px;
 			flex-shrink: 1;
@@ -235,6 +234,7 @@ HarvestHUD {
 			transition: all 0.1s ease-in;
 			align-items: center;
 			justify-content: center;
+			pointer-events: all;
 
 			.title {
 				font-family: "Chewy";
